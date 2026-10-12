@@ -1,0 +1,34 @@
+LIB "primdec.lib"; LIB "sing.lib";
+ring r = 0,(x,y,z,t),dp;
+// charts of F_{B4,0}
+poly GT = (x+1)^2*(y+1)^2 + x*y*z^2;          // (x,y,z)
+poly GX = (1+t)^2*(y+t)^2 + y*z^2;            // (y,z,t)
+poly GY = (x+t)^2*(1+t)^2 + x*z^2;            // (x,z,t)
+poly GZ = (x+t)^2*(y+t)^2 + x*y;              // (x,y,t)
+ideal JT = GT, diff(GT,x),diff(GT,y),diff(GT,z), t;
+ideal JX = GX, diff(GX,y),diff(GX,z),diff(GX,t), x;
+ideal JY = GY, diff(GY,x),diff(GY,z),diff(GY,t), y;
+ideal JZ = GZ, diff(GZ,x),diff(GZ,y),diff(GZ,t), z;
+"--- U_T minAss"; minAssGTZ(JT);
+"--- U_T: radical equals (x+1,z) cap (y+1,z) ?";
+ideal cl = intersect(ideal(x+1,z,t),ideal(y+1,z,t));
+ideal rd = radical(JT); size(reduce(rd,std(cl))) + size(reduce(cl,std(rd)));
+"--- torus chart: saturate by xyz";
+ideal Jo = JT, 1-x*y*z*t;  // abuse: here t is extra var; reuse t as Rabinowitsch var
+ring r2 = 0,(x,y,z,s),dp; poly GT=(x+1)^2*(y+1)^2+x*y*z^2;
+ideal Jo = GT, diff(GT,x),diff(GT,y),diff(GT,z), 1-s*x*y*z; std(Jo);
+setring r;
+"--- U_X"; ideal rd=radical(JX); ideal cl = intersect(ideal(t+1,z,x),ideal(y+t,z,x));
+size(reduce(rd,std(cl))) + size(reduce(cl,std(rd)));
+"--- U_Y"; rd=radical(JY); cl = intersect(ideal(x+t,z,y),ideal(t+1,z,y));
+size(reduce(rd,std(cl))) + size(reduce(cl,std(rd)));
+"--- U_Z"; rd=radical(JZ); cl = ideal(x,y,t,z);
+size(reduce(rd,std(cl))) + size(reduce(cl,std(rd)));
+"--- local Milnor number at p_inf (U_Z origin)";
+ring rl = 0,(x,y,t),ds; poly GZ = (x+t)^2*(y+t)^2 + x*y; milnor(GZ);
+"--- local Jacobian ideal std:"; std(jacob(GZ));
+"--- at q: w^2+u^2v^2 Jacobian algebra dim (expect -1 = infinite)";
+ring rq = 0,(u,v,w),ds; poly g9 = u^2*v^2 + (-1+u)*(-1+v)*w^2; vdim(std(jacob(g9)));
+"--- pinch point a_X: F = u^2(1+s)^2+(-1+u)s w^2, singular locus near 0";
+ring ra = 0,(u,s,w),ds; poly ga = u^2*(1+s)^2+(-1+u)*s*w^2; std(jacob(ga));
+quit;

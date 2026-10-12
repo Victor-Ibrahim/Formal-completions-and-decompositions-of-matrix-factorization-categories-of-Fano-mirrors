@@ -1,0 +1,10 @@
+LIB "sing.lib";
+ring r=0,(y,z,t),ds;
+proc FX(number l){ return( y^2 + y^2*t + y*t + y*z + y^2*z + y*t^2 + 4*y*z*t + y*z*t^2 + z*t^2 + y*z^2 + z*t^3 + y*z^2*t + z^2*t + z^2*t^2 - l*y*z*t ); } // chart X=1
+"P1^1=[1:0:0:0], lam=1: milnor, hess rank"; poly f=FX(1); milnor(f); rank(jacob(jacob(jet(f,2))));
+"P2^1=[1:0:0:-1], lam=2:"; f=subst(FX(2),t,t-1); milnor(f); rank(jacob(jacob(jet(f,2))));
+ring r2=0,(x,y,t),ds; // chart Z=1
+poly F = x^2*y^2 + x*y^2*t + x^2*y*t + x^2*y + x*y^2 + x*y*t^2 + 4*x*y*t + y*t^2 + x*t^2 + x*y + t^3 + y*t + x*t + t^2;
+"P3=[0:0:1:0], lam=1:"; poly g = F - 1*x*y*t; milnor(g); rank(jacob(jacob(jet(g,2))));
+"V18 r_X lam=-1 hess rank:"; ring r3=0,(y,z,t),ds; poly h=(1+y+z)*((1+t)*(y+t)*(z+t)-t^3)+y*z*t; milnor(h); rank(jacob(jacob(jet(h,2))));
+quit;

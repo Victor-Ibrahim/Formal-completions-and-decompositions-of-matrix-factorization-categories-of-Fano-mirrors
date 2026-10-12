@@ -1,0 +1,5 @@
+LIB "sing.lib";
+ring rt = 0,(u,v),ds;
+poly g = (u)^4 + (1)*(-2+u)*v^2; "B2 transverse milnor:"; milnor(g);
+poly g3 = u^3 + (-2+u)*v^2; "B3 transverse milnor (T=1):"; milnor(g3);
+quit;

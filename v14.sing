@@ -1,0 +1,7 @@
+LIB "sing.lib";
+ring rr = 0,(b,r,t),ds;
+poly F1 = b*(r+1)^2*(b-t-1) + b*(r+1)*(b-1)^2 + r*(b-t-1)*t;   // lam = -1
+"milnor at lam=-1:"; milnor(F1);
+poly F2 = b*(r+1)^2*(b-t-1) + b*(r+1)*(b-1)^2 - 5*r*(b-t-1)*t;   // lam = 5 generic
+"milnor at lam=5:"; milnor(F2);
+quit;

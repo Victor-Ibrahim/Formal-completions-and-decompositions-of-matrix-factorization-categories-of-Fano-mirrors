@@ -1,0 +1,39 @@
+LIB "primdec.lib"; LIB "sing.lib";
+ring P = 0,(X,Y,Z,T),dp;
+poly A = X+Y+Z; poly B = (X+Y+Z)*T^2+(X*Y+X*Z+Y*Z)*T+X*Y*Z;
+"--- Sing V(B) in P^3 (minimal primes of jacobian):"; minAssGTZ(jacob(B)+ideal(B));
+"--- Sing V(AB):"; minAssGTZ(jacob(A*B)+ideal(A*B));
+ring r = 0,(x,y,z,t),dp;
+proc chk(poly G, ideal claim, ideal extra) {
+  ideal J = G, jacob(G), extra; ideal rd = radical(J);
+  return(size(reduce(rd,std(claim))) + size(reduce(claim,std(rd))));
+}
+poly AT=x+y+z; poly BT=AT+x*y+x*z+y*z+x*y*z;
+poly AX=1+y+z; poly BX=AX*t^2+(y+z+y*z)*t+y*z;
+poly AY=x+1+z; poly BY=AY*t^2+(x+z+x*z)*t+x*z;
+poly AZ=x+y+1; poly BZ=AZ*t^2+(x+y+x*y)*t+x*y;
+"U_T (26):"; chk(AT*BT, ideal(AT,BT,t), ideal(t));
+"U_X (27):"; chk(AX*BX, intersect(ideal(AX,BX,x),ideal(y,z,t,x)), ideal(x));
+"U_Y (28):"; chk(AY*BY, intersect(ideal(AY,BY,y),ideal(x,z,t,y)), ideal(y));
+"U_Z (29):"; chk(AZ*BZ, intersect(ideal(AZ,BZ,z),ideal(x,y,t,z)), ideal(z));
+"--- (A_T,B_T) radical? (prime?)"; minAssGTZ(ideal(AT,BT));
+"--- local types: r_X in U_X";
+ring rl = 0,(y,z,t),ds; poly g = (1+y+z)*(t^2*(1+y+z)+t*(y+z+y*z)+y*z);
+"milnor r_X:"; milnor(g); 
+"restriction to kernel (-s,-s,s):"; ring rs=0,s,dp; poly gs = (1-2s)*(s^2*(1-2s)+s*(-2s+s^2)+s^2); factorize(gs);
+"--- plane cubic C0: T(X^2+XY+Y^2)+XY(X+Y) in P^2";
+ring p2 = 0,(X,Y,T),dp; poly c = T*(X^2+X*Y+Y^2)+X*Y*(X+Y);
+"irreducible factors:"; factorize(c);
+"singular points:"; minAssGTZ(jacob(c)+ideal(c));
+"milnor at [0:0:1]:"; ring p2l = 0,(x,y),ds; poly cl = x^2+x*y+y^2+x*y*(x+y); milnor(cl);
+"--- node p0 of C0 inside U_T: local type of AB at origin";
+ring rT = 0,(x,y,z),ds; poly G=(x+y+z)*(x+y+z+x*y+x*z+y*z+x*y*z);
+"milnor at p0 (expect -1: nonisolated)"; milnor(G);
+"--- compare with w^2+(uv)^2: both have 1-dim critical locus with 2 branches";
+"--- check the three points [1:-1:0:0],[1:0:-1:0],[0:1:-1:0] are smooth on C0";
+setring P;
+ideal C0 = A, B;
+proc smoothpt(ideal I, list p){ matrix M = jacob(I); matrix Mp = subst(subst(subst(subst(M,X,p[1]),Y,p[2]),Z,p[3]),T,p[4]); return(rank(Mp)); }
+smoothpt(C0, list(1,-1,0,0)); smoothpt(C0, list(1,0,-1,0)); smoothpt(C0, list(0,1,-1,0)); smoothpt(C0, list(0,0,0,1));
+"on C0?"; subst(subst(subst(subst(C0,X,1),Y,-1),Z,0),T,0);
+quit;

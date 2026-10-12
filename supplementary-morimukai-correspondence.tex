@@ -1,0 +1,253 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.7in,landscape]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array,longtable,booktabs}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black]{hyperref}
+\setlength{\LTpre}{0.5em}
+\setlength{\LTpost}{0.5em}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\newcommand{\polycell}[1]{\begingroup\scriptsize\(\begin{aligned}[t]#1\end{aligned}\)\endgroup}
+\newcommand{\familycell}[1]{\begingroup\scriptsize #1\endgroup}
+\newcommand{\sourcecell}[1]{\begingroup\scriptsize #1\endgroup}
+\begin{document}
+\section*{Supplementary GRDB/Iskovskikh--Mori--Mukai Correspondence Table}
+
+This table records the Iskovskikh--Mori--Mukai label used in the manuscript, the Laurent polynomial displayed there, the Fano family description attached to the example, and the external GRDB source to be used for cross-checking. The GRDB source page is \url{http://www.grdb.co.uk/misc/morimukai.php}.
+The polynomial column is generated from \texttt{Apendice.tex}; the machine-readable companion file is \texttt{supplementary-morimukai-correspondence.csv}.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.07\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.12\textwidth}}
+\caption{GRDB/Iskovskikh--Mori--Mukai correspondence for Mori--Mukai Laurent polynomial examples.}\\
+\toprule
+\textbf{IMM ID} & \textbf{Laurent polynomial} & \textbf{Fano family / manuscript description} & \textbf{Source}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{IMM ID} & \textbf{Laurent polynomial} & \textbf{Fano family / manuscript description} & \textbf{Source}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{Continued on next page}\\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+$MM_{2-1}$ & \polycell{W_{MM_{2-1}}={}&x^7y^7z^{18}+6x^6y^6z^{15}
++6x^5y^5z^{13}+15x^5y^5z^{12}
++30x^4y^4z^{10}+20x^4y^4z^9\\
+&+x^4y^3z^9+x^3y^4z^9+15x^3y^3z^8
++60x^3y^3z^7+15x^3y^3z^6+3x^3y^2z^6+3x^2y^3z^6\\
+&+60x^2y^2z^5+60x^2y^2z^4+6x^2y^2z^3
++3x^2yz^4+3x^2yz^3+3xy^2z^4+3xy^2z^3\\
+&+20xyz^3+90xyz^2+30xyz+xy+6xz+x+6yz+y
++\frac{60}{z}+\frac{6}{z^2}+\frac{3}{yz}+\frac{3}{yz^2}\\
+&+\frac{3}{xz}+\frac{3}{xz^2}
++\frac{15}{xyz^2}+\frac{60}{xyz^3}+\frac{15}{xyz^4}
++\frac{3}{xy^2z^4}+\frac{3}{x^2yz^4}\\
+&+\frac{30}{x^2y^2z^5}+\frac{20}{x^2y^2z^6}
++\frac{1}{x^2y^3z^6}+\frac{1}{x^3y^2z^6}
++\frac{6}{x^3y^3z^7}+\frac{15}{x^3y^3z^8}\\
+&+\frac{6}{x^4y^4z^{10}}+\frac{1}{x^5y^5z^{12}}.} & \familycell{For the degree-$4$ hypersurface-in-a-product model, Appendix~A of \cite{CoatesCortiGalkinKasprzyk2016} gives} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-2}$ & \polycell{W_{MM_{2-2}}={}&xy^2+2xyz+2xy+xz^2+2xz+x
++\frac{y^2}{z}+4y+\frac{4y}{z}+6z+\frac{6}{z}\\
+&+\frac{4z^2}{y}+\frac{14z}{y}+\frac{14}{y}+\frac{4}{yz}
++\frac{z^3}{y^2}+\frac{4z^2}{y^2}+\frac{6z}{y^2}
++\frac{4}{y^2}+\frac{1}{y^2z}\\
+&+\frac{4}{xz}+\frac{12}{xy}+\frac{12}{xyz}
++\frac{12z}{xy^2}+\frac{25}{xy^2}+\frac{12}{xy^2z}\\
+&+\frac{4z^2}{xy^3}+\frac{12z}{xy^3}+\frac{12}{xy^3}
++\frac{4}{xy^3z}+\frac{6}{x^2y^2z}
++\frac{12}{x^2y^3}+\frac{12}{x^2y^3z}\\
+&+\frac{6z}{x^2y^4}+\frac{12}{x^2y^4}+\frac{6}{x^2y^4z}
++\frac{4}{x^3y^4z}+\frac{4}{x^3y^5}
++\frac{4}{x^3y^5z}+\frac{1}{x^4y^6z}} & \familycell{The Quantum Lefschetz construction with mirror map gives} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-3}$ & \polycell{W_{MM_{2-3}}={}&x^2y^5z^2+4x^2y^4z^2+6x^2y^3z^2
++4x^2y^2z^2+x^2yz^2+xy^3z^2+4xy^3z\\
+&+2xy^2z^2+12xy^2z+xy^2+xyz^2+12xyz+2xy+4xz+x\\
+&+2yz+6y+2z+\frac{2}{z}+\frac{6}{y}+\frac{2}{yz}
++\frac{1}{xy}+\frac{4}{xyz}+\frac{4}{xy^2z}
++\frac{1}{xy^2z^2}+\frac{1}{x^2y^3z^2}.} & \familycell{For the degree-$8$ hypersurface-in-a-product model, the Laurent potential is} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-4}$ & \polycell{W_{MM_{2-4}} = {} & xy^2 + 2xy + x + \frac{2x}{z} + \frac{2x}{yz} + \frac{x}{y^2z^2} \\
+& + y^3z + 3y^2z + 3yz + 4y + z + \frac{3}{y} \\
+& + \frac{5}{yz} + \frac{4}{y^2z} + \frac{2}{y^3z^2}+ \frac{1}{x} + \frac{2}{xy}  \\
+& + \frac{1}{xy^2} + \frac{2}{xy^2z} + \frac{2}{xy^3z} + \frac{1}{xy^4z^2}} & \familycell{the Landau--Ginzburg model of the blowup of $\mathbb{P}^3$ in the intersection of two cubics defined on the algebraic torus $(\mathbb{C}^*)^3$ by the following 21-term potential:} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-5}$ & \polycell{W_{MM_{2-5}}={}&\frac{x^3y^3}{z^2}+\frac{x^2y^3}{z^2}+\frac{3x^2y^2}{z}+\frac{x^2y}{z}+\frac{2xy^2}{z}+3xy+\frac{4xy}{z}+x+y+\frac{2y}{z}+z \\
+&\quad +\frac{1}{y}+\frac{2}{x}+\frac{3z}{xy}+\frac{3}{xy}+\frac{1}{x^2y}+\frac{3z}{x^2y^2}+\frac{z}{x^3y^3}.} & \familycell{the Landau--Ginzburg model of the blowup of a cubic hypersurface in $\mathbb{P}^4$ along a plane cubic, defined on the algebraic torus $(\mathbb{C}^*)^3$ by the following 18-term Laurent potential:} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-6}$ & \polycell{W_{MM_{2-6}}
+=x\left(1+\frac{1}{yz}\right)^2+yzB(z)+\frac{B(z)^2}{x}
++2\bigl(B(z)-2\bigr)+\frac{2B(z)}{yz}} & \familycell{the Landau--Ginzburg model $MM_{2-6}$ associated with a $(2,2)$-divisor in $\mathbb{P}^2\times\mathbb{P}^2$.} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-7}$ & \polycell{\widetilde W_{MM_{2-7}}=K\left(S^2+\frac{1}{z}\right)+zS^3+S-5} & \familycell{another Laurent potential for the Mori--Mukai model $MM_{2-7}$ on the algebraic torus $(\mathbb{C}^*)^3$.} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-8}$ & \polycell{W_{MM_{2-8}}=xu^2+2uv+\frac{v^2}{x}-2} & \familycell{the Landau--Ginzburg model $MM_{2-8}$ on the algebraic torus $(\mathbb{C}^*)^3$.} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-9}$ & \polycell{W_{MM_{2-9}}
+=xA+\frac{uv^3}{x}+zA^2uv^2-\frac{1}{u}-4} & \familycell{the Mori--Mukai model $MM_{2-9}$ on the algebraic torus $(\mathbb{C}^*)^3$.} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-10}$ & \polycell{W_{MM_{2-10}}={}&x+yz^2+2yz+y+4z+\frac{2yz}{x}
++\frac{2y}{x}+\frac{4}{x}+\frac{y}{x^2} \\
+&+\frac{6}{y}+\frac{2}{yz}+\frac{4}{y^2z}
++\frac{2}{xyz}+\frac{1}{y^3z^2}} & \familycell{the Mori--Mukai model $MM_{2-10}$ on the algebraic torus $(\mathbb{C}^*)^3$, defined by the Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-11}$ & \polycell{W_{MM_{2-11}}={}&x+\frac{x}{yz}+yz+y+z+\frac{2}{z}+\frac{2}{y}
++\frac{yz}{x}+\frac{2y}{x}+\frac{2z}{x} \\
+&+\frac{2}{x}+\frac{y}{xz}+\frac{z}{xy}} & \familycell{the Mori--Mukai model $MM_{2-11}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-12}$ & \polycell{W_{MM_{2-12}}={}&x+yz^2+2yz+y+2z+\frac{2}{x}
++\frac{2}{xz}+\frac{2}{z}+\frac{1}{xz^2} \\
+&+\frac{1}{y}+\frac{2}{xyz}+\frac{1}{x^2yz^2}} & \familycell{the Mori--Mukai model $MM_{2-12}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-13}$ & \polycell{W_{MM_{2-13}}={}&x+\frac{x}{y}+y+z+\frac{1}{z}+\frac{2}{y}
++\frac{2}{yz}+\frac{1}{y^2z} \\
+&+\frac{2yz}{x}+\frac{2y}{x}+\frac{2}{x}+\frac{y^2z}{x^2}} & \familycell{the Mori--Mukai model $MM_{2-13}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-14}$ & \polycell{W_{MM_{2-14}}={}&x+\frac{2xz}{y}+\frac{xz^2}{y^2}
++\frac{xz}{y^2}+y+z+\frac{2z}{y}+\frac{3}{y} \\
+&+\frac{2y}{xz}+\frac{1}{x}+\frac{3}{xz}
++\frac{y}{x^2z^2}} & \familycell{the Mori--Mukai model $MM_{2-14}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-15}$ & \polycell{W_{MM_{2-15}}={}&x+\frac{x}{z}+\frac{x}{yz}+y+\frac{y}{z}+z
++\frac{2}{z}+\frac{2}{y} \\
+&+\frac{y}{xz}+\frac{2}{x}+\frac{z}{xy}} & \familycell{the Mori--Mukai model $MM_{2-15}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-16}$ & \polycell{W_{MM_{2-16}}={}&x+y+z+\frac{1}{z}+\frac{2z}{y}+\frac{2}{y}
++\frac{z}{y^2}+\frac{2y}{x} \\
+&+\frac{2y}{xz}+\frac{2}{x}+\frac{y^2}{x^2z}} & \familycell{the Mori--Mukai model $MM_{2-16}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-17}$ & \polycell{W_{MM_{2-17}}={}&\frac{x^2}{yz}+\frac{x^2}{yz^2}+x+\frac{2x}{z}
++\frac{x}{yz}+y+z \\
+&+\frac{2z}{x}+\frac{1}{x}+\frac{z}{x^2}} & \familycell{the Mori--Mukai model $MM_{2-17}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-18}$ & \polycell{W_{MM_{2-18}}={}&x+yz^2+2yz+y+2z+\frac{1}{y}
++\frac{2}{x} \\
+&+\frac{2}{xz}+\frac{2}{xyz}+\frac{1}{x^2yz^2}} & \familycell{the Mori--Mukai model $MM_{2-18}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-19}$ & \polycell{W_{MM_{2-19}}={}&\frac{x^2}{yz}+\frac{2x}{yz}+\frac{1}{yz}
++z+\frac{2yz}{x}+\frac{y^2z}{x^2} \\
+&+x+y+\frac{y}{x}} & \familycell{the Mori--Mukai model $MM_{2-19}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-20}$ & \polycell{W_{MM_{2-20}}={}&x+\frac{2}{x}+\frac{1}{y}+\frac{1}{z}
++\frac{x}{yz}+y+\frac{y}{x} \\
+&+z+\frac{2z}{x}+\frac{z}{x^2}} & \familycell{the Mori--Mukai model $MM_{2-20}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-21}$ & \polycell{W_{MM_{2-21}}={}&x+y+y^2z+2yz+z+\frac{x}{yz}
++\frac{2}{yz}+\frac{1}{xyz}} & \familycell{the Mori--Mukai model $MM_{2-21}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-22}$ & \polycell{W_{MM_{2-22}}={}&x+\frac{x}{y}+y+z+\frac{1}{y}
++\frac{1}{yz}+\frac{z}{x}+\frac{2}{x}+\frac{1}{xz}} & \familycell{the Mori--Mukai model $MM_{2-22}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-23}$ & \polycell{W_{MM_{2-23}}=x^2y+2xy+x+y+z+\frac{2}{xy}
++\frac{1}{x^2y^2z}} & \familycell{the Mori--Mukai model $MM_{2-23}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-24}$ & \polycell{W_{MM_{2-24}}={}&y+\frac{2y}{xz}+\frac{y}{x^2z^2}
++z+\frac{z}{y}+x+\frac{1}{x}+\frac{2}{xz}+\frac{1}{y}} & \familycell{the Mori--Mukai model $MM_{2-24}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-25}$ & \polycell{W_{MM_{2-25}}=x+\frac{x}{y}+y+z+\frac{1}{yz}
++\frac{yz}{x}+\frac{2}{x}+\frac{yz}{x^2}} & \familycell{the Mori--Mukai model $MM_{2-25}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-26}$ & \polycell{W_{MM_{2-26}}=x+\frac{z}{x}+\frac{2}{x}+\frac{1}{xz}
++y+\frac{y}{z}+z+\frac{1}{y}} & \familycell{the Mori--Mukai model $MM_{2-26}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-27}$ & \polycell{W_{MM_{2-27}}=x+\frac{x}{z}+y+z+\frac{1}{yz}
++\frac{1}{x}+\frac{1}{xy}} & \familycell{the Mori--Mukai model $MM_{2-27}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-28}$ & \polycell{W_{MM_{2-28}}=xyz^2+xyz+x+y+z+\frac{1}{yz}+\frac{1}{xz}} & \familycell{the Mori--Mukai model $MM_{2-28}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-29}$ & \polycell{W_{MM_{2-29}}=x+\frac{x}{y}+y+z+\frac{2}{x}+\frac{1}{x^2z}} & \familycell{the Mori--Mukai model $MM_{2-29}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-30}$ & \polycell{W_{MM_{2-30}}=x+y+z+\frac{z}{xy}+\frac{2}{xy}+\frac{1}{xyz}} & \familycell{the Mori--Mukai model $MM_{2-30}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-31}$ & \polycell{W_{MM_{2-31}}=x+\frac{x}{y}+y+z+\frac{1}{yz}+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{2-31}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-32}$ & \polycell{W_{MM_{2-32}}=\frac{xy}{z}+\frac{x}{z}+\frac{y}{z}+\frac{2}{z}
++\frac{1}{xz}+\frac{1}{yz}+\frac{1}{xyz}+z} & \familycell{the Mori--Mukai model $MM_{2-32}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-33}$ & \polycell{W_{MM_{2-33}}=x+\frac{x}{z}+y+z+\frac{1}{xy}} & \familycell{the Mori--Mukai model $MM_{2-33}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-34}$ & \polycell{W_{MM_{2-34}}=x+\frac{1}{x}+y+z+\frac{1}{yz}} & \familycell{the Mori--Mukai model $MM_{2-34}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-35}$ & \polycell{W_{MM_{2-35}}=x+\frac{x}{yz}+y+z+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{2-35}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{2-36}$ & \polycell{W_{MM_{2-36}}=\frac{x^2}{yz}+x+y+z+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{2-36}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-1}$ & \polycell{W_{MM_{3-1}}={}&\frac{x^2y^3}{z}+\frac{4xy^2}{z}+\frac{6y}{z} \\
+&+\frac{4}{xz}+\frac{1}{x^2yz}+xy^2+3xy+x+2y+\frac{2}{y} \\
+&+\frac{1}{x}+\frac{3}{xy}+\frac{1}{xy^2}+z+\frac{2z}{y}
++\frac{z}{y^2}} & \familycell{the Mori--Mukai model $MM_{3-1}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-2}$ & \polycell{W_{MM_{3-2}}={}&xy z^2+xy z+3xz+x+\frac{3x}{y}+\frac{x}{y^2z}
++3yz+y+z+\frac{1}{y} \\
+&+\frac{3}{yz}+\frac{3y}{x}+\frac{1}{x}+\frac{3}{xz}
++\frac{y}{x^2z}} & \familycell{the Mori--Mukai model $MM_{3-2}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-3}$ & \polycell{W_{MM_{3-3}}={}&\frac{xy}{z}+x+\frac{x}{z}+\frac{2x}{y}
++\frac{x}{y^2}+y+\frac{y}{z}+z+\frac{3}{y} \\
+&+\frac{2y}{x}+\frac{3}{x}+\frac{y}{x^2}} & \familycell{the Mori--Mukai model $MM_{3-3}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-4}$ & \polycell{W_{MM_{3-4}}={}&x+\frac{x}{y}+2yz+y+z+\frac{2}{y}
++\frac{2}{yz}+\frac{1}{y^2z} \\
+&+\frac{y^2z^2}{x}+\frac{4yz}{x}+\frac{6}{x}
++\frac{4}{xyz}+\frac{1}{xy^2z^2}} & \familycell{the Mori--Mukai model $MM_{3-4}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-5}$ & \polycell{W_{MM_{3-5}}={}&xyz+xz^2+2xz+x+y+2z+\frac{2}{z}
++\frac{1}{y}+\frac{1}{yz} \\
+&+\frac{1}{x}+\frac{2}{xz}+\frac{1}{xz^2}} & \familycell{the Mori--Mukai model $MM_{3-5}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-6}$ & \polycell{W_{MM_{3-6}}=x+\frac{xz}{y}+\frac{2x}{y}+\frac{x}{yz}
++y+z+\frac{1}{y}+\frac{1}{yz}
++\frac{2y}{x}+\frac{2}{x}+\frac{y}{x^2}} & \familycell{the Mori--Mukai model $MM_{3-6}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-7}$ & \polycell{W_{MM_{3-7}}
+=\frac{xy}{z}+x+\frac{x}{z}+\frac{x}{y}+y+z
++\frac2y+\frac yx+\frac2x+\frac1{xy}} & \familycell{the CCGK Laurent polynomial for $MM_{3-7}$:} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-8}$ & \polycell{W_{MM_{3-8}}={}&x+\frac{x}{z}+y+z+\frac{1}{z}
++\frac{2}{y}+\frac{1}{yz} \\
+&+\frac{y}{x}+\frac{3}{x}+\frac{3}{xy}+\frac{1}{xy^2}} & \familycell{the Mori--Mukai model $MM_{3-8}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-9}$ & \polycell{W_{MM_{3-9}}=\frac{x^2}{yz}+x+\frac{4x}{yz}+y+z
++\frac{6}{yz}+\frac{1}{x}+\frac{4}{xyz}+\frac{1}{x^2yz}} & \familycell{the Mori--Mukai model $MM_{3-9}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-10}$ & \polycell{W_{MM_{3-10}}=\frac{xy}{z}+x+\frac{x}{y}+y+z+
+\frac{2}{y}+\frac{y}{x}+\frac{2}{x}+\frac{1}{xy}} & \familycell{the Mori--Mukai model $MM_{3-10}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-11}$ & \polycell{W_{MM_{3-11}}=x+\frac{x}{z}+\frac{x}{yz}+y+z+
+\frac{1}{y}+\frac{y}{x}+\frac{2}{x}+\frac{1}{xy}} & \familycell{the Mori--Mukai model $MM_{3-11}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-12}$ & \polycell{W_{MM_{3-12}}=xy+x+y+z+\frac{1}{y}+\frac{y}{xz}
++\frac{3}{x}+\frac{2}{xz}+\frac{3}{x^2z}+\frac{1}{x^3z^2}} & \familycell{the Mori--Mukai model $MM_{3-12}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-13}$ & \polycell{W_{MM_{3-13}}=x+y+z+\frac{2}{yz}+\frac{yz}{x}
++\frac{3}{x}+\frac{3}{xyz}+\frac{1}{xy^2z^2}} & \familycell{the Mori--Mukai model $MM_{3-13}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-14}$ & \polycell{W_{MM_{3-14}}=\frac{x^2}{yz}+x+\frac{3x}{yz}+y+z
++\frac{3}{yz}+\frac{1}{x}+\frac{1}{xyz}} & \familycell{the Mori--Mukai model $MM_{3-14}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-15}$ & \polycell{W_{MM_{3-15}}=x+\frac{x}{yz}+y+z+\frac{1}{y}
++\frac{y}{x}+\frac{2}{x}+\frac{1}{xy}} & \familycell{the Mori--Mukai model $MM_{3-15}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-16}$ & \polycell{W_{MM_{3-16}}=x+\frac{x}{y}+y+\frac{y}{z}+z+\frac{1}{y}
++\frac{y}{xz}+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{3-16}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-17}$ & \polycell{W_{MM_{3-17}}=x+y+z+\frac{1}{y}+\frac{2}{yz}
++\frac{1}{x}+\frac{2}{xyz}+\frac{1}{xy^2z^2}} & \familycell{the Mori--Mukai model $MM_{3-17}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-18}$ & \polycell{W_{MM_{3-18}}=x+\frac{x}{y}+y+z+\frac{z}{x}+\frac{2}{x}
++\frac{1}{xz}} & \familycell{the Mori--Mukai model $MM_{3-18}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-19}$ & \polycell{W_{MM_{3-19}}=x+\frac{2x}{yz}+\frac{x}{y^2z^2}+y+z
++\frac{2}{yz}+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{3-19}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-20}$ & \polycell{W_{MM_{3-20}}=x+y+z+\frac{1}{yz}+\frac{y}{x}
++\frac{2}{x}+\frac{1}{xy}} & \familycell{the Mori--Mukai model $MM_{3-20}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-21}$ & \polycell{W_{MM_{3-21}}=x+y+z+\frac{1}{y}+\frac{y}{x}+\frac{2}{x}
++\frac{1}{xyz}+\frac{1}{x^2z}} & \familycell{the Mori--Mukai model $MM_{3-21}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-22}$ & \polycell{W_{MM_{3-22}}=\frac{x^2}{yz}+x+\frac{2x}{yz}+y+z
++\frac{1}{yz}+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{3-22}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-23}$ & \polycell{W_{MM_{3-23}}=xz+x+\frac{x}{y}+y+z+\frac{1}{yz}+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{3-23}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-24}$ & \polycell{W_{MM_{3-24}}=x+y+z+\frac{1}{y}+\frac{y}{x}+\frac{1}{x}
++\frac{1}{xyz}} & \familycell{the Mori--Mukai model $MM_{3-24}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-25}$ & \polycell{W_{MM_{3-25}}=x+\frac{x}{z}+y+z+\frac{1}{x}+\frac{1}{xy}} & \familycell{the Mori--Mukai model $MM_{3-25}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-26}$ & \polycell{W_{MM_{3-26}}=xy+x+y+z+\frac{1}{yz}+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{3-26}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-27}$ & \polycell{W_{MM_{3-27}}=x+y+z+\frac{1}{x}+\frac{1}{y}+\frac{1}{z}} & \familycell{the Mori--Mukai model $MM_{3-27}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-28}$ & \polycell{W_{MM_{3-28}}=x+\frac{x}{z}+y+z+\frac{1}{y}+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{3-28}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-29}$ & \polycell{W_{MM_{3-29}}=xy+x+\frac{x}{yz}+y+z+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{3-29}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-30}$ & \polycell{W_{MM_{3-30}}=x+\frac{x}{y}+y+\frac{y}{z}+z+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{3-30}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{3-31}$ & \polycell{W_{MM_{3-31}}=\frac{x^2}{y^2z}+x+\frac{2x}{y}+y+z+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{3-31}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-1}$ & \polycell{W_{MM_{4-1}}=x+yz^2+2yz+y+2z+\frac{1}{y}+\frac{2}{yz}
++\frac{1}{x}+\frac{2}{xyz}+\frac{1}{xy^2z^2}} & \familycell{the Mori--Mukai model $MM_{4-1}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-2}$ & \polycell{W_{MM_{4-2}}=x+y+\frac{y}{z}+z+\frac{1}{z}+\frac{2}{y}
++\frac{y}{x}+\frac{3}{x}+\frac{3}{xy}+\frac{1}{xy^2}} & \familycell{the Mori--Mukai model $MM_{4-2}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-3}$ & \polycell{W_{MM_{4-3}}=x+\frac{2x}{yz}+\frac{x}{y^2z^2}
++yz^2+2yz+y+\frac{2}{yz}+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{4-3}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-4}$ & \polycell{W_{MM_{4-4}}=x+\frac{x}{y}+y+z+\frac{1}{z}+\frac{1}{y}
++\frac{2}{x}+\frac{2}{xz}+\frac{1}{x^2z}} & \familycell{the Mori--Mukai model $MM_{4-4}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-5}$ & \polycell{W_{MM_{4-5}}=x+\frac{x}{z}+y+z+\frac{1}{y}
++\frac{2y}{x}+\frac{2}{x}+\frac{y}{x^2}} & \familycell{the Mori--Mukai model $MM_{4-5}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-6}$ & \polycell{W_{MM_{4-6}}=x+\frac{x}{y}+y+z+\frac{1}{y}
++\frac{y}{x}+\frac{2}{x}+\frac{y}{x^2z}+\frac{1}{x^2z}} & \familycell{the Mori--Mukai model $MM_{4-6}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-7}$ & \polycell{W_{MM_{4-7}}=x+\frac{x}{y}+y+z+\frac{1}{y}
++\frac{z}{x}+\frac{2}{x}+\frac{1}{xz}} & \familycell{the Mori--Mukai model $MM_{4-7}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-8}$ & \polycell{W_{MM_{4-8}}=x+y+z+\frac{1}{z}+\frac{z}{y}+\frac{1}{y}
++\frac{1}{x}+\frac{1}{xz}} & \familycell{the Mori--Mukai model $MM_{4-8}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-9}$ & \polycell{W_{MM_{4-9}}=xy+x+y+z+\frac{1}{y}+\frac{2}{x}+\frac{1}{x^2z}} & \familycell{the Mori--Mukai model $MM_{4-9}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-10}$ & \polycell{W_{MM_{4-10}}=xy+x+y+z+\frac{1}{y}+\frac{1}{yz}+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{4-10}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-11}$ & \polycell{W_{MM_{4-11}}=x+y+z+\frac{1}{y}+\frac{z}{x}+\frac{2}{x}+\frac{1}{xz}} & \familycell{the Mori--Mukai model $MM_{4-11}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-12}$ & \polycell{W_{MM_{4-12}}=xy+x+\frac{x}{z}+y+z+\frac{1}{y}+\frac{1}{x}} & \familycell{the Mori--Mukai model $MM_{4-12}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{4-13}$ & \polycell{W_{MM_{4-13}}
+=xy+\frac{xy}{z}+x+y+z+\frac1y+\frac1x} & \familycell{the Mori--Mukai model $MM_{4-13}$ on the algebraic torus $(\mathbb C^*)^3$:} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{5-1}$ & \polycell{W_{MM_{5-1}}=x+y+\frac{y}{z}+z+\frac{2}{y}
++\frac{y}{x}+\frac{3}{x}+\frac{3}{xy}+\frac{1}{xy^2}} & \familycell{the Mori--Mukai model $MM_{5-1}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{5-2}$ & \polycell{W_{MM_{5-2}}=x+y+\frac{y}{z}+z+\frac{1}{y}
++\frac{y}{x}+\frac{2}{x}+\frac{1}{xy}} & \familycell{the Mori--Mukai model $MM_{5-2}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{5-3}$ & \polycell{W_{MM_{5-3}}=x+y+z+\frac{1}{y}+\frac{3}{x}
++\frac{2}{xz}+\frac{3}{x^2z}+\frac{1}{x^3z^2}} & \familycell{the Mori--Mukai model $MM_{5-3}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{6-1}$ & \polycell{W_{MM_{6-1}}=x+y+z+\frac{1}{z}+\frac{2}{y}
++\frac{y}{x}+\frac{3}{x}+\frac{3}{xy}+\frac{1}{xy^2}} & \familycell{the Mori--Mukai model $MM_{6-1}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{7-1}$ & \polycell{W_{MM_{7-1}}=xz^2+2xz+x+y+4z+\frac{1}{y}
++\frac{6}{x}+\frac{2}{xz}+\frac{4}{x^2z}+\frac{1}{x^3z^2}} & \familycell{the Mori--Mukai model $MM_{7-1}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{8-1}$ & \polycell{W_{MM_{8-1}}=x+\frac{1}{x}+y(z+1)^3
++3\left(z+\frac{1}{z}\right)
++\frac{3(z+1)}{yz^2}+\frac{1}{y^2z^3}} & \familycell{the Mori--Mukai model $MM_{8-1}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{9-1}$ & \polycell{W_{MM_{9-1}}
+=x\left(z+1+\frac{1}{xz}\right)^4+y+\frac{1}{y}-12} & \familycell{Using the product construction for $S_2\times\mathbb P^1$, the polynomial in Appendix~A can be regrouped as} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+$MM_{10-1}$ & \polycell{W_{MM_{10-1}}
+=x\left(z+1+\frac{1}{xz^2}\right)^6+y+\frac{1}{y}-60} & \familycell{For the product $S_1\times\mathbb P^1$, the potential is} & \sourcecell{GRDB Mori--Mukai table; manuscript polynomial} \\
+\end{longtable}
+
+\bibliographystyle{amsplain}
+\bibliography{ref}
+\end{document}

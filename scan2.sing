@@ -1,0 +1,34 @@
+LIB "primdec.lib"; LIB "sing.lib";
+ring R = 0,(X,Y,Z,T,lam),dp;
+proc scan(poly F0, poly G, string name)
+{
+  "################", name;
+  poly Fl = F0 - lam*G;
+  list vv = X,Y,Z,T; int i; list L; int j;
+  for (i=1;i<=4;i++)
+  {
+    ideal I = Fl, diff(Fl,X), diff(Fl,Y), diff(Fl,Z), diff(Fl,T), G, vv[i]-1;
+    L = minAssGTZ(I);
+    for (j=1;j<=size(L);j++){
+      ideal P = std(L[j]);
+      ideal El = eliminate(P, X*Y*Z*T);     // lambda-constraint
+      ideal Ep = eliminate(P, lam);         // projection to P^3
+      if (size(El)>0) { "  chart",string(vv[i]),": VERTICAL  lam:", El[1], " | P3-locus:", Ep; }
+      else { "  chart",string(vv[i]),": HORIZONTAL  P3-locus:", Ep, " | full:", P; }
+      kill P, El, Ep;
+    }
+    kill I;
+  }
+}
+poly G = X*Y*Z*T;
+scan((X+T)^2*(Y+T)^2 + X*Y*Z^2, G, "B4");
+scan((X+Y+Z)*((X+Y+Z)*T^2+(X*Y+X*Z+Y*Z)*T+X*Y*Z), G, "V18");
+scan((X+Y+T)^4 + X*Y*Z^2, G, "B2");
+scan((T^2+T*(X+Y+Z)+X*Y+X*Z+Y*Z)^2, G, "V10");
+scan(T*(X+Y+T)^3 + X*Y*Z^2, G, "B3");
+scan((X+Y+Z+T)*(Y*Z*(X+Y+Z+T)+(Y+Z+T)*(Z+T)^2), G, "V14");
+scan(X^2*Y*Z+X*Y^2*Z+X*Y*Z^2+Y*Z*T^2+X*Z*T^2+X*Y*T^2+T^4, G, "B5");
+scan(X^2*Y^2+X*Y^2*T+X^2*Y*T+X^2*Y*Z+X*Y^2*Z+X*Y*T^2+4*X*Y*Z*T+Y*Z*T^2+X*Z*T^2+X*Y*Z^2+Z*T^3+Y*Z^2*T+X*Z^2*T+Z^2*T^2, G, "V22");
+poly H = X*Y-X*T-T^2;
+scan(X^4+Z^2*H, Y*Z*H, "B1");
+quit;

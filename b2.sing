@@ -1,0 +1,16 @@
+LIB "primdec.lib"; LIB "sing.lib";
+ring P = 0,(X,Y,Z,T),dp;
+poly F = (X+Y+T)^4 + X*Y*Z^2;
+"--- Sing(F_B2,0) global (radical of jacobian):"; minAssGTZ(jacob(F)+ideal(F));
+"--- B3 (64) at lam=0"; poly F3 = T*(X+Y+T)^3 + X*Y*Z^2; minAssGTZ(jacob(F3)+ideal(F3));
+"--- V10 central: Q smooth?"; poly Q = T^2+T*(X+Y+Z)+X*Y+X*Z+Y*Z; minAssGTZ(jacob(Q));
+ring rl = 0,(x,y,t),ds;
+"B2 at p_inf (U_Z): milnor of (x+y+t)^4+xy:"; milnor((x+y+t)^4+x*y);
+"B3 at p_inf (U_Z): milnor of t(x+y+t)^3+xy:"; milnor(t*(x+y+t)^3+x*y);
+"B2 transverse type on L at generic point: in U_T, X=x,Y=y; line x+y+1=z=0; take point x=1,y=-2";
+ring rt = 0,(u,v,s),ds; // u = x-1 shift along line? use coords: x = 1+s, y = -2-s+u, z = v
+poly g = ((1+s)+(-2-s+u)+1)^4 + (1+s)*(-2-s+u)*v^2;
+"transverse (s=0) milnor:"; milnor(subst(g,s,0));
+ring rt3 = 0,(u,v,s),ds; poly g3 = ((1+s)+(-2-s+u)+1)^3 + (1+s)*(-2-s+u)*v^2;
+"B3 transverse (s=0) milnor:"; milnor(subst(g3,s,0));
+quit;

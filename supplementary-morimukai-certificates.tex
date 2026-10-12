@@ -1,0 +1,2956 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.65in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{listings}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black]{hyperref}
+\lstdefinestyle{certificates}{
+  basicstyle=\ttfamily\tiny,
+  columns=fullflexible,
+  breaklines=true,
+  breakatwhitespace=false,
+  keepspaces=true,
+  showstringspaces=false,
+  frame=single,
+  framerule=0.2pt,
+  xleftmargin=0.5em,
+  xrightmargin=0.5em
+}
+\lstset{style=certificates}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\sloppy
+
+\title{Auditable Computational Certificates for Mori--Mukai Landau--Ginzburg Models}
+\author{Generated from \texttt{computations/mori\_mukai\_validation.py}}
+\date{11 de agosto de 2026}
+
+\begin{document}
+\maketitle
+
+\section*{How to Read This Supplement}
+The source is the executable validation dictionary \texttt{CASES} in
+\path{computations/mori_mukai_validation.py}. Each Mori--Mukai label is listed separately.
+Within each label, the certificates are grouped as identities/compact forms, saturated critical ideals,
+point and Hessian checks, parametric branches, and normal forms or formal expansions.  Regenerate this
+supplement with
+\[
+\texttt{python computations/build\_morimukai\_certificates.py}
+\]
+Running the companion symbolic-validation command
+\[
+\texttt{python computations/mori\_mukai\_validation.py --all}
+\]
+recomputes the symbolic checks represented here.
+
+\section*{Summary}
+\begin{itemize}
+\item Mori--Mukai labels: 88.
+\item Compact-form/identity checks: 23.
+\item Saturated-ideal checks: 74.
+\item Explicit point checks: 19.
+\item Parametric isolated-point checks: 13.
+\item Parametric branch/component checks: 17.
+\item Exact normal-form checks: 10.
+\item Formal expansion checks: 4.
+\end{itemize}
+
+\section*{Certificates by Label}
+\subsection*{$ MM_{2-1} $}
+
+\begin{lstlisting}
+
+Label: MM_2_1
+Notes: Residual A2 surface with a u^3v crossing, one exact hyperbolic curve, and two isolated Morse points.
+
+Identities / compact forms:
+  - second critical fiber product W+61=(R+x)(R+y)/(xy): 1 - (x + (x**2*y**2*z**5 + x*y*z**2 + 1)**3/(x**2*y**2*z**6))*(y +
+    (x**2*y**2*z**5 + x*y*z**2 + 1)**3/(x**2*y**2*z**6))/(x*y) + (x + y + (x**2*y**2*z**5 + x*y*z**2 +
+    1)**3/(x**2*y**2*z**6))*(x**2*y**2*z**5 + x*y*z**2 + 1)**3/(x**3*y**3*z**6) == 0
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - parametric point branch: a^2=1/108 isolated branch
+    parameter: a
+    minimal polynomial: 108*a**2 - 1
+    coordinates: x = a, y = a, z = 6
+    value: 432*a + 372
+    ordinary Hessian det: not asserted
+    log Hessian det: 80808192*a + 746496
+    coprime/nonvanishing tests: a, 433*a + 4
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  - normal form: surface S: exact residual cubic factor
+    checked identity: W - (-60) = (0) + ((x + y + (x**2*y**2*z**5 + x*y*z**2 +
+      1)**3/(x**2*y**2*z**6))/(x**3*y**3*z**6))*(x**2*y**2*z**5 + x*y*z**2 + 1)^3
+    residual: x**2*y**2*z**5 + x*y*z**2 + 1
+    exponent: 3
+    unit: (x + y + (x**2*y**2*z**5 + x*y*z**2 + 1)**3/(x**2*y**2*z**6))/(x**3*y**3*z**6)
+    extra term: 0
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-2} $}
+
+\begin{lstlisting}
+
+Label: MM_2_2
+Notes: Exact quadratic critical surface plus three isolated Morse points.
+
+Identities / compact forms:
+  - surface coefficient Q|S=-(y+z+1)/y: (y + z + 1)/y + (y + z + 1)**4*(y**2/(y + z + 1)**2 + 2*y*z/(y + z + 1)**2 - y*z/(y + z +
+    1)**3 - 2*y/(y + z + 1) + 2*y/(y + z + 1)**2 + z**2/(y + z + 1)**2 - 2*z/(y + z + 1) + 2*z/(y + z + 1)**2 + 1 - 2/(y + z + 1) +
+    (y + z + 1)**(-2))/(y**2*z) == 0
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - parametric point branch: 4t^3-16t^2+16t-1 isolated branch
+    parameter: t
+    minimal polynomial: 4*t**3 - 16*t**2 + 16*t - 1
+    coordinates: x = 4*t - 8, y = t, z = 1
+    value: 48*t**2 - 64*t - 10
+    ordinary Hessian det: not asserted
+    log Hessian det: 161792*t**2 - 286336*t + 18432
+    coprime/nonvanishing tests: t*(t - 2), 1264*t**2 - 2237*t + 144
+
+Parametric branches / positive-dimensional components:
+  - branch: critical surface F=0
+    parameter: y
+    substitution: x = -1/(y*(y + z + 1))
+    exclusions: y, z, y + z + 1
+    value: -14
+    log Hessian matrix: none
+
+Normal forms and formal expansions:
+  - normal form: surface S: W+14=QF^2
+    checked identity: W - (-14) = (0) + ((x**3*y**4*z + x**2*y**4 + 2*x**2*y**3*z + 2*x**2*y**3 + x**2*y**2*z**2 + 2*x**2*y**2*z +
+      x**2*y**2 + 2*x*y**2 + 2*x*y*z + 2*x*y + 1)/(x**4*y**6*z))*(x*y*(y + z + 1) + 1)^2
+    residual: x*y*(y + z + 1) + 1
+    exponent: 2
+    unit: (x**3*y**4*z + x**2*y**4 + 2*x**2*y**3*z + 2*x**2*y**3 + x**2*y**2*z**2 + 2*x**2*y**2*z + x**2*y**2 + 2*x*y**2 + 2*x*y*z +
+      2*x*y + 1)/(x**4*y**6*z)
+    extra term: 0
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-3} $}
+
+\begin{lstlisting}
+
+Label: MM_2_3
+Notes: Quadratic surface with a u^2v crossing, a second quadratic curve, and two isolated Morse points.
+
+Identities / compact forms:
+  - surface coefficient restriction: (y + 1)**2*(y**2/(y + 1)**2 - y*z/(y + 1) - 2*y/(y + 1) + 2*y/(y + 1)**2 + 1 - 2/(y + 1) + (y +
+    1)**(-2) - 1/(z*(y + 1)))/y + (y + 1)*(y*z**2 + 1)/(y*z) == 0
+  - Gamma square identity on yz^2=1: 1 + z**4*(x*(1 + z**(-2))/z + 1)**2*(x**2/z**2 + 2*x**2/z**4 + x**2/z**6 + 2*x/z + 2*x/z**2 +
+    2*x/z**3 + 1)/x**2 - (x**2*(z**2 + 1)**2 + x*z**3*(2*z**2 + z + 2) + z**6)**2/(x**2*z**8) == 0
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - point: P_+=(1/2,1,1)
+    coordinates: x = 1/2, y = 1, z = 1
+    value: 68
+    ordinary Hessian det: not asserted
+    log Hessian det: 41472
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+  - point: P_-=(-1/2,1,-1)
+    coordinates: x = -1/2, y = 1, z = -1
+    value: 36
+    ordinary Hessian det: not asserted
+    log Hessian det: -25088
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+
+Parametric branches / positive-dimensional components:
+  - branch: critical surface F=0
+    parameter: y
+    substitution: x = -1/(y*z*(y + 1))
+    exclusions: y, z, y + 1
+    value: -12
+    log Hessian matrix: none
+  - branch: crossing curve K
+    parameter: t
+    substitution: x = t**3/(t**2 - 1), y = -1/t**2, z = t
+    exclusions: t, t**2 - 1
+    value: -12
+    log Hessian matrix: none
+
+Normal forms and formal expansions:
+  - normal form: surface S: W+12=QF^2
+    checked identity: W - (-12) = (0) + ((x**2*y**4*z**2 + 2*x**2*y**3*z**2 + x**2*y**2*z**2 + x*y**2*z**2 + 2*x*y**2*z + 2*x*y*z +
+      x*y + 1)/(x**2*y**3*z**2))*(x*y*z*(y + 1) + 1)^2
+    residual: x*y*z*(y + 1) + 1
+    exponent: 2
+    unit: (x**2*y**4*z**2 + 2*x**2*y**3*z**2 + x**2*y**2*z**2 + x*y**2*z**2 + 2*x*y**2*z + 2*x*y*z + x*y + 1)/(x**2*y**3*z**2)
+    extra term: 0
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-4} $}
+
+\begin{lstlisting}
+
+Label: MM_2_4
+Notes: Four isolated Morse points from the two xy=+-1 branches.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - point: xy=-1 branch sign 1
+    coordinates: x = -1/(-1/2 + sqrt(5)/2), y = -1/2 + sqrt(5)/2, z = -1/2 + sqrt(5)/2
+    value: -3/2 + 5*sqrt(5)/2
+    ordinary Hessian det: not asserted
+    log Hessian det: not asserted
+    require nonzero ordinary Hessian: True
+    require nonzero log Hessian: False
+  - point: xy=-1 branch sign -1
+    coordinates: x = -1/(-sqrt(5)/2 - 1/2), y = -sqrt(5)/2 - 1/2, z = -sqrt(5)/2 - 1/2
+    value: -5*sqrt(5)/2 - 3/2
+    ordinary Hessian det: not asserted
+    log Hessian det: not asserted
+    require nonzero ordinary Hessian: True
+    require nonzero log Hessian: False
+  - point: xy=1 branch sign 1
+    coordinates: x = 1/(-1/18 + 5*sqrt(13)/18), y = -1/18 + 5*sqrt(13)/18, z = -29/18 + 17*sqrt(13)/18
+    value: 33/2 + 13*sqrt(13)/2
+    ordinary Hessian det: not asserted
+    log Hessian det: not asserted
+    require nonzero ordinary Hessian: True
+    require nonzero log Hessian: False
+  - point: xy=1 branch sign -1
+    coordinates: x = 1/(-5*sqrt(13)/18 - 1/18), y = -5*sqrt(13)/18 - 1/18, z = -17*sqrt(13)/18 - 29/18
+    value: 33/2 - 13*sqrt(13)/2
+    ordinary Hessian det: not asserted
+    log Hessian det: not asserted
+    require nonzero ordinary Hessian: True
+    require nonzero log Hessian: False
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-5} $}
+
+\begin{lstlisting}
+
+Label: MM_2_5
+Notes: Positive-dimensional A1 curve plus two isolated Morse points.
+
+Identities / compact forms:
+  - quadratic normal discriminant on Gamma: 8*t**6*(t + 1)*(2*t + 1)/(t**3 + t**2 - 1)**6 - t**6*(4*t + 3)**2/(t**3 + t**2 - 1)**6 +
+    t**6/(t**3 + t**2 - 1)**6 == 0
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - point: p_+
+    coordinates: x = sqrt(3), y = 3/26 + 25*sqrt(3)/78, z = 77*sqrt(3)/234 + 27/26
+    value: 6*sqrt(3) + 21
+    ordinary Hessian det: not asserted
+    log Hessian det: not asserted
+    require nonzero ordinary Hessian: True
+    require nonzero log Hessian: False
+  - point: p_-
+    coordinates: x = -sqrt(3), y = 3/26 - 25*sqrt(3)/78, z = 27/26 - 77*sqrt(3)/234
+    value: 21 - 6*sqrt(3)
+    ordinary Hessian det: not asserted
+    log Hessian det: not asserted
+    require nonzero ordinary Hessian: True
+    require nonzero log Hessian: False
+
+Parametric branches / positive-dimensional components:
+  - branch: Gamma curve
+    parameter: t
+    substitution: x = t, y = (t**3 + t**2 - 1)/t, z = -(t**3 + t**2 - 1)**2/t**3
+    exclusions: t, t**3 + t**2 - 1
+    value: -6
+    log Hessian matrix: none
+
+Normal forms and formal expansions:
+  - formal expansion: Gamma quadratic normal form in generators f1,f2
+    substitution: x = t, y = (U + t**3 + t**2 - 1)/t, z = (V - (U + t**3 + t**2 - 1)**2/t**2)/t
+    expected expression through degree < 3: -2*U**2/(t*(t**3 + t**2 - 1)) + U*V*t**3*(4*t + 3)/(t**3 + t**2 - 1)**3 - V**2*t**7*(t +
+      1)*(2*t + 1)/(t**3 + t**2 - 1)**5 - 6
+    normal variables: U, V
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-6} $}
+
+\begin{lstlisting}
+
+Label: MM_2_6
+Notes: One isolated Morse point and two disjoint positive-dimensional A1 components.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - point: P1=(8/3,2,1)
+    coordinates: x = 8/3, y = 2, z = 1
+    value: 28
+    ordinary Hessian det: 108
+    log Hessian det: not asserted
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+
+Parametric branches / positive-dimensional components:
+  - branch: Gamma_1
+    parameter: t
+    substitution: x = t, y = 1, z = -1
+    exclusions: t
+    value: -4
+    log Hessian matrix: none
+  - branch: Gamma_2
+    parameter: t
+    substitution: x = 2*(t + 1)**2/t, y = -2/t, z = t
+    exclusions: t, t + 1
+    value: -4
+    log Hessian matrix: none
+
+Normal forms and formal expansions:
+  - formal expansion: Gamma_1 quadratic normal form
+    substitution: x = t, y = U + 1, z = V - 1
+    expected expression through degree < 3: U**2*t - 2*U*V*t + V**2*(t + 1) - 4
+    normal variables: U, V
+  - formal expansion: Gamma_2 quadratic normal form
+    substitution: x = V + 2*(t + 1)**2/t, y = U - 2/t, z = t
+    expected expression through degree < 3: -t*(U*(t + 1)**2 + V)*(3*U*(t + 1)**2 - V)/(8*(t + 1)**2) - 4
+    normal variables: U, V
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-7} $}
+
+\begin{lstlisting}
+
+Label: MM_2_7
+Notes: Detailed Mori--Mukai validation with fixed symbolic checks transcribed from main.tex. Checks the Gamma curve and the cubic
+  isolated branch.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - parametric point branch: alpha cubic isolated branch
+    parameter: alpha
+    minimal polynomial: 4*alpha**3 - 4*alpha**2 - 4*alpha + 3
+    coordinates: x = alpha, y = 1, z = -28*alpha**2 + 56*alpha - 24
+    value: (-84*alpha**2 + 239*alpha - 114)/((5*alpha - 6)*(5*alpha - 3))
+    ordinary Hessian det: not asserted
+    log Hessian det: (20312*alpha**2 + 6614*alpha - 11454)/(7700*alpha**2 - 14855*alpha + 6171)
+    coprime/nonvanishing tests: alpha, -28*alpha**2 + 56*alpha - 24, 10156*alpha**2 + 3307*alpha - 5727, 7700*alpha**2 - 14855*alpha
+      + 6171
+
+Parametric branches / positive-dimensional components:
+  - branch: Gamma curve
+    parameter: t
+    substitution: x = (-t**2 - t - 1)/(t*(t + 1)**2), y = t, z = -(t**2 + t + 1)**2/t**2
+    exclusions: t, t + 1, t**2 + t + 1
+    value: -5
+    log Hessian matrix: none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-8} $}
+
+\begin{lstlisting}
+
+Label: MM_2_8
+Notes: Exact square surface contribution plus three isolated Morse points.
+
+Identities / compact forms:
+  - compact square W+2=F^2/x: 0 == 0
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - parametric point branch: rho^3-rho-1 isolated branch
+    parameter: rho
+    minimal polynomial: rho**3 - rho - 1
+    coordinates: x = rho**(-3), y = rho, z = rho
+    value: not asserted
+    ordinary Hessian det: (1632*rho**2 + 2048*rho + 1056)/(rho*(rho + 1))
+    log Hessian det: not asserted
+    coprime/nonvanishing tests: 51*rho**2 + 64*rho + 33, rho*(rho + 1)
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  - normal form: surface Sigma: W+2=(1/x)F^2
+    checked identity: W - (-2) = (0) + (1/x)*(x*(y + z + 1) + 1 + 1/(y*z))^2
+    residual: x*(y + z + 1) + 1 + 1/(y*z)
+    exponent: 2
+    unit: 1/x
+    extra term: 0
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-9} $}
+
+\begin{lstlisting}
+
+Label: MM_2_9
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 19*x + 49*z**3 - 115*z**2 - 36*z + 88
+      * 2*y + 5*z**3 - 12*z**2 - 4*z + 12
+      * z**4 - 2*z**3 - 2*z**2 + 2*z + 2
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-10} $}
+
+\begin{lstlisting}
+
+Label: MM_2_10
+Notes: Two rational Morse points; saturated torus critical ideal is zero-dimensional.
+
+Identities / compact forms:
+  - compact square W=F^2/y+x-4: y*z**2 + 2*y*z + y + 4*z + 4 - (y*z + y + 2 + 1/(y*z) + y/x)**2/y + 6/y + 2/(y*z) + 4/(y**2*z) +
+    1/(y**3*z**2) + 2*y*z/x + 2*y/x + 4/x + 2/(x*y*z) + y/x**2 == 0
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - 64*z + 16
+      * 15*y + 256*z - 128
+      * (16*z - 5)*(16*z - 3)
+
+Point and Hessian certificates:
+  - point: P1=(4,16/5,5/16)
+    coordinates: x = 4, y = 16/5, z = 5/16
+    value: 20
+    ordinary Hessian det: 50
+    log Hessian det: not asserted
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+  - point: P2=(-4,16/3,3/16)
+    coordinates: x = -4, y = 16/3, z = 3/16
+    value: 4
+    ordinary Hessian det: -18
+    log Hessian det: not asserted
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-11} $}
+
+\begin{lstlisting}
+
+Label: MM_2_11
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**2 - z
+      * y - z
+      * z**4 + 2*z**3 + z**2 - 2*z - 3
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-12} $}
+
+\begin{lstlisting}
+
+Label: MM_2_12
+Notes: Exact square completion with one A1 curve and one isolated Morse point.
+
+Identities / compact forms:
+  - compact square W=F^2/y+xB^2-2: 0 == 0
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - point: P1=(3,2/3,1)
+    coordinates: x = 3, y = 2/3, z = 1
+    value: 14
+    ordinary Hessian det: 64
+    log Hessian det: not asserted
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+
+Parametric branches / positive-dimensional components:
+  - branch: Gamma=(1,t,-1)
+    parameter: t
+    substitution: x = 1, y = t, z = -1
+    exclusions: t
+    value: -2
+    log Hessian matrix: none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-13} $}
+
+\begin{lstlisting}
+
+Label: MM_2_13
+Notes: A1 curve plus cubic algebraic isolated branch.
+
+Identities / compact forms:
+  - compact square W=F^2/z+xB+y-2: 0 == 0
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - parametric point branch: xi^3-16 isolated branch
+    parameter: xi
+    minimal polynomial: xi**3 - 16
+    coordinates: x = xi, y = xi**2/4, z = 1
+    value: 3*xi**2/4 + 3*xi + 2
+    ordinary Hessian det: (18*xi**2 + 51*xi + 96)/(8*xi)
+    log Hessian det: not asserted
+    coprime/nonvanishing tests: xi, 6*xi**2 + 17*xi + 32
+
+Parametric branches / positive-dimensional components:
+  - branch: Gamma=(1,-1,t)
+    parameter: t
+    substitution: x = 1, y = -1, z = t
+    exclusions: t
+    value: -3
+    log Hessian matrix: none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-14} $}
+
+\begin{lstlisting}
+
+Label: MM_2_14
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 638*x + 1507*z**3 - 6420*z**2 + 3039*z - 378
+      * 29*y + 33*z**3 - 101*z**2 - 5*z + 4
+      * 11*z**4 - 52*z**3 + 48*z**2 - 12*z + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-15} $}
+
+\begin{lstlisting}
+
+Label: MM_2_15
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x + y - z**4 + 2*z**3 + z**2 - 2*z - 1
+      * (z + 1)*(y + z**3 - z**2 - 3*z - 1)
+      * (z + 1)*(z**4 - 3*z**2 - 4*z - 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-16} $}
+
+\begin{lstlisting}
+
+Label: MM_2_16
+Notes: Cubic algebraic isolated branch with nontrivial saturated critical ideal.
+
+Identities / compact forms:
+  - compact square W=F^2/z+x+y-2: 0 == 0
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 2*x - 48*z**2 + 125*z - 76
+      * 2*y + 16*z**2 - 31*z + 12
+      * 16*z**3 - 63*z**2 + 80*z - 32
+
+Point and Hessian certificates:
+  - parametric point branch: beta^3-4beta-16 branch
+    parameter: beta
+    minimal polynomial: beta**3 - 4*beta - 16
+    coordinates: x = beta, y = beta**2/4 - 1, z = -3*beta**2/64 - beta/16 + 23/16
+    value: 3*beta + 2 + 4/beta
+    ordinary Hessian det: (43*beta**2 + 128*beta + 208)/(4*beta*(beta + 2))
+    log Hessian det: not asserted
+    coprime/nonvanishing tests: beta, beta**2 - 4, -3*beta**2 - 4*beta + 92, 43*beta**2 + 128*beta + 208
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-17} $}
+
+\begin{lstlisting}
+
+Label: MM_2_17
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 7*x - 88*z**3 + 95*z**2 - 75*z + 50
+      * 7*y + 286*z**3 - 350*z**2 + 279*z - 192
+      * 11*z**4 - 16*z**3 + 14*z**2 - 10*z + 2
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-18} $}
+
+\begin{lstlisting}
+
+Label: MM_2_18
+Notes: Quartic algebraic isolated branch with exact square completion and saturation.
+
+Identities / compact forms:
+  - compact square W=x+yA^2-2: 0 == 0
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - 4*z**2 - 4*z
+      * y - 1
+      * 4*z**4 + 4*z**3 - 1
+
+Point and Hessian certificates:
+  - parametric point branch: eta quartic branch
+    parameter: eta
+    minimal polynomial: 4*eta**4 + 4*eta**3 - 1
+    coordinates: x = 4*eta**2 + 4*eta, y = 1, z = eta
+    value: 8*eta**2 + 12*eta + 2
+    ordinary Hessian det: 32*eta**4*(eta + 1)**2*(4*eta + 3)
+    log Hessian det: not asserted
+    coprime/nonvanishing tests: eta, eta + 1, 4*eta + 3
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-19} $}
+
+\begin{lstlisting}
+
+Label: MM_2_19
+Notes: Curve component plus quartic isolated branch; checks saturated decomposition data.
+
+Identities / compact forms:
+  - two-square compact form: 0 == 0
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x + y*z + y - z
+      * (y - 1)*(y + 2*z**3 - z**2 - 2*z - 3)
+      * (y - 1)*(z**2 - z - 1)*(z**2 + z + 1)
+
+Point and Hessian certificates:
+  - parametric point branch: rho quartic isolated branch
+    parameter: rho
+    minimal polynomial: rho**4 - rho**2 - 2*rho - 1
+    coordinates: x = rho**3 - rho**2 - 1, y = -2*rho**3 + rho**2 + 2*rho + 3, z = rho
+    value: not asserted
+    ordinary Hessian det: (2*rho + 2)*(19*rho**2 + 28*rho + 10)
+    log Hessian det: not asserted
+    coprime/nonvanishing tests: rho, rho**3 - rho**2 - 1, -2*rho**3 + rho**2 + 2*rho + 3, (rho + 1)*(19*rho**2 + 28*rho + 10)
+
+Parametric branches / positive-dimensional components:
+  - branch: Gamma=(-1,1,t)
+    parameter: t
+    substitution: x = -1, y = 1, z = t
+    exclusions: t
+    value: -1
+    log Hessian matrix: none
+
+Normal forms and formal expansions:
+  - formal expansion: Gamma normal quadratic form
+    substitution: x = U - 1, y = V + 1, z = t
+    expected expression through degree < 3: U**2*(t - 1 + 1/t) + U*V*(2*t - 1) + V**2*t - 1
+    normal variables: U, V
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-20} $}
+
+\begin{lstlisting}
+
+Label: MM_2_20
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 17558*x + 1761*z**5 - 23474*z**4 + 20398*z**3 - 45568*z**2 + 12618*z + 2764
+      * 17558*y + 1537*z**5 - 21196*z**4 + 26368*z**3 - 34278*z**2 - 2836*z + 7956
+      * z**6 - 14*z**5 + 20*z**4 - 26*z**3 + 8*z**2 + 10*z + 2
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-21} $}
+
+\begin{lstlisting}
+
+Label: MM_2_21
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 90*x - 176*z**3 + 13*z**2 + 307*z - 26
+      * 30*y + 32*z**3 + 34*z**2 - 79*z - 68
+      * (z**2 - 2)*(16*z**2 + 9*z + 4)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-22} $}
+
+\begin{lstlisting}
+
+Label: MM_2_22
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x + 2*z**4 - 2*z**3 + 2*z**2 - z - 2
+      * y - 4*z**4 + 2*z**3 - 6*z**2 + 3
+      * 2*z**5 + 2*z**3 + z**2 - 2*z - 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-23} $}
+
+\begin{lstlisting}
+
+Label: MM_2_23
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 7*x - 32*z**2 + 4*z + 24
+      * 119*y - 160*z**2 - 92*z + 92
+      * 16*z**3 + 16*z**2 - 16*z - 17
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-24} $}
+
+\begin{lstlisting}
+
+Label: MM_2_24
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x**2 - 2*x*z - 1
+      * y - 1
+      * (z - 1)*(z**2 + z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-25} $}
+
+\begin{lstlisting}
+
+Label: MM_2_25
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 5*x - 16*z**2 - 11*z + 2
+      * 5*y + 4*z**2 - 11*z - 3
+      * (2*z - 1)*(2*z**2 + 2*z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-26} $}
+
+\begin{lstlisting}
+
+Label: MM_2_26
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 2*x - 2*z**5 - z**4 - 5*z**3 - 7*z**2 + 2*z + 5
+      * 2*y - z**5 + z**4 - 3*z**3 + 3*z - 2
+      * z**6 + 2*z**4 + 2*z**3 - 3*z**2 - 2*z + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-27} $}
+
+\begin{lstlisting}
+
+Label: MM_2_27
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**5 + z**2 + z
+      * y - z
+      * (z**3 - z - 1)*(z**3 + z - 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-28} $}
+
+\begin{lstlisting}
+
+Label: MM_2_28
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 2*x - y**2*z**4 + y**2*z**3 - y**2*z**2 + y**2*z + y*z**5 - y*z + 2*y + z**3 - z**2 - z - 3
+      * (y + 2*z**3 - z**2 - 4)*(y**2*z - y*z**2 - y*z - 1)
+      * (z**4 - 2*z - 1)*(y**2*z - y*z**2 - y*z - 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-29} $}
+
+\begin{lstlisting}
+
+Label: MM_2_29
+Notes: One rational point plus a quartic algebraic branch.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 5*x + 64*z**4 + 80*z**3 - 32*z**2 - 44*z - 1
+      * 5*y - 96*z**4 - 80*z**3 + 48*z**2 + 26*z - 1
+      * (z + 1)*(16*z**4 - 8*z**2 - z + 1)
+
+Point and Hessian certificates:
+  - point: rational point (1,-1,-1)
+    coordinates: x = 1, y = -1, z = -1
+    value: -1
+    ordinary Hessian det: not asserted
+    log Hessian det: 2
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+  - parametric point branch: alpha quartic branch
+    parameter: alpha
+    minimal polynomial: alpha**4 + alpha**3 - 4
+    coordinates: x = alpha**2, y = alpha, z = alpha**(-2)
+    value: alpha*(2*alpha + 3)
+    ordinary Hessian det: not asserted
+    log Hessian det: 8*alpha + 6
+    coprime/nonvanishing tests: alpha, 4*alpha + 3
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-30} $}
+
+\begin{lstlisting}
+
+Label: MM_2_30
+Notes: Quintic algebraic branch; checks the saturated ideal and log Hessian determinant modulo p(lambda).
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**4 - 2*z**3 - 3*z**2 + z - 1
+      * y - z**4 - 2*z**3 - 3*z**2 + z - 1
+      * z**5 + z**4 + z**3 - 3*z**2 + 3*z - 1
+
+Point and Hessian certificates:
+  - parametric point branch: lambda quintic branch
+    parameter: lam
+    minimal polynomial: lam**5 + lam**4 + lam**3 - 3*lam**2 + 3*lam - 1
+    coordinates: x = lam*(lam + 1)/(1 - lam), y = lam*(lam + 1)/(1 - lam), z = lam
+    value: 3*lam**4 + 6*lam**3 + 9*lam**2 - 2*lam + 3
+    ordinary Hessian det: not asserted
+    log Hessian det: 4*lam**4 + 4*lam**3 + 4*lam**2 - 14*lam + 16
+    coprime/nonvanishing tests: lam*(lam - 1)*(lam + 1), 2*lam**4 + 2*lam**3 + 2*lam**2 - 7*lam + 8
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-31} $}
+
+\begin{lstlisting}
+
+Label: MM_2_31
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x + z**5 - 3*z**4 + 2*z**3 - z**2 + z - 1
+      * y + z**4 - 2*z**3 - 2*z + 1
+      * z**6 - 2*z**5 - 2*z**3 + z**2 + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-32} $}
+
+\begin{lstlisting}
+
+Label: MM_2_32
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - y
+      * 3*y**2 + 3*y - z**2 + 2
+      * (y - 1)*(z**2 + 1)
+      * (z**2 - 8)*(z**2 + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-33} $}
+
+\begin{lstlisting}
+
+Label: MM_2_33
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**2
+      * y - z**2 - z
+      * (z**3 + z**2 - 1)*(z**3 + z**2 + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-34} $}
+
+\begin{lstlisting}
+
+Label: MM_2_34
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * (x - 1)*(x + 1)
+      * y - z
+      * (z - 1)*(z**2 + z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-35} $}
+
+\begin{lstlisting}
+
+Label: MM_2_35
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**3
+      * y - z
+      * z**6 + z**4 - 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{2-36} $}
+
+\begin{lstlisting}
+
+Label: MM_2_36
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 2*x + z**5 - 4*z**4 - z**2
+      * y - z
+      * z**6 - 4*z**5 - 2*z**3 + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-1} $}
+
+\begin{lstlisting}
+
+Label: MM_3_1
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 3*x**2 + 3*x*y*z - 6*x*y - 6*x - 2*y**3*z + y**3 - y**2*z + 2*y**2 - y*z + 5*y + z + 1
+      * (x - 1)*(y**2 + y + 1)
+      * (y - 1)*(y + 1)*(y**2 + y + 1)
+      * (y + 1)*(z - 2)*(z + 2)*(y**2 + y + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-2} $}
+
+\begin{lstlisting}
+
+Label: MM_3_2
+Notes: Detailed Mori--Mukai validation with fixed symbolic checks transcribed from main.tex. Checks the Morse--Bott curve and the
+  two cubic isolated branches.
+
+Identities / compact forms:
+  - compact U form: -x*y*z**2*(1 + (x + y)/(x*y*z))**3 + x*y*z**2 + x*y*z + 3*x*z + x + 3*x/y + x/(y**2*z) + 3*y*z + y - z*(1 + (x +
+    y)/(x*y*z))*(x*y + 1) + z + 6 + 1/y + 3/(y*z) + 3*y/x + 1/x + 3/(x*z) + y/(x**2*z) == 0
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - parametric point branch: positive cubic isolated branch
+    parameter: lam
+    minimal polynomial: lam**3 + 4*lam**2 - 4
+    coordinates: x = 1, y = 1, z = lam
+    value: 3*lam**2 + 16*lam + 10
+    ordinary Hessian det: not asserted
+    log Hessian det: 176*lam**2 + 856*lam + 768
+    coprime/nonvanishing tests: lam, 22*lam**2 + 107*lam + 96
+  - parametric point branch: negative cubic isolated branch
+    parameter: rho
+    minimal polynomial: rho**3 - 2*rho**2 + 4
+    coordinates: x = -1, y = -1, z = rho
+    value: 3*rho**2 - 8*rho + 2
+    ordinary Hessian det: not asserted
+    log Hessian det: -152*rho**2 + 472*rho - 528
+    coprime/nonvanishing tests: rho, 19*rho**2 - 59*rho + 66
+
+Parametric branches / positive-dimensional components:
+  - branch: Gamma Morse--Bott curve
+    parameter: t
+    substitution: x = t, y = -1/t, z = t - 1/t
+    exclusions: t, t - 1, t + 1
+    value: -6
+    log Hessian matrix: Matrix([[2/t, -t + 1/t, -t + 1/t], [-t + 1/t, -2*t, -t + 1/t], [-t + 1/t, -t + 1/t, 0]])
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-3} $}
+
+\begin{lstlisting}
+
+Label: MM_3_3
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 247*x + 247*y + 207*z**3 - 539*z**2 - 228*z + 240
+      * 247*y**2 + 3952*y + 981*z**3 - 3188*z**2 - 1596*z + 2512
+      * (z - 4)*(26*y - 9*z**2 - 12*z + 32)
+      * (z - 4)*(9*z**3 - 16*z**2 - 16)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-4} $}
+
+\begin{lstlisting}
+
+Label: MM_3_4
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - 32*z**5 - 16*z**4 + 32*z**3 + 24*z**2 - 2*z - 7
+      * y + 16*z**4 - 8*z**2 - 8*z + 1
+      * (z - 1)*(16*z**5 - 8*z**3 - 8*z**2 + z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-5} $}
+
+\begin{lstlisting}
+
+Label: MM_3_5
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - 4*z**7 - 15*z**6 - 12*z**5 + 20*z**4 + 36*z**3 + 6*z**2 - 16*z - 13
+      * y - z**7 - 4*z**6 - 4*z**5 + 4*z**4 + 9*z**3 + 2*z**2 - 3*z - 2
+      * (z**4 + 2*z**3 - 3*z - 1)*(z**4 + 2*z**3 - z - 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-6} $}
+
+\begin{lstlisting}
+
+Label: MM_3_6
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 95*x + 128*z**5 + 343*z**4 + 432*z**3 + 1186*z**2 - 67*z - 1570
+      * 285*y - 131*z**5 - 350*z**4 - 473*z**3 - 1318*z**2 - 129*z + 1236
+      * (z**3 + 3*z**2 - 3)*(z**3 + z**2 + 4*z + 5)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-7} $}
+
+\begin{lstlisting}
+
+Label: MM_3_7
+Notes: CCGK Appendix A polynomial: two isolated Morse points.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 2*x + 3*z - 7
+      * y + 3*z - 6
+      * z**2 - 6*z + 7
+
+Point and Hessian certificates:
+  - parametric point branch: z^2-6z+7 isolated branch
+    parameter: t
+    minimal polynomial: t**2 - 6*t + 7
+    coordinates: x = 7/2 - 3*t/2, y = 6 - 3*t, z = t
+    value: 18 - 4*t
+    ordinary Hessian det: not asserted
+    log Hessian det: 210 - 54*t
+    coprime/nonvanishing tests: t*(2 - t)*(7 - 3*t)*(t - 2), 9*t - 35
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-8} $}
+
+\begin{lstlisting}
+
+Label: MM_3_8
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 4*x - z**5 - z**4 + 4*z**3 + z + 1
+      * 4*y - z**7 - 2*z**6 + 2*z**5 + 5*z**4 + 7*z**3 + 4*z**2 + 5
+      * (z + 1)*(z**7 + z**6 - 3*z**5 - 3*z**4 - 5*z**3 + 3*z**2 - z - 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-9} $}
+
+\begin{lstlisting}
+
+Label: MM_3_9
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 4*x**2 + 40*x + z**3 - 60
+      * (x - 1)*(z - 4)
+      * y - z
+      * (z - 4)*(z**3 - 16)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-10} $}
+
+\begin{lstlisting}
+
+Label: MM_3_10
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 49*x + 49*y + 36*z**4 - 130*z**3 - 36*z**2 + 14*z + 65
+      * 49*y**2 + 441*y + 160*z**4 - 584*z**3 - 209*z**2 + 63*z + 292
+      * (z - 4)*(7*y - 8*z**3 + z + 4)
+      * (z - 4)*(2*z - 1)*(2*z**3 - 2*z - 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-11} $}
+
+\begin{lstlisting}
+
+Label: MM_3_11
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 27699*x - 131*z**5 + 2152*z**4 - 7530*z**3 - 6754*z**2 - 15798*z + 21285
+      * 27699*y + 2155*z**5 - 21446*z**4 + 18150*z**3 - 42613*z**2 + 68316*z + 4866
+      * z**6 - 10*z**5 + 10*z**4 - 32*z**3 + 49*z**2 - 12*z + 43
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-12} $}
+
+\begin{lstlisting}
+
+Label: MM_3_12
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 1593499155*x - 702272339*z**7 + 40707585955*z**6 + 20317860746*z**5 - 238219059006*z**4 + 244020218545*z**3 -
+        92921979643*z**2 + 6975254335*z + 5521924046
+      * 1593499155*y - 113358064*z**7 + 6655734902*z**6 - 1595553041*z**5 - 43476512952*z**4 + 65780613764*z**3 - 30172214777*z**2 +
+        2541159668*z + 890703988
+      * (z**4 - 59*z**3 + 37*z**2 + 9*z + 1)*(z**4 + z**3 - 5*z**2 + 3*z - 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-13} $}
+
+\begin{lstlisting}
+
+Label: MM_3_13
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 48*x - 125
+      * 3*y - 4
+      * 3*z - 4
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-14} $}
+
+\begin{lstlisting}
+
+Label: MM_3_14
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 12*x + z**4 - 2*z**3 - 6*z + 3
+      * y - z
+      * z**6 - 4*z**5 + z**4 - 12*z**3 + 27*z**2 + 27
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-15} $}
+
+\begin{lstlisting}
+
+Label: MM_3_15
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 1759*x + 128*z**6 - 548*z**5 - 18*z**4 - 2192*z**3 - 873*z**2 - 310*z + 1812
+      * 3518*y + 1502*z**6 - 7200*z**5 - 2355*z**4 + 2862*z**3 - 4280*z**2 + 2244*z + 4882
+      * 2*z**7 - 12*z**6 + 11*z**5 - 8*z**4 + 4*z**3 + 4*z**2 + 4*z - 4
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-16} $}
+
+\begin{lstlisting}
+
+Label: MM_3_16
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 61*x + 54*z**7 + 6*z**6 + 95*z**5 - 165*z**4 - 93*z**3 - 138*z**2 + 5*z + 62
+      * 61*y - 38*z**7 + 50*z**6 - 103*z**5 + 211*z**4 - 165*z**3 + 131*z**2 - 121*z + 49
+      * 2*z**8 + 5*z**6 - 6*z**5 + z**4 - 10*z**3 - 4*z + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-17} $}
+
+\begin{lstlisting}
+
+Label: MM_3_17
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 4*x - z - 4
+      * 4*y - z**2 - 4*z
+      * z**4 + 4*z**3 - 16
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-18} $}
+
+\begin{lstlisting}
+
+Label: MM_3_18
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x + 3*z**6 - 2*z**5 + 11*z**4 - 8*z**3 + 5*z**2 + 6*z - 7
+      * y - 4*z**6 + 2*z**5 - 15*z**4 + 8*z**3 - 8*z**2 - 9*z + 8
+      * z**7 - z**6 + 4*z**5 - 4*z**4 + 3*z**3 + z**2 - 3*z + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-19} $}
+
+\begin{lstlisting}
+
+Label: MM_3_19
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 17*x - z**2 + 4*z - 16
+      * y - z
+      * z**3 - 4
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-20} $}
+
+\begin{lstlisting}
+
+Label: MM_3_20
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x**2 + z**2 - 2*z - 3
+      * (z - 1)*(x + z + 2)
+      * y + 2*z**2 - 2*z - 1
+      * (z - 1)*(2*z**2 + 2*z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-21} $}
+
+\begin{lstlisting}
+
+Label: MM_3_21
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 1627*x + 4400*z**7 + 18777*z**6 + 17991*z**5 + 74273*z**4 + 45483*z**3 - 79913*z**2 - 41283*z + 18623
+      * 1627*y - 6526*z**7 - 27988*z**6 - 27439*z**5 - 111760*z**4 - 71655*z**3 + 113203*z**2 + 55072*z - 24229
+      * z**8 + 4*z**7 + 3*z**6 + 16*z**5 + 6*z**4 - 20*z**3 - 4*z**2 + 6*z - 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-22} $}
+
+\begin{lstlisting}
+
+Label: MM_3_22
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 110*x + 4*z**6 - 13*z**5 + 4*z**4 - 68*z**3 + 36*z**2 + 4*z + 58
+      * y - z
+      * z**7 - 4*z**6 - 4*z**4 + 8*z**3 + 8*z**2 - 4
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-23} $}
+
+\begin{lstlisting}
+
+Label: MM_3_23
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 205*x + 293*z**7 - 795*z**6 - 56*z**5 - 2211*z**4 - 1878*z**3 + 953*z**2 + 435*z + 91
+      * 205*y - 309*z**7 + 865*z**6 - 27*z**5 + 2408*z**4 + 1679*z**3 - 1089*z**2 - 775*z - 238
+      * z**8 - 2*z**7 - 2*z**6 - 8*z**5 - 12*z**4 - 2*z**3 + 3*z**2 + 2*z + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-24} $}
+
+\begin{lstlisting}
+
+Label: MM_3_24
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 4*x + 7*z**7 - 58*z**6 + 47*z**5 - 62*z**4 - 5*z**3 + 12*z**2 - 13*z + 12
+      * 4*y - 7*z**7 + 59*z**6 - 55*z**5 + 67*z**4 - 7*z**3 - 13*z**2 + 5*z - 13
+      * z**8 - 8*z**7 + 4*z**6 - 4*z**5 - 6*z**4 + 4*z**3 + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-25} $}
+
+\begin{lstlisting}
+
+Label: MM_3_25
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**2
+      * y - z**6 - 2*z**5 - z**4 + z**2 + z + 1
+      * (z - 1)*(z + 1)*(z**2 + 1)*(z**2 + z - 1)*(z**2 + z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-26} $}
+
+\begin{lstlisting}
+
+Label: MM_3_26
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**3 + 1
+      * y + z**6 + z**4 - 2*z**3 - 2*z
+      * z**8 + z**6 - 2*z**5 - 2*z**3 + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-27} $}
+
+\begin{lstlisting}
+
+Label: MM_3_27
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * (x - 1)*(x + 1)
+      * (y - 1)*(y + 1)
+      * (z - 1)*(z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-28} $}
+
+\begin{lstlisting}
+
+Label: MM_3_28
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**2
+      * (y - 1)*(y + 1)
+      * z**4 + z**3 - 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-29} $}
+
+\begin{lstlisting}
+
+Label: MM_3_29
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 23*x + 6*z**7 - 29*z**6 + 28*z**5 - 43*z**4 + 3*z**3 + 10*z**2 - 16*z + 21
+      * 23*y + 16*z**7 - 85*z**6 + 90*z**5 - 61*z**4 + 54*z**3 + 42*z**2 - 81*z + 10
+      * z**8 - 4*z**7 - 2*z**5 - z**4 + 4*z**3 + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-30} $}
+
+\begin{lstlisting}
+
+Label: MM_3_30
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**4 - z**3
+      * y - z**2
+      * z**8 + 2*z**7 + 2*z**6 + 2*z**5 + z**4 - 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{3-31} $}
+
+\begin{lstlisting}
+
+Label: MM_3_31
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - 4*z**2
+      * y - 4*z
+      * 16*z**4 + 16*z**3 - 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-1} $}
+
+\begin{lstlisting}
+
+Label: MM_4_1
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x*y + x - 2*y*z - y - 2
+      * x*z - 1
+      * (y - 2)*(y*z + y + 1)
+      * (2*z - 1)*(y*z + y + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-2} $}
+
+\begin{lstlisting}
+
+Label: MM_4_2
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 15*x - 26*z**5 - 8*z**4 + 54*z**3 - 7*z**2 + 39*z - 14
+      * y - z**2 + 1
+      * (z**3 - 3*z + 1)*(z**3 + 2*z**2 + z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-3} $}
+
+\begin{lstlisting}
+
+Label: MM_4_3
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 2*x*y - 2*x + 2*y - z - 1
+      * (2*x - 1)*(z + 1)
+      * (y - 1)*(z + 1)
+      * (z - 1)*(z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-4} $}
+
+\begin{lstlisting}
+
+Label: MM_4_4
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x + 16*z**4 - 48*z**3 + 40*z**2 - 8*z
+      * y - 16*z**4 + 48*z**3 - 44*z**2 + 12*z + 1
+      * 16*z**5 - 64*z**4 + 88*z**3 - 48*z**2 + 8*z + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-5} $}
+
+\begin{lstlisting}
+
+Label: MM_4_5
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**2
+      * 20*y - 9*z**4 - 11*z**3 + 4*z**2 + 8*z + 12
+      * (z + 1)*(z**4 + z**3 - 4)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-6} $}
+
+\begin{lstlisting}
+
+Label: MM_4_6
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 456761*x + 499916*z**9 + 1624217*z**8 - 10282244*z**7 - 4445956*z**6 + 5337383*z**5 - 1974010*z**4 + 3373121*z**3 -
+        90990*z**2 - 1879996*z + 1125167
+      * 456761*y - 597994*z**9 - 1956497*z**8 + 12259824*z**7 + 5701293*z**6 - 6016682*z**5 + 591865*z**4 - 5688312*z**3 -
+        428082*z**2 + 1682856*z - 708578
+      * z**10 + 4*z**9 - 18*z**8 - 24*z**7 + z**6 + 4*z**5 + 8*z**4 + 6*z**3 - 2*z**2 + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-7} $}
+
+\begin{lstlisting}
+
+Label: MM_4_7
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x + 8*z**4 - 2*z**3 - 9*z**2 + 18*z - 10
+      * y - 18*z**4 - z**3 + 17*z**2 - 36*z + 17
+      * (2*z - 1)*(z**2 - z + 1)*(z**2 + z - 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-8} $}
+
+\begin{lstlisting}
+
+Label: MM_4_8
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 2*x - 2*y + z**8 + z**7 - 2*z**6 - 7*z**5 - 6*z**4 - z**3 + 7*z**2 + 4*z + 3
+      * y**2 - z - 1
+      * (z - 1)*(2*y - z**7 - 2*z**6 + 2*z**5 + 9*z**4 + 9*z**3 + 2*z**2 - 3*z - 3)
+      * (z - 1)*(z**8 + 2*z**7 - z**6 - 8*z**5 - 11*z**4 - 8*z**3 - z**2 + 2*z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-9} $}
+
+\begin{lstlisting}
+
+Label: MM_4_9
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x + 16*z**4 + 16*z**3 - 8*z**2 - 8*z
+      * y - 4*z**2 + 1
+      * 16*z**5 + 16*z**4 - 8*z**3 - 8*z**2 + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-10} $}
+
+\begin{lstlisting}
+
+Label: MM_4_10
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**4 - z**3 + 1
+      * y + z**8 + 2*z**7 + 2*z**6 + 2*z**5 - z**4 - 2*z**3 - 2*z**2 - 2*z
+      * z**10 + 2*z**9 + 2*z**8 + 2*z**7 - z**6 - 2*z**5 - 2*z**4 - 2*z**3 + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-11} $}
+
+\begin{lstlisting}
+
+Label: MM_4_11
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - 2*z**2 + z - 2
+      * (y - 1)*(y + 1)
+      * z**3 - z**2 + 2*z - 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-12} $}
+
+\begin{lstlisting}
+
+Label: MM_4_12
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - z**2
+      * y + z**9 + z**8 - z**7 + 2*z**6 - z**5 + 2*z**3 - z**2 + z - 2
+      * z**10 + 2*z**9 + z**8 + 2*z**7 - z**6 - 2*z**5 - 2*z**4 - 2*z**3 + z**2 + 1
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{4-13} $}
+
+\begin{lstlisting}
+
+Label: MM_4_13
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - y*z**2 - z**4 - z**3
+      * y**2 + y*z**2 + y*z - 1
+      * (z + 1)*(z**2 + 1)*(y - z**3 + z - 1)
+      * (z + 1)*(z**2 + 1)*(z**2 - z + 1)*(z**2 + z - 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{5-1} $}
+
+\begin{lstlisting}
+
+Label: MM_5_1
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 16*x + 23*z**4 + 2*z**3 - 24*z**2 + 16*z - 71
+      * y - z**2
+      * z**5 + 2*z**4 - z - 4
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{5-2} $}
+
+\begin{lstlisting}
+
+Label: MM_5_2
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - 2*z**7 - 5*z**6 - 4*z**5 - 4*z**4 - 2*z**3 + z**2 + 3*z + 3
+      * y - z**2
+      * (z**4 + z - 1)*(z**4 + 2*z**3 - z - 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{5-3} $}
+
+\begin{lstlisting}
+
+Label: MM_5_3
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * 3*x - 8
+      * (y - 1)*(y + 1)
+      * 8*z - 9
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{6-1} $}
+
+\begin{lstlisting}
+
+Label: MM_6_1
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * x - y - 1
+      * y**2 - y - 1
+      * (z - 1)*(z + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{7-1} $}
+
+\begin{lstlisting}
+
+Label: MM_7_1
+Notes: Detailed Mori--Mukai validation: saturated torus critical ideal is checked against fixed generators.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  - critical ideal saturated by xyz
+    saturation element: x*y*z
+    expected generators:
+      * (x - 4)*(x**2*z**2 + x**2*z + 2*x*z + 1)
+      * (4*z - 1)*(x**2*z**2 + x**2*z + 2*x*z + 1)
+      * (y - 1)*(y + 1)
+
+Point and Hessian certificates:
+  none
+
+Parametric branches / positive-dimensional components:
+  none
+
+Normal forms and formal expansions:
+  none
+
+\end{lstlisting}
+
+\subsection*{$ MM_{8-1} $}
+
+\begin{lstlisting}
+
+Label: MM_8_1
+Notes: Two isolated Morse points and two residual A2 curve components.
+
+Identities / compact forms:
+  none
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - point: P_1=(eps,1,1)
+    coordinates: x = 1, y = 1, z = 1
+    value: 23
+    ordinary Hessian det: not asserted
+    log Hessian det: 486
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+  - point: P_-1=(eps,1,1)
+    coordinates: x = -1, y = 1, z = 1
+    value: 19
+    ordinary Hessian det: not asserted
+    log Hessian det: -486
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+
+Parametric branches / positive-dimensional components:
+  - branch: Gamma_1
+    parameter: t
+    substitution: x = 1, y = -1/(t*(t + 1)), z = t
+    exclusions: t, t + 1
+    value: -4
+    log Hessian matrix: Matrix([[2, 0, 0], [0, 0, 0], [0, 0, 0]])
+  - branch: Gamma_-1
+    parameter: t
+    substitution: x = -1, y = -1/(t*(t + 1)), z = t
+    exclusions: t, t + 1
+    value: -8
+    log Hessian matrix: Matrix([[-2, 0, 0], [0, 0, 0], [0, 0, 0]])
+
+Normal forms and formal expansions:
+  - normal form: Gamma_1: split quadratic plus residual A2
+    checked identity: W - (-4) = (x - 2 + 1/x) + (1/(y**2*z**3))*(y*z*(z + 1) + 1)^3
+    residual: y*z*(z + 1) + 1
+    exponent: 3
+    unit: 1/(y**2*z**3)
+    extra term: x - 2 + 1/x
+  - normal form: Gamma_-1: split quadratic plus residual A2
+    checked identity: W - (-8) = (x + 2 + 1/x) + (1/(y**2*z**3))*(y*z*(z + 1) + 1)^3
+    residual: y*z*(z + 1) + 1
+    exponent: 3
+    unit: 1/(y**2*z**3)
+    extra term: x + 2 + 1/x
+
+\end{lstlisting}
+
+\subsection*{$ MM_{9-1} $}
+
+\begin{lstlisting}
+
+Label: MM_9_1
+Notes: Two twisted mixed A3 curves and two isolated Morse points.
+
+Identities / compact forms:
+  - theta_x factorization: -x*(z + 1 - 3/(x*z))*(z + 1 + 1/(x*z))**3 + (x*z**2 + x*z - 3)*(x*z**2 + x*z + 1)**3/(x**3*z**4) == 0
+  - theta_z factorization: -4*x*(z - 1/(x*z))*(z + 1 + 1/(x*z))**3 + 4*(x*z**2 - 1)*(x*z**2 + x*z + 1)**3/(x**3*z**4) == 0
+  - theta_y factorization: -y + (y - 1)*(y + 1)/y + 1/y == 0
+  - Gamma_1 normal-coordinate Jacobian: 0 == 0
+  - Gamma_-1 normal-coordinate Jacobian: 0 == 0
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - point: P_1=(4,1,1/2)
+    coordinates: x = 4, y = 1, z = 1/2
+    value: 54
+    ordinary Hessian det: not asserted
+    log Hessian det: 4096
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+  - point: P_-1=(4,-1,1/2)
+    coordinates: x = 4, y = -1, z = 1/2
+    value: 50
+    ordinary Hessian det: not asserted
+    log Hessian det: -4096
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+
+Parametric branches / positive-dimensional components:
+  - branch: Gamma_1
+    parameter: t
+    substitution: x = -1/(t*(t + 1)), y = 1, z = t
+    exclusions: t, t + 1
+    value: -10
+    log Hessian matrix: none
+  - branch: Gamma_-1
+    parameter: t
+    substitution: x = -1/(t*(t + 1)), y = -1, z = t
+    exclusions: t, t + 1
+    value: -14
+    log Hessian matrix: none
+
+Normal forms and formal expansions:
+  - normal form: Gamma_1: quadratic plus residual A3
+    checked identity: W - (-10) = ((y - 1)**2/y) + (x)*(z + 1 + 1/(x*z))^4
+    residual: z + 1 + 1/(x*z)
+    exponent: 4
+    unit: x
+    extra term: (y - 1)**2/y
+  - normal form: Gamma_-1: quadratic plus residual A3
+    checked identity: W - (-14) = ((y + 1)**2/y) + (x)*(z + 1 + 1/(x*z))^4
+    residual: z + 1 + 1/(x*z)
+    exponent: 4
+    unit: x
+    extra term: (y + 1)**2/y
+
+\end{lstlisting}
+
+\subsection*{$ MM_{10-1} $}
+
+\begin{lstlisting}
+
+Label: MM_10_1
+Notes: Two twisted mixed A5 curves and two isolated Morse points.
+
+Identities / compact forms:
+  - theta_x factorization: -x*(z + 1 - 5/(x*z**2))*(z + 1 + 1/(x*z**2))**5 + (x*z**3 + x*z**2 - 5)*(x*z**3 + x*z**2 +
+    1)**5/(x**5*z**12) == 0
+  - theta_z factorization: -6*x*(z - 2/(x*z**2))*(z + 1 + 1/(x*z**2))**5 + 6*(x*z**3 - 2)*(x*z**3 + x*z**2 + 1)**5/(x**5*z**12) == 0
+  - theta_y factorization: -y + (y - 1)*(y + 1)/y + 1/y == 0
+  - Gamma_1 normal-coordinate Jacobian: 0 == 0
+  - Gamma_-1 normal-coordinate Jacobian: 0 == 0
+
+Saturated critical ideals:
+  none
+
+Point and Hessian certificates:
+  - point: P_1=(27/4,1,2/3)
+    coordinates: x = 27/4, y = 1, z = 2/3
+    value: 374
+    ordinary Hessian det: not asserted
+    log Hessian det: 373248
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+  - point: P_-1=(27/4,-1,2/3)
+    coordinates: x = 27/4, y = -1, z = 2/3
+    value: 370
+    ordinary Hessian det: not asserted
+    log Hessian det: -373248
+    require nonzero ordinary Hessian: False
+    require nonzero log Hessian: False
+
+Parametric branches / positive-dimensional components:
+  - branch: Gamma_1
+    parameter: t
+    substitution: x = -1/(t**2*(t + 1)), y = 1, z = t
+    exclusions: t, t + 1
+    value: -58
+    log Hessian matrix: none
+  - branch: Gamma_-1
+    parameter: t
+    substitution: x = -1/(t**2*(t + 1)), y = -1, z = t
+    exclusions: t, t + 1
+    value: -62
+    log Hessian matrix: none
+
+Normal forms and formal expansions:
+  - normal form: Gamma_1: quadratic plus residual A5
+    checked identity: W - (-58) = ((y - 1)**2/y) + (x)*(z + 1 + 1/(x*z**2))^6
+    residual: z + 1 + 1/(x*z**2)
+    exponent: 6
+    unit: x
+    extra term: (y - 1)**2/y
+  - normal form: Gamma_-1: quadratic plus residual A5
+    checked identity: W - (-62) = ((y + 1)**2/y) + (x)*(z + 1 + 1/(x*z**2))^6
+    residual: z + 1 + 1/(x*z**2)
+    exponent: 6
+    unit: x
+    extra term: (y + 1)**2/y
+
+\end{lstlisting}
+
+\end{document}

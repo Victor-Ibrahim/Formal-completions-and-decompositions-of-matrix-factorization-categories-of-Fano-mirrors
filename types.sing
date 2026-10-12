@@ -1,0 +1,24 @@
+LIB "sing.lib"; LIB "classify.lib";
+ring r = 0,(x,z,t),ds;
+"### B1 at P2=[0:1:0:0] (chart Y=1, coords x,z,t), lam=1,2,-3";
+int i; list L = 1,2,-3;
+for (i=1;i<=3;i++){ number l = L[i];
+  poly f = x^4 + z^2*(x - x*t - t^2) - l*z*(x - x*t - t^2);
+  "lam=",l," milnor=",milnor(f)," hessian rank=",rank(jacob(jacob(jet(f,2)))); kill f, l; }
+"### B1 at P4=[0:1:lam:0], lam=1: shift z -> z+1";
+poly f4 = x^4 + (z+1)^2*(x - x*t - t^2) - 1*(z+1)*(x - x*t - t^2);
+"milnor=",milnor(f4)," rank=",rank(jacob(jacob(jet(f4,2))));
+ring r5 = 0,(y,z,t),ds;
+"### B5 at [1:0:0:0] (chart X=1), lam=1,2,-3";
+for (i=1;i<=3;i++){ number l = L[i];
+  poly f = y*z + y^2*z + y*z^2 + y*z*t^2 + z*t^2 + y*t^2 + t^4 - l*y*z*t;
+  "lam=",l," milnor=",milnor(f)," hessian rank=",rank(jacob(jacob(jet(f,2)))); kill f, l; }
+"lam=0:"; poly f0 = y*z + y^2*z + y*z^2 + y*z*t^2 + z*t^2 + y*t^2 + t^4; milnor(f0);
+"### V14 at P6=[0:1:-1:0] (chart Y=1, coords x,z,t), z -> z-1; lam = -1, 1, 3";
+ring r14 = 0,(x,z,t),ds;
+list LL = -1,1,3;
+for (i=1;i<=3;i++){ number l = LL[i];
+  poly A = x+1+(z-1)+t; poly Bh = 1+(z-1)+t; poly C = (z-1)+t;
+  poly f = A*((z-1)*A + Bh*C^2) - l*x*(z-1)*t;
+  "lam=",l," milnor=",milnor(f)," hessian rank=",rank(jacob(jacob(jet(f,2)))); kill f,l,A,Bh,C; }
+quit;

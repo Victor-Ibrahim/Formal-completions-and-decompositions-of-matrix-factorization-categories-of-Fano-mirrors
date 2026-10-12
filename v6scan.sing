@@ -1,0 +1,12 @@
+LIB "primdec.lib"; LIB "sing.lib";
+// V6 pencil in P^1 x P^2: (X0+X1)^2 (Y+Z+T)^3 - lam X0 X1 Y Z T ; total-space singular locus on the base locus
+ring R=0,(a,b,u,v,w,lam),dp;  // a=X0,b=X1 ; u=Y,v=Z,w=T
+poly F0 = (a+b)^2*(u+v+w)^3; poly G = a*b*u*v*w; poly Fl = F0 - lam*G;
+list ch1 = a,b; list ch2 = u,v,w; int i,j,k; list L;
+for(i=1;i<=2;i++){ for(j=1;j<=3;j++){
+  ideal I = Fl, diff(Fl,a),diff(Fl,b),diff(Fl,u),diff(Fl,v),diff(Fl,w), G, ch1[i]-1, ch2[j]-1;
+  L = minAssGTZ(I);
+  for(k=1;k<=size(L);k++){ ideal P=std(L[k]); ideal El=eliminate(P,a*b*u*v*w); "chart",string(ch1[i]),string(ch2[j]),": lam-constraint:",El," dim:",dim(P), " P:", P; kill P,El; }
+  kill I;
+}}
+quit;

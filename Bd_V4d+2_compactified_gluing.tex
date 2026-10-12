@@ -1,0 +1,3186 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{tabularray}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black
+]{hyperref}
+
+\hfuzz=2pt
+\hbadness=5000
+\vbadness=5000
+\emergencystretch=2em
+\raggedbottom
+\allowdisplaybreaks[2]
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\MF}{MF}
+\DeclareMathOperator{\Sing}{Sing}
+\DeclareMathOperator{\CritLoc}{CritLoc}
+\DeclareMathOperator{\Tot}{Tot}
+\DeclareMathOperator{\Kar}{Kar}
+\newcommand{\Db}{\mathrm D^{b}}
+\newcommand{\Dtwo}{\mathrm{D}^{\mathrm{coh}}_{\mathbb Z/2}}
+\newcommand{\Cliff}{\operatorname{Cl}}
+\newcommand{\MorseCat}[1]{\mathsf{Q}_{#1}}
+\newcommand{\MBcat}[1]{\mathsf{MB}(#1)}
+\newcommand{\Aper}[2]{\mathsf{A}^{\mathrm{per}}_{#2}(#1)}
+\newcommand{\QAper}[2]{\mathsf{QA}^{\mathrm{per}}_{#2}(#1)}
+\newcommand{\QAtwist}[3]{\mathsf{QA}^{\mathrm{per}}_{#2}(#1;[#3])}
+\newcommand{\Dper}[3]{\mathsf{D}^{\mathrm{per}}_{#2}(#1;[#3])}
+\newcommand{\FormalCat}[1]{\mathsf{F}(#1)}
+\newcommand{\CcompB}{\mathcal C^{\mathrm{comp}}_{B_4,0}}
+\newcommand{\CcompV}{\mathcal C^{\mathrm{comp}}_{V_{18},0}}
+\newcommand{\CrawB}{\mathcal C^{\mathrm{raw}}_{B_4,0}}
+\newcommand{\CrawV}{\mathcal C^{\mathrm{raw}}_{V_{18},0}}
+\newcommand{\CcompBtwo}{\mathcal C^{\mathrm{comp}}_{B_2,0}}
+\newcommand{\CcompVten}{\mathcal C^{\mathrm{comp}}_{V_{10},0}}
+\newcommand{\CcompBthree}{\mathcal C^{\mathrm{comp}}_{B_3,0}}
+\newcommand{\CcompVfourteen}{\mathcal C^{\mathrm{comp}}_{V_{14},0}}
+\newcommand{\CcompBone}{\mathcal C^{\mathrm{comp}}_{B_1,0}}
+\newcommand{\CcompVsix}{\mathcal C^{\mathrm{comp}}_{V_6,0}}
+
+\begin{document}
+
+\title[Compactified gluing for $B_d$ and $V_{4d+2}$]{Compactified Gluing for the $B_d$ and $V_{4d+2}$ Landau--Ginzburg Models}
+\author{Victor Ibrahim Santos El Adji}
+\date{}
+
+\begin{abstract}
+We compare projective compactifications of the standard Landau--Ginzburg
+models attached to the five rank-one pairs $(B_d,V_{4d+2})$, $1\leq d\leq5$.
+For the genus-two pair $(B_4,V_{18})$, we carry out a complete chartwise
+calculation: the four standard affine charts of $\mathbb P^3$, together with
+the dense torus as a fifth computational chart, determine the central
+singular supports, the noncentral ordinary double points, and the overlap
+identifications.  The corresponding compactified central categories are
+defined as explicit Čech totalizations of formal matrix-factorization
+categories.  For all five pairs, we compare the isolated compactification
+contributions and the numbers of irreducible components of the resolved
+central fibers.  For the pair $(B_2,V_{10})$, we additionally compute the
+source-torus critical strata, the raw central supports of convenient
+projective pencils, and their two noncentral ordinary double points.  For
+$(B_3,V_{14})$, we perform the analogous calculation and exhibit explicitly
+the second $V_{14}$ node created by resolving a base curve.  On the
+index-two side, we give compactification calculations for every $B_d$,
+$1\leq d\leq5$: the quartic pencils, their isolated ordinary double points,
+the base-locus singularities relevant to the resolution, and the central
+component counts.  We also calculate the two remaining extreme cases on the
+prime side directly from their compactified pencils.  The $V_6$ pencil has
+one noncentral ordinary double point, while the $V_{22}$ pencil has three
+ordinary double points away from the base locus and a fourth one created by
+blowing up a boundary base line.  No additional source-torus calculation is
+needed for these four extreme models.  The isolated and component-count
+invariants agree for $d=2,3,4,5$ and differ for $d=1$.  We distinguish these numerical equalities
+from an equivalence of the full compactified categories, which additionally
+requires compatible global gluing data or compactified Homological Mirror
+Symmetry.
+\end{abstract}
+\maketitle
+
+\section{Scope, the five pairs, and the computational charts}
+
+The rank-one families considered in this note form the five pairs
+\[
+(B_d,V_{4d+2}),
+\qquad d=1,2,3,4,5.
+\]
+The uniform comparison records isolated compactification contributions and
+central-component counts for every pair.  The complete chartwise resolution
+is carried out for $(B_4,V_{18})$.  For $(B_2,V_{10})$ we give an explicit
+critical-point and raw central-support calculation, while retaining the
+standard resolution data for the component count.  For $(B_3,V_{14})$ we
+also compute the source and compactifiable representatives, including the
+base-curve blowup producing the second $V_{14}$ node.  For $B_1$ and $B_5$
+we work directly with the compactified quartic pencils and do not repeat a
+source-torus census.  We use the same compactified approach for $V_6$ and
+$V_{22}$.  The $V_6$ pencil is naturally anticanonical in
+$\mathbb P^1\times\mathbb P^2$; the other explicit projective pencils below
+lie in $\mathbb P^3_{[X:Y:Z:T]}$.  For the latter, the projective cover has four
+standard affine charts
+\[
+U_X,\qquad U_Y,\qquad U_Z,\qquad U_T.
+\]
+We add
+\[
+U_\circ=U_T\cap\{XYZ\neq0\}\simeq(\mathbb C^*)^3
+\]
+as a fifth, redundant, computational chart.  This chart records which
+singularities occur before compactification.  Since $U_\circ\subset U_T$, a
+point found in both charts is not a second singularity: the overlap maps must
+identify the corresponding local categories.
+
+The calculations in this note are reproduced by
+\begin{center}
+\texttt{python computations/rank\_one\_five\_chart\_gluing.py}.
+\end{center}
+
+There are three logically distinct objects:
+\begin{enumerate}
+\item the source Laurent polynomial used in the open-torus census;
+\item a standard Givental-type Laurent representative that admits a convenient
+quartic compactification;
+\item the resolved Calabi--Yau Landau--Ginzburg model obtained after resolving
+the base locus of the quartic pencil.
+\end{enumerate}
+Birational mutations can move critical strata between the torus and the
+boundary.  We therefore do not identify the category of the source Laurent
+polynomial with the compactified central category without an additional
+argument.  Likewise, agreement of component or node counts for a general
+pair does not determine its full exceptional-chart gluing.
+
+\section{Reference survey and logical dependency map}
+\label{sec:reference_survey}
+
+This section records the role of each group of references.  The distinction is
+important because the literature supplies the Laurent models, compactification
+framework, and categorical tools, but it does not contain the five-chart
+calculation or the claimed Čech presentations in exactly the form used below.
+
+\subsection{Laurent models, periods, and compactifications}
+
+The period tables and the classification of three-dimensional Minkowski
+polynomials are developed in \cite{CCGK,Minkowski}.  For Picard-rank-one Fano
+threefolds, explicit Laurent-polynomial weak Landau--Ginzburg models and open
+Calabi--Yau compactifications are given case by case in
+\cite{PrzyjalkowskiWeak}.  The formulas used below for $B_4$ and $V_{18}$ are
+the standard toric/Givental representatives appearing in this circle of
+constructions; the survey \cite{PrzyjalkowskiToric} provides a convenient
+table of the rank-one models.  The compactifiable $B_2$ and $V_{10}$
+representatives and their noncentral ordinary double points are also recorded
+in \cite{Przyjalkowski2026}; the same source records the compactifiable
+$B_3$ and $V_{14}$ pencils and the two isolated contributions of each.
+For $V_6$ we use the Givental complete-intersection compactification, while
+for $V_{22}$ we homogenize the Laurent polynomial of
+\cite{PrzyjalkowskiWeak} and compare its base-locus resolution with
+\cite{Przyjalkowski2026}.
+
+The existence and geometry of Calabi--Yau compactifications, including the
+behavior of the fiber over infinity, are treated systematically in
+\cite{PrzyjalkowskiCY}.  The component counts and the explicit incidence
+descriptions of the resolved central fibers of $B_4$ and $V_{18}$ are given in
+\cite{PrzyjalkowskiHodge}.  The recent calculation
+\cite{Przyjalkowski2026} concerns fibers with isolated singularities and is a
+useful comparison for the two noncentral nodes, but it is not the primary
+source for the central-fiber gluing carried out here.  In particular, the
+homogeneous quartics, their affine chart equations, their Jacobian ideals, and
+their overlap identifications below are direct calculations in this note.
+For $d=2,3$, the cited sources provide the standard resolution and node
+census, while the torus equations, raw central supports, Hessians, and the
+displayed local blowup calculations are carried out directly in
+Sections~\ref{sec:B2_V10_calculation} and
+\ref{sec:B3_V14_calculation}.
+
+\subsection{Mutation and the choice of a Laurent representative}
+
+Mutation preserves the classical period and relates many Laurent mirrors of
+the same Fano family \cite{Minkowski}.  For Givental/Hori--Vafa models coming
+from different nef partitions, mutation equivalence is established in
+\cite{PrinceMutation}.  These results justify comparing different Laurent
+representatives at the level of periods and birational Landau--Ginzburg data.
+They do not, without further hypotheses, identify their critical loci on a
+fixed torus chart or their matrix-factorization categories after a chosen
+compactification.  This is why the source Laurent polynomial, the convenient
+quartic representative, and the resolved pencil are kept separate throughout
+the paper.
+
+\subsection{Matrix factorizations and formal localization}
+
+Matrix factorizations originate in Eisenbud's description of maximal
+Cohen--Macaulay modules over hypersurfaces \cite{Eisenbud}.  Orlov identifies
+Landau--Ginzburg B-branes with categories of singularities in the affine case
+\cite{OrlovDbranes} and develops the nonaffine theory in
+\cite{OrlovNonaffine}.  Compact generation and dg models for local
+matrix-factorization categories are studied in \cite{Dyckerhoff}.
+
+The passage to formal neighborhoods and idempotent completion is supported by
+Orlov's formal-completion theorem \cite{OrlovFormal}: after Karoubi completion,
+the singularity category is determined by the formal neighborhood of the
+singular locus.  The dg and support-sensitive framework needed to compare
+overlaps and totalizations is developed further in \cite{Preygel}.  In this
+paper, however, equations \eqref{eq:B4_cech_totalization} and
+\eqref{eq:V18_cech_totalization} are definitions of the two compactified
+central categories.  A complete descent theorem identifying those
+totalizations with a globally constructed resolved matrix-factorization
+category must be applied in an enhanced dg or stable-infinity-categorical
+setting.
+
+The local elimination of a split quadratic pair uses Kn\"orrer periodicity
+\cite{Knorrer}; useful global and derived forms appear in
+\cite{OrlovEquivalences,Hirano}.  Blowups are especially relevant because the
+Calabi--Yau models are obtained by resolving a base locus.  The
+matrix-factorization blowup formula and its dg foundations are given by
+Lunts--Schn\"urer \cite{LuntsSchnurer}.  Their theorem explains what must be
+tracked on every exceptional chart; it does not by itself show that all
+exceptional contributions glue to a genus-two curve in the two pencils at
+hand.
+
+\subsection{The two genus-two categories}
+
+For $B_4$, the intersection of two quadrics and its pencil of quadrics are
+governed by the even Clifford algebra.  The resulting semiorthogonal
+decomposition and its genus-two double cover are established in
+\cite{KuzQuadric}; see also \cite{AuelBernardaraBolognesi} for a broader
+treatment of quadric fibrations, Clifford algebras, and rationality questions.
+
+For $V_{18}$, the homological projective dual of the $G_2$ Grassmannian and the
+double cover of the orthogonal line branched at six points are constructed in
+\cite{KuzHyperplane}.  This gives the genus-two curve and the
+semiorthogonal decomposition used in \eqref{eq:V18_fano_sod}.  Kuznetsov's
+survey \cite{KuzFano} formulates the relation between the nontrivial components
+of index-two and index-one Fano threefolds.  The later work
+\cite{KuzShinder} proves a deformation statement for the corresponding
+components and corrects the scope of the original conjectural correspondence.
+It should not be read as an automatic equivalence between an arbitrary
+$B_4$ and an arbitrary $V_{18}$.
+
+Finally, Bondal--Orlov reconstruction \cite{BondalOrlov} applies to the
+$\mathbb Z$-graded derived categories of the smooth genus-two curves.  Passing
+from that statement to the two-periodic categories in this paper requires a
+compatible graded lift.  Passing from the Fano-side decompositions to
+$\CcompB$ and $\CcompV$ additionally requires compactified Homological Mirror
+Symmetry or a complete global formal-Clifford calculation.
+
+\subsection{Summary of evidentiary status}
+
+The reference chain may be summarized as follows:
+\begin{center}
+\small
+\begin{tblr}{
+  width=0.97\textwidth,
+  colspec={Q[l,wd=0.21\textwidth]Q[l,wd=0.28\textwidth]X[l]},
+  row{1}={font=\bfseries},
+  hline{1,2,Z}={0.4pt},
+  rowsep=2pt,
+}
+Input & Principal references & What they support here \\
+Laurent mirrors & \cite{CCGK,PrzyjalkowskiWeak,PrzyjalkowskiToric} &
+Choice of the Laurent representatives and their period interpretation. \\
+Compactification & \cite{PrzyjalkowskiHodge,PrzyjalkowskiCY,Przyjalkowski2026} &
+Existence and geometry of compactified pencils, central-component incidence, and comparison with isolated singular fibers. \\
+Mutation & \cite{Minkowski,PrinceMutation} &
+Period-preserving birational comparison, but not categorical invariance of the chosen compactification. \\
+Local categories & \cite{Eisenbud,OrlovDbranes,OrlovNonaffine,Dyckerhoff} &
+Matrix factorizations and singularity categories on affine and nonaffine charts. \\
+Formal gluing & \cite{OrlovFormal,Preygel,LuntsSchnurer} &
+Formal-local invariance, enhanced categorical operations, and behavior under blowups. \\
+Quadratic reduction & \cite{Knorrer,OrlovEquivalences,Hirano} &
+Removal of nondegenerate quadratic directions and the local curve-type model. \\
+Fano-side curves & \cite{KuzQuadric,KuzHyperplane,KuzFano,KuzShinder} &
+The two genus-two categories and the precise limits of their correspondence. \\
+\end{tblr}
+\end{center}
+
+Thus the literature supports the inputs and the local categorical mechanisms.
+The five-chart Jacobian calculations, the overlap audit, and the assertion that
+no chartwise copy should be counted twice are the computational contribution of
+this note.  The equivalence $\CcompB\simeq\CcompV$ remains conditional for the
+reasons stated in Section~\ref{sec:reference_survey} and in the final section.
+
+\section{The \texorpdfstring{$B_4$}{B4} pencil}
+
+\subsection{The dense torus and projective equation}
+
+For the chart audit we use
+\begin{equation}
+\label{eq:B4_torus}
+f_{B_4}(x,y,z)=\frac{(x+1)^2(y+1)^2}{xyz}+z.
+\end{equation}
+This is a standard Givental-type representative of the $B_4$ mirror
+\cite{PrzyjalkowskiWeak,PrzyjalkowskiToric}.
+The fiber $f_{B_4}=\lambda$ has projective closure
+\begin{equation}
+\label{eq:B4_pencil}
+F_{B_4,\lambda}
+=(X+T)^2(Y+T)^2+XYZ^2-\lambda XYZT=0.
+\end{equation}
+The logarithmic critical equations of \eqref{eq:B4_torus} have the two
+solutions
+\[
+(x,y,z)=(1,1,4),\qquad (1,1,-4),
+\]
+with critical values $8$ and $-8$.  Their logarithmic Hessian determinants
+are $32$ and $-32$, respectively.
+
+The corresponding projective points are
+\[
+p_+=[1:1:4:1],\qquad p_-=[1:1:-4:1].
+\]
+Both points have all homogeneous coordinates nonzero, so each appears in all
+five computations.
+
+\subsection{The four projective charts}
+
+The point coordinates and affine Hessian determinants are
+\[
+\begin{array}{c|c|c|c}
+\text{chart}&p_+&p_-&\det(\operatorname{Hess})\\ \hline
+U_\circ,\ U_T&(1,1,4)&(1,1,-4)&128\\
+U_X&(1,4,1)&(1,-4,1)&128\\
+U_Y&(1,4,1)&(1,-4,1)&128\\
+U_Z&(1/4,1/4,1/4)&(-1/4,-1/4,-1/4)&1/2.
+\end{array}
+\]
+Thus the Čech overlap maps identify five local copies of $p_+$ with one
+global point, and likewise for $p_-$.  The noncentral part contributes exactly
+\[
+\MorseCat{3}\oplus\MorseCat{3}.
+\]
+Here and below, ``noncentral part'' means the singularities away from the
+unresolved base locus.
+
+At $\lambda=0$, the singular support of the raw quartic is
+\begin{equation}
+\label{eq:B4_raw_support}
+\begin{gathered}
+L_X\cup L_Y\cup\{p_\infty\},\\
+L_X=V(X+T,Z),\qquad L_Y=V(Y+T,Z),\qquad
+p_\infty=[0:0:1:0].
+\end{gathered}
+\end{equation}
+Write $G_i=F_{B_4,0}|_{U_i}$ and let
+$J(G_i)=(G_i,\partial G_i)$ be its hypersurface Jacobian ideal.  With the
+affine coordinates indicated by the formulas, the five equations are
+\begin{align*}
+G_\circ&=G_T|_{xyz\neq0},\\
+G_T(x,y,z)&=(x+1)^2(y+1)^2+xyz^2,\\
+G_X(y,z,t)&=(1+t)^2(y+t)^2+yz^2,\\
+G_Y(x,z,t)&=(x+t)^2(1+t)^2+xz^2,\\
+G_Z(x,y,t)&=(x+t)^2(y+t)^2+xy.
+\end{align*}
+Direct differentiation gives the following reduced Jacobian ideals:
+\begin{align}
+\sqrt{J(G_\circ)}&=(1),
+\label{eq:B4_jacobian_torus}\\
+\sqrt{J(G_T)}
+&=(x+1,z)\cap(y+1,z),
+\label{eq:B4_jacobian_T}\\
+\sqrt{J(G_X)}
+&=(t+1,z)\cap(y+t,z),
+\label{eq:B4_jacobian_X}\\
+\sqrt{J(G_Y)}
+&=(x+t,z)\cap(t+1,z),
+\label{eq:B4_jacobian_Y}\\
+\sqrt{J(G_Z)}&=(x,y,t).
+\label{eq:B4_jacobian_Z}
+\end{align}
+Thus the support is distributed among the charts as follows.
+\[
+\begin{array}{c|c}
+\text{chart}&\text{central singular support}\\ \hline
+U_\circ&\varnothing\\
+U_T&\{x=-1,z=0\}\cup\{y=-1,z=0\}\\
+U_X&\{t=-1,z=0\}\cup\{y+t=0,z=0\}\\
+U_Y&\{x+t=0,z=0\}\cup\{t=-1,z=0\}\\
+U_Z&\{(x,y,t)=(0,0,0)\}.
+\end{array}
+\]
+The lines meet at
+\[
+q=[-1:-1:0:1].
+\]
+In $U_T$, put $X=-1+u$, $Y=-1+v$, and $Z=w$.  The central equation becomes
+exactly
+\begin{equation}
+\label{eq:B4_crossing}
+u^2v^2+(-1+u)(-1+v)w^2.
+\end{equation}
+Since the coefficient of $w^2$ is a unit near $q$, the formal splitting lemma
+reduces \eqref{eq:B4_crossing} to
+\[
+w^2+(uv)^2.
+\]
+This is not a $D_4$ normal form.  Indeed,
+\[
+\CritLoc\bigl(w^2+u^2v^2\bigr)
+=V(w,u)\cup V(w,v)
+\]
+is the union of two formal curves, whereas the article's relative $D_4$
+model $p(p^2-\delta v^2)$ has isolated transverse critical locus
+$V(p,v)$.  Therefore the $D_4$ notation $\Dper{Z}{4}{\delta}$ does not apply
+at $q$.  More precisely, this is a \emph{nonisolated tangential
+double-crossing singularity}:
+\[
+w^2+u^2v^2=(w+\mathrm iuv)(w-\mathrm iuv).
+\]
+The two factors define smooth formal surfaces.  At a generic point of either
+critical curve they meet normally and the transverse singularity is $A_1$;
+at $q$ their tangent planes coincide.  Its Jacobian algebra
+\[
+\mathbb C[[u,v,w]]/(w,uv^2,u^2v)
+\]
+is infinite-dimensional, so the germ is not an isolated ADE singularity.
+The two line strata therefore form one connected gluing contribution; they
+cannot be written as a direct sum of two Morse--Bott categories.
+
+There are four further special points on the two lines:
+\[
+\begin{aligned}
+a_X&=[-1:0:0:1],& b_X&=[0:1:0:0] &&\text{on }L_X,\\
+a_Y&=[0:-1:0:1],& b_Y&=[1:0:0:0] &&\text{on }L_Y.
+\end{aligned}
+\]
+They are distinct from $q$.  At $a_X$, use the $U_T$ coordinates
+\[
+X=-1+u,\qquad Y=s,\qquad Z=w.
+\]
+Then
+\[
+F_{B_4,0}=u^2(1+s)^2+(-1+u)s w^2
+\overset{c}{\sim}U^2-sW^2.
+\]
+This is the nonisolated pinch-point, or $D_\infty$, normal form.  At $b_X$,
+use $U_Y$ and set $T=s$, $X=u-s$, and $Z=w$; the equation is
+\[
+u^2(1+s)^2+(u-s)w^2
+\overset{c}{\sim}U^2-sW^2.
+\]
+The points $a_Y$ and $b_Y$ have the same formal type by symmetry.  Thus the
+transverse $A_1$ form along either line degenerates at two pinch points, in
+addition to the tangential double crossing at $q$.
+
+In the $U_Z$ chart around $p_\infty$, the central equation is
+\[
+xy+(x+t)^2(y+t)^2.
+\]
+Its quadratic part is $xy$.  Eliminating the two nondegenerate variables
+leaves a residual series beginning with $t^4$, so the raw quartic has an
+$A_3$ singularity at $p_\infty$; equivalently, its local Jacobian ideal is
+$(x,y,t^3)$.  This point is singular in the base-locus
+model and is modified by the simultaneous resolution.  Consequently its raw
+$A_3$ category must not be added as an independent summand of the resolved
+Landau--Ginzburg model.
+
+\subsection{Decomposition on each of the five raw charts}
+
+For a chart $U_i$, let $\mathcal R^{B_4}_{i,0}$ denote the
+idempotent-completed formal matrix-factorization category of the raw central
+equation in that chart.  For $i\in\{T,X,Y\}$, the notation
+$\FormalCat{(L_X\cup L_Y)\cap U_i}$ denotes the central formal category
+supported on
+$(L_X\cup L_Y)\cap U_i$.  Away from
+\[
+\Sigma_{B_4}=\{q,a_X,b_X,a_Y,b_Y\}
+\]
+the transverse Hessian is nondegenerate, hence locally the contribution is
+Morse--Bott.  At the four points $a_X,b_X,a_Y,b_Y$ the formal type is
+$D_\infty$, while at $q$ it is $w^2+(uv)^2$.  These special germs remain
+joined to the open Morse--Bott strata inside
+$\FormalCat{(L_X\cup L_Y)\cap U_i}$.
+
+The raw central categories are
+\begin{align}
+\mathcal R^{B_4}_{\circ,0}
+&\simeq 0,
+\label{eq:B4_chart_decomposition_torus}\\
+\mathcal R^{B_4}_{T,0}
+&\simeq \FormalCat{(L_X\cup L_Y)\cap U_T},\\
+\mathcal R^{B_4}_{X,0}
+&\simeq \FormalCat{(L_X\cup L_Y)\cap U_X},\\
+\mathcal R^{B_4}_{Y,0}
+&\simeq \FormalCat{(L_X\cup L_Y)\cap U_Y},\\
+\mathcal R^{B_4}_{Z,0}
+&\simeq \Aper{\mathrm{pt}}{3}.
+\label{eq:B4_chart_decomposition_Z}
+\end{align}
+More explicitly, equations \eqref{eq:B4_jacobian_torus}--
+\eqref{eq:B4_jacobian_Z} give the dictionary
+\begin{center}
+\small
+\begin{tblr}{
+  width=\textwidth,
+  colspec={Q[c,wd=0.08\textwidth]X[l]Q[l,wd=0.31\textwidth]},
+  row{1}={font=\bfseries},
+  hline{1,2,Z}={0.4pt},
+  rowsep=2pt,
+}
+chart & formal type on the support & category \\
+$U_\circ$ & empty & $0$ \\
+$U_T$ & $w^2+(uv)^2$ at $q$; $D_\infty$ at $a_X,a_Y$; $A_1$ elsewhere
+& $\FormalCat{(L_X\cup L_Y)\cap U_T}$ \\
+$U_X$ & $w^2+(uv)^2$ at $q$; $D_\infty$ at $a_X,b_Y$; $A_1$ elsewhere
+& $\FormalCat{(L_X\cup L_Y)\cap U_X}$ \\
+$U_Y$ & $w^2+(uv)^2$ at $q$; $D_\infty$ at $b_X,a_Y$; $A_1$ elsewhere
+& $\FormalCat{(L_X\cup L_Y)\cap U_Y}$ \\
+$U_Z$ & $xy+t^4$ & $\Aper{\mathrm{pt}}{3}$ \\
+\end{tblr}
+\end{center}
+Here $xy+t^4$ denotes the formal contact type after eliminating higher terms;
+it is precisely the convention $\Aper{\mathrm{pt}}{3}$ used in the main
+article.  The three occurrences of the line-crossing category are restrictions
+of one global connected category, not three direct summands.
+In addition, the part supported away from the base locus is
+$\MorseCat{3}^{\oplus2}$ in every chart, because both noncentral nodes have all
+homogeneous coordinates nonzero.  These are five restrictions of two global
+points, not ten global summands.  Likewise, on pairwise and higher overlaps the restrictions of
+the three displayed $\FormalCat{(L_X\cup L_Y)\cap U_i}$ categories are
+identified.  The $A_3$ point occurs only in $U_Z$
+and is disjoint from the line crossing in the raw central fiber.
+
+Because the raw pencil still has an unresolved base locus, the expressions
+above are not asserted to be the full matrix-factorization categories of all
+raw fibers.  They record exactly the central fiber and the two verified
+singularities away from the base locus.  The resolved Landau--Ginzburg map is
+needed before taking a genuine direct sum over all critical values.
+
+\subsection{Raw and resolved central categories}
+
+Let $\FormalCat{L_X\cup L_Y}$ denote the formal matrix-factorization category
+supported on the connected crossing $L_X\cup L_Y$.  Before resolving the
+base locus, disjointness of $p_\infty$ gives
+\begin{equation}
+\label{eq:B4_raw_category}
+\CrawB
+\simeq
+\FormalCat{L_X\cup L_Y}
+\oplus \Aper{\mathrm{pt}}{3}.
+\end{equation}
+Equation \eqref{eq:B4_raw_category} is a statement about the raw quartic, not
+the resolved compactification.
+
+This formula can be refined by supported localization.  Put
+\[
+L_X^\circ=L_X\setminus\Sigma_{B_4},
+\qquad
+L_Y^\circ=L_Y\setminus\Sigma_{B_4},
+\]
+and define the category retaining all five special germs by
+\[
+\mathcal P^{\mathrm{raw}}_{B_4}
+:=
+\overline{\MF^{\Sigma_{B_4}}_0\!\left(
+\widehat{\mathbb P^3}_{L_X\cup L_Y},\widehat F_{B_4,0}
+\right)}.
+\]
+Its completed local germs consist of four $D_\infty$ pinch points and the
+tangential double crossing $w^2+(uv)^2$ at $q$.  Removing
+$\Sigma_{B_4}$ leaves the disjoint union
+$L_X^\circ\amalg L_Y^\circ$, and supported localization gives
+\begin{equation}
+\label{eq:B4_raw_localization}
+\mathcal P^{\mathrm{raw}}_{B_4}
+\longrightarrow
+\FormalCat{L_X\cup L_Y}
+\longrightarrow
+\MBcat{L_X^\circ}\oplus\MBcat{L_Y^\circ}.
+\end{equation}
+The notation $\MBcat{L_i^\circ}$ retains the actual transverse quadratic
+bundle and its Clifford data.  Sequence \eqref{eq:B4_raw_localization} is not
+asserted to split.  Since $p_\infty$ is disjoint from both lines, its
+$\Aper{\mathrm{pt}}{3}$ contribution is the genuine direct summand appearing
+in \eqref{eq:B4_raw_category}.
+
+Let $\pi_{B_4}:\widetilde Y_{B_4}\to Y^{\mathrm{raw}}_{B_4}$ be the
+standard minimal resolution.  Its central fiber has three surface components
+\[
+D_1\cup D_2\cup D_3.
+\]
+Their pairwise intersections
+\[
+R_{12}=D_1\cap D_2,
+\qquad
+R_{13}=D_1\cap D_3,
+\qquad
+R_{23}=D_2\cap D_3
+\]
+are rational curves, and the three curves meet at two points
+$e_+$ and $e_-$ \cite{PrzyjalkowskiHodge}.  Thus the resolved central
+singular support is the connected curve
+\[
+\Gamma_{B_4}=R_{12}\cup R_{13}\cup R_{23},
+\qquad
+R_{12}\cap R_{13}\cap R_{23}=\{e_+,e_-\}.
+\]
+Put
+\[
+R_{ij}^{\circ}=R_{ij}\setminus\{e_+,e_-\}.
+\]
+At a point of $R_{ij}^{\circ}$ the resolved map has transverse equation
+$uv$, so that the article's notation for this open contribution is
+$\MBcat{R_{ij}^{\circ}}$.  For $\epsilon\in\{+,-\}$, let
+\[
+\mathcal P_{B_4,\epsilon}
+:=
+\overline{\MF^{e_\epsilon}_0
+\bigl(\widehat{\widetilde Y}_{B_4,e_\epsilon},
+\widehat w_{B_4}\bigr)},
+\qquad
+\mathcal P_{B_4}:=
+\mathcal P_{B_4,+}\oplus\mathcal P_{B_4,-}.
+\]
+This definition retains the complete formal equation at the two triple
+points.  If a chosen final resolution chart is simple normal crossing, then
+that equation is $uvw$ and
+\[
+\mathcal P_{B_4,\epsilon}
+\simeq
+\overline{\MF^t_0
+\bigl(\operatorname{Spf}\mathbb C[[u,v,w]],uvw\bigr)}.
+\]
+The component-count statement alone does not replace this last local
+normal-form check.
+Supported localization gives the explicit nonsplit Verdier sequence
+\begin{equation}
+\label{eq:B4_resolved_localization}
+\mathcal P_{B_4}
+\longrightarrow
+\CcompB
+\longrightarrow
+\MBcat{R_{12}^{\circ}}
+\oplus\MBcat{R_{13}^{\circ}}
+\oplus\MBcat{R_{23}^{\circ}}.
+\end{equation}
+In particular, the three rational-curve terms in
+\eqref{eq:B4_resolved_localization} are not asserted to form a direct sum
+decomposition of $\CcompB$; the two triple-point categories retain their
+gluing.
+
+Put $\widetilde U_i=\pi_{B_4}^{-1}(U_i)$.  For a nonempty
+subset $I\subset\{\circ,X,Y,Z,T\}$, put
+\[
+\widetilde U_I=\bigcap_{i\in I}\widetilde U_i,
+\qquad
+\mathfrak M^B_I=
+\MF^{\Gamma_{B_4}\cap\widetilde U_I}_{\mathrm{dg}}
+\bigl(\widehat{\widetilde U_I}_{\Gamma_{B_4}\cap\widetilde U_I},
+\widehat w_{B_4}\bigr).
+\]
+For every inclusion $I\subset J$, restriction along
+$\widetilde U_J\hookrightarrow\widetilde U_I$ gives a dg functor
+\begin{equation}
+\label{eq:B4_cech_restriction}
+\rho^B_{I,J}:\mathfrak M^B_I\longrightarrow\mathfrak M^B_J.
+\end{equation}
+Together with their canonical composition coherences, these functors form a
+semicosimplicial dg category
+\[
+\check{\mathfrak M}^{B,p}
+=
+\prod_{i_0<\cdots<i_p}
+\mathfrak M^B_{\{i_0,\ldots,i_p\}}.
+\]
+On the component indexed by $J=\{j_0<\cdots<j_{p+1}\}$, the $a$-th coface
+is $\rho^B_{J\setminus\{j_a\},J}$.
+
+\begin{definition}
+\label{def:B4_comp_category}
+The compactified central category is the idempotent-completed Čech
+totalization of this enhanced diagram:
+\begin{equation}
+\label{eq:B4_cech_totalization}
+\CcompB
+:=
+\Kar\!\left(
+H^0\Tot\bigl(\check{\mathfrak M}^{B,\bullet}\bigr)
+\right).
+\end{equation}
+\end{definition}
+
+Here totalization means the homotopy limit in the dg, equivalently
+stable-$\infty$-categorical, setting.  Equation
+\eqref{eq:B4_cech_totalization} is a definition; it does not assert that the
+outer terms of the Verdier sequence \eqref{eq:B4_resolved_localization}
+determine its middle term.
+
+The overlap identifications and the two noncentral Morse points give the
+proved top-level decomposition
+\begin{equation}
+\label{eq:B4_final_decomposition}
+\overline{\MF(Y_{B_4},w_{B_4})}
+\simeq
+\CcompB\oplus\MorseCat{3}\oplus\MorseCat{3}.
+\end{equation}
+
+\section{The \texorpdfstring{$V_{18}$}{V18} pencil}
+
+\subsection{The torus model and its two ordinary double points}
+
+Use the standard representative
+\begin{equation}
+\label{eq:V18_torus}
+f_{V_{18}}(x,y,z)
+=\frac{(x+y+z)(x+y+z+xy+xz+yz+xyz)}{xyz}.
+\end{equation}
+The corresponding compactified pencil belongs to the standard toric
+compactification framework of
+\cite{PrzyjalkowskiWeak,PrzyjalkowskiCY,PrzyjalkowskiToric}.
+Its projective pencil is
+\begin{equation}
+\label{eq:V18_pencil}
+\begin{split}
+F_{V_{18},\lambda}
+={}&(X+Y+Z)
+\bigl((X+Y+Z)T^2+(XY+XZ+YZ)T+XYZ\bigr)\\
+&-\lambda XYZT=0.
+\end{split}
+\end{equation}
+Put $3a^2=1$.  The two singular points outside the base locus are
+\begin{equation}
+\label{eq:V18_nodes}
+p_a=[1:1:1:a],
+\qquad
+\lambda=18a+9=9\pm6\sqrt3.
+\end{equation}
+Their coordinates are
+\[
+\begin{array}{c|c}
+\text{chart}&p_a\\ \hline
+U_\circ,\ U_T&(a^{-1},a^{-1},a^{-1})\\
+U_X&(1,1,a)\\
+U_Y&(1,1,a)\\
+U_Z&(1,1,a).
+\end{array}
+\]
+The Hessian determinant is invertible modulo $3a^2-1$ in every chart.  Hence
+the five local descriptions glue to two global ordinary double points and
+contribute $\MorseCat{3}\oplus\MorseCat{3}$.
+
+\subsection{The connected central cubic}
+
+At $\lambda=0$, set
+\[
+A=X+Y+Z,
+\qquad
+B=(X+Y+Z)T^2+(XY+XZ+YZ)T+XYZ.
+\]
+The central quartic is $AB=0$.  Its two components meet along
+\begin{equation}
+\label{eq:V18_cubic}
+C_0=V(A,B),
+\qquad
+T(X^2+XY+Y^2)+XY(X+Y)=0
+\quad\text{on }A=0.
+\end{equation}
+Since $A$ is linear and smooth, a point of $AB=0$ is singular either when
+$A=B=0$ or when it is a singular point of the cubic surface $B=0$.  Direct
+differentiation gives
+\[
+\Sing(V(B))=\{r_X,r_Y,r_Z\},
+\]
+so the complete singular support of the raw central quartic is
+\[
+\Sing(V(AB))=C_0\sqcup\{r_X,r_Y,r_Z\}.
+\]
+The chart equations are
+\[
+\begin{array}{c|c}
+\text{chart}&C_0\\ \hline
+U_\circ&x+y+z=0,\quad xy+xz+yz+xyz=0,\quad xyz\neq0\\
+U_T&x+y+z=0,\quad xy+xz+yz+xyz=0\\
+U_X&1+y+z=0,\quad t(y+z+yz)+yz=0\\
+U_Y&x+1+z=0,\quad t(x+z+xz)+xz=0\\
+U_Z&x+y+1=0,\quad t(x+y+xy)+xy=0.
+\end{array}
+\]
+For complete explicitness, put
+\begin{align*}
+A_T&=x+y+z,
+&B_T&=A_T+xy+xz+yz+xyz,\\
+A_X&=1+y+z,
+&B_X&=A_X\,t^2+(y+z+yz)t+yz,\\
+A_Y&=x+1+z,
+&B_Y&=A_Y\,t^2+(x+z+xz)t+xz,\\
+A_Z&=x+y+1,
+&B_Z&=A_Z\,t^2+(x+y+xy)t+xy.
+\end{align*}
+Then $G_i=A_iB_i$ on each projective chart, while
+$G_\circ=G_T|_{xyz\neq0}$.  If $J(G_i)=(G_i,\partial G_i)$, direct
+differentiation gives
+\begin{align}
+\sqrt{J(G_\circ)}&=(A_T,B_T)\mathcal O(U_\circ),
+\label{eq:V18_jacobian_torus}\\
+\sqrt{J(G_T)}&=(A_T,B_T),
+\label{eq:V18_jacobian_T}\\
+\sqrt{J(G_X)}&=(A_X,B_X)\cap(y,z,t),
+\label{eq:V18_jacobian_X}\\
+\sqrt{J(G_Y)}&=(A_Y,B_Y)\cap(x,z,t),
+\label{eq:V18_jacobian_Y}\\
+\sqrt{J(G_Z)}&=(A_Z,B_Z)\cap(x,y,t).
+\label{eq:V18_jacobian_Z}
+\end{align}
+The first factor in each intersection is the corresponding piece of $C_0$;
+the maximal ideals in the last three lines are respectively the points
+$r_X,r_Y,r_Z$.
+The plane cubic \eqref{eq:V18_cubic} is irreducible and has one ordinary node
+at
+\[
+p_0=[0:0:0:1].
+\]
+In $U_T$ the quadratic term at $p_0$ is $x^2+xy+y^2$, whose Hessian is
+nondegenerate.  Away from $p_0$, the gradients of $A$ and $B$ are independent,
+so the formal local equation is $uv$.  At $p_0$ the two equations are tangent,
+and the node cannot be detached as an independent direct summand.
+
+The seven points
+\[
+\begin{gathered}
+[1:0:0:0],\quad[0:1:0:0],\quad[0:0:1:0],\\
+[1:-1:0:0],\quad[1:0:-1:0],\quad[0:1:-1:0],\\
+[0:0:0:1]
+\end{gathered}
+\]
+are special points of the singular base-locus model.  Their roles are not the
+same.  The three coordinate points
+\[
+r_X=[1:0:0:0],\qquad
+r_Y=[0:1:0:0],\qquad
+r_Z=[0:0:1:0]
+\]
+are disjoint from $C_0$ and are isolated singularities of the raw central
+quartic.  For example, in $U_X$ the local central equation at $r_X$ is
+\[
+(1+y+z)
+\bigl(t^2(1+y+z)+t(y+z+yz)+yz\bigr).
+\]
+Its Hessian has rank two and kernel generated by
+$(y,z,t)=(-s,-s,s)$.  Restriction to this kernel is
+\[
+s^3(2s-1),
+\]
+so the residual cubic is nonzero and $r_X$ has type $A_2$.  Cyclic symmetry
+gives the same type at $r_Y$ and $r_Z$.  This is the central-fiber
+calculation at $\lambda=0$.  For the general pencil member, the cubic
+coefficient along the Hessian kernel is $-(1+\lambda)s^3$; at $\lambda=-1$
+it vanishes and each of the three points has type $A_3$.  This degeneration
+lies on the fixed base locus and is resolved in the simultaneous resolution;
+it does not create an additional ordinary double point, consistently with
+$\varepsilon(V_{18})=2$.
+
+The three points
+\[
+[1:-1:0:0],\qquad[1:0:-1:0],\qquad[0:1:-1:0]
+\]
+are smooth points of $C_0$.  The remaining point $p_0=[0:0:0:1]$ is its node.
+All seven points are affected by the resolution of the base locus, but only
+$r_X,r_Y,r_Z$ give additional isolated summands for the raw quartic.  None of
+these raw summands may be inserted unchanged into the resolved category
+\cite{PrzyjalkowskiCY,PrzyjalkowskiToric}.
+
+The incidence relations are therefore
+\[
+V(A)\cap V(B)=C_0,
+\qquad
+C_0\cap\{r_X,r_Y,r_Z\}=\varnothing,
+\qquad
+r_i\neq r_j\quad(i\neq j).
+\]
+Put $C_0^\circ=C_0\setminus\{p_0\}$ and define the category supported at the
+node by
+\[
+\mathcal P^{\mathrm{raw}}_{V_{18},p_0}
+:=
+\overline{\MF^{p_0}_0\!\left(
+\widehat{\mathbb P^3}_{C_0},\widehat F_{V_{18},0}
+\right)}.
+\]
+Its local formal equation is $w^2+(uv)^2$.  Along $C_0^\circ$, the functions
+$(A,B)$ are independent formal normal coordinates and the equation is exactly
+$AB=uv$.  Supported localization consequently gives the nonsplit sequence
+\begin{equation}
+\label{eq:V18_raw_localization}
+\mathcal P^{\mathrm{raw}}_{V_{18},p_0}
+\longrightarrow
+\FormalCat{C_0}
+\longrightarrow
+\MBcat{C_0^\circ}.
+\end{equation}
+The isolated points are disjoint from this connected support, and their local
+matrix-factorization categories are, for $i\in\{X,Y,Z\}$,
+\[
+\mathcal A_i
+:=
+\overline{\MF^{r_i}_0(\widehat{U_i}_{r_i},\widehat F_{V_{18},0})}
+\simeq\Aper{\mathrm{pt}}{2}.
+\]
+Consequently
+$\mathcal A_X\oplus\mathcal A_Y\oplus\mathcal A_Z
+\simeq\Aper{\mathrm{pt}}{2}^{\oplus3}$.
+
+\subsection{Decomposition on each of the five raw charts}
+
+Put $C_{0,i}=C_0\cap U_i$.  The opens
+$C_{0,\circ},C_{0,X},C_{0,Y},C_{0,Z}$ are smooth, and the exact product
+$AB$ has split normal form $uv$ along them.  Kn\"orrer periodicity therefore
+identifies their central chart contributions with
+$\MBcat{C_{0,i}}$.  The chart $U_T$ contains the node $p_0$, and
+$\FormalCat{C_{0,T}}$ denotes the single formal category supported on all of
+$C_{0,T}$.
+
+To see its special local type, use $r=A=x+y+z$ as one coordinate and put
+$z=r-x-y$.  Writing $B=r+h$ gives the exact square completion
+\[
+AB=r(r+h)=\left(r+\frac h2\right)^2-\left(\frac h2\right)^2.
+\]
+The restriction $h|_{r=0}$ has nondegenerate quadratic part
+$-(x^2+xy+y^2)$.  The formal splitting and Morse lemmas therefore give the
+same crossing type $w^2+(uv)^2$ at $p_0$.  Thus the two formal branches of the
+node belong to one category $\FormalCat{C_{0,T}}$ rather than two direct
+summands.  As in the $B_4$ calculation, this is a nonisolated tangential
+double crossing: it is generically transverse $A_1$ along each branch, but at
+$p_0$ the two smooth surface branches are tangent.  It is not the isolated
+transverse model $p(p^2-\delta v^2)$ defining $\Dper{Z}{4}{\delta}$.
+
+Let $\mathcal R^{V_{18}}_{i,0}$ denote the raw central category in $U_i$.
+The chartwise singular supports and the preceding local normal forms give
+\begin{align}
+\mathcal R^{V_{18}}_{\circ,0}
+&\simeq \MBcat{C_{0,\circ}},
+\label{eq:V18_chart_decomposition_torus}\\
+\mathcal R^{V_{18}}_{T,0}
+&\simeq \FormalCat{C_{0,T}},\\
+\mathcal R^{V_{18}}_{X,0}
+&\simeq
+\MBcat{C_{0,X}}
+\oplus\Aper{\mathrm{pt}}{2},\\
+\mathcal R^{V_{18}}_{Y,0}
+&\simeq
+\MBcat{C_{0,Y}}
+\oplus\Aper{\mathrm{pt}}{2},\\
+\mathcal R^{V_{18}}_{Z,0}
+&\simeq
+\MBcat{C_{0,Z}}
+\oplus\Aper{\mathrm{pt}}{2}.
+\label{eq:V18_chart_decomposition_Z}
+\end{align}
+Equivalently, the calculation may be read directly from the Jacobian ideals:
+\[
+\begin{array}{c|c|c}
+\text{chart}&\text{formal type on the support}&\text{category}\\ \hline
+U_\circ&uv\text{ along }C_{0,\circ}
+&\MBcat{C_{0,\circ}}\\
+U_T&uv\text{ off }p_0,\quad w^2+(uv)^2\text{ at }p_0
+&\FormalCat{C_{0,T}}\\
+U_X&uv\text{ along }C_{0,X},\quad uv+s^3\text{ at }r_X
+&\MBcat{C_{0,X}}\oplus\Aper{\mathrm{pt}}{2}\\
+U_Y&uv\text{ along }C_{0,Y},\quad uv+s^3\text{ at }r_Y
+&\MBcat{C_{0,Y}}\oplus\Aper{\mathrm{pt}}{2}\\
+U_Z&uv\text{ along }C_{0,Z},\quad uv+s^3\text{ at }r_Z
+&\MBcat{C_{0,Z}}\oplus\Aper{\mathrm{pt}}{2}.
+\end{array}
+\]
+The notation $uv+s^3$ records the three-variable suspension of the $A_2$
+residual singularity, hence exactly the article's term
+$\Aper{\mathrm{pt}}{2}$.
+Here the three $A_2$ terms are genuinely different raw points: $r_X$ occurs
+only in $U_X$, $r_Y$ only in $U_Y$, and $r_Z$ only in $U_Z$.  By contrast,
+the curve pieces are identified by the overlap functors.  Separately, the part
+supported away from the base locus is $\MorseCat{3}^{\oplus2}$ in every chart;
+its five chartwise copies glue to the same two global nodes.
+
+As for $B_4$, these formulas do not define the full categories of every fiber
+of the unresolved rational pencil: base-locus singularities can persist for
+other values of $\lambda$.  They give the complete decomposition of the raw
+central fiber together with the separately verified non-base-locus nodes.
+
+The notation $\FormalCat{C_0}$ denotes the connected global formal category
+along the nodal cubic appearing in
+\eqref{eq:V18_raw_localization}.  Before resolving the base locus, the central
+category is consequently
+\begin{equation}
+\label{eq:V18_raw_category}
+\CrawV
+\simeq
+\FormalCat{C_0}
+\oplus
+\Aper{\mathrm{pt}}{2}^{\oplus3}.
+\end{equation}
+This is a decomposition of the raw central quartic only.
+
+Let $\pi_{V_{18}}:\widetilde Y_{V_{18}}\to
+Y^{\mathrm{raw}}_{V_{18}}$ be the standard minimal resolution.  Its central
+fiber has three surface components
+\[
+E_1\cup E_2\cup E_3.
+\]
+Each pair meets in a rational curve
+\[
+S_{12}=E_1\cap E_2,
+\qquad
+S_{13}=E_1\cap E_3,
+\qquad
+S_{23}=E_2\cap E_3,
+\]
+and all three curves meet at two points $d_+$ and $d_-$
+\cite{PrzyjalkowskiHodge}.  Therefore
+\[
+\Gamma_{V_{18}}=S_{12}\cup S_{13}\cup S_{23}
+\]
+is the complete connected singular support of the resolved central fiber.
+These two points lie over the node $p_0=[0:0:0:1]$ and record its two tangent
+directions.  Indeed, in $U_T$ and on the plane $A=0$, the nodal cubic has
+equation
+\[
+g(x,y)=x^2+xy+y^2+xy(x+y)=0.
+\]
+Blow up $(x,y)=(0,0)$ and use the chart
+\[
+x=\tau s,\qquad y=s.
+\]
+After removing the exceptional factor $s^2$, the strict transform is
+\[
+\tau^2+\tau+1+\tau(\tau+1)s=0.
+\]
+Hence its intersection with the exceptional divisor $s=0$ consists of
+\[
+d_+=\{s=0,\ \tau=\omega_+\},
+\qquad
+d_-=\{s=0,\ \tau=\omega_-\},
+\]
+where
+\[
+\omega_\pm=\frac{-1\pm\mathrm i\sqrt3}{2},
+\qquad
+\omega_\pm^2+\omega_\pm+1=0.
+\]
+Equivalently,
+\[
+\pi_{V_{18}}(d_+)=\pi_{V_{18}}(d_-)=p_0,
+\qquad
+[x:y]_{d_\pm}=[\omega_\pm:1].
+\]
+Put $S_{ij}^{\circ}=S_{ij}\setminus\{d_+,d_-\}$ and define
+\[
+\mathcal P_{V_{18},\epsilon}
+:=
+\overline{\MF^{d_\epsilon}_0
+\bigl(\widehat{\widetilde Y}_{V_{18},d_\epsilon},
+\widehat w_{V_{18}}\bigr)},
+\qquad
+\mathcal P_{V_{18}}
+:=
+\mathcal P_{V_{18},+}\oplus\mathcal P_{V_{18},-}.
+\]
+If the final resolution chart is simple normal crossing, then
+$\mathcal P_{V_{18},\epsilon}$ is the local category of $uvw$; otherwise the
+displayed definition retains the actual formal germ.  Supported localization
+gives
+\begin{equation}
+\label{eq:V18_resolved_localization}
+\mathcal P_{V_{18}}
+\longrightarrow
+\CcompV
+\longrightarrow
+\MBcat{S_{12}^{\circ}}
+\oplus\MBcat{S_{13}^{\circ}}
+\oplus\MBcat{S_{23}^{\circ}}.
+\end{equation}
+Again this is a gluing statement, not a direct-sum decomposition.
+
+Put $\widetilde U_i=\pi_{V_{18}}^{-1}(U_i)$.
+For each nonempty $I\subset\{\circ,X,Y,Z,T\}$, define
+\[
+\widetilde U_I=\bigcap_{i\in I}\widetilde U_i,
+\qquad
+\mathfrak M^V_I=
+\MF^{\Gamma_{V_{18}}\cap\widetilde U_I}_{\mathrm{dg}}
+\bigl(\widehat{\widetilde U_I}_{\Gamma_{V_{18}}\cap\widetilde U_I},
+\widehat w_{V_{18}}\bigr).
+\]
+For $I\subset J$, restriction gives
+\begin{equation}
+\label{eq:V18_cech_restriction}
+\rho^V_{I,J}:\mathfrak M^V_I\longrightarrow\mathfrak M^V_J.
+\end{equation}
+These functors and their composition coherences define
+\[
+\check{\mathfrak M}^{V,p}
+=
+\prod_{i_0<\cdots<i_p}
+\mathfrak M^V_{\{i_0,\ldots,i_p\}},
+\]
+whose cofaces are $\rho^V_{J\setminus\{j_a\},J}$.
+
+\begin{definition}
+\label{def:V18_comp_category}
+The compactified central category is
+\begin{equation}
+\label{eq:V18_cech_totalization}
+\CcompV
+:=
+\Kar\!\left(
+H^0\Tot\bigl(\check{\mathfrak M}^{V,\bullet}\bigr)
+\right).
+\end{equation}
+\end{definition}
+
+Again the totalization is taken before passing to the homotopy category and
+idempotent completion.
+
+Thus the proved decomposition is
+\begin{equation}
+\label{eq:V18_final_decomposition}
+\overline{\MF(Y_{V_{18}},w_{V_{18}})}
+\simeq
+\CcompV\oplus\MorseCat{3}\oplus\MorseCat{3}.
+\end{equation}
+
+\section{The \texorpdfstring{$d=2$}{d=2} pair: \texorpdfstring{$B_2$ and $V_{10}$}{B2 and V10}}
+\label{sec:B2_V10_calculation}
+
+We now perform the corresponding critical-point calculation for the quartic
+double solid $B_2$ and the Gushel--Mukai threefold $V_{10}$.  As in the
+$d=4$ calculation, it is essential to distinguish the source Laurent
+polynomials used in the torus census from the convenient Laurent
+representatives used for projective compactification.
+
+\subsection{The source Laurent polynomials on the torus}
+
+For the source $B_2$ model, set
+\begin{equation}
+\label{eq:B2_source_factorization}
+F_{B_2}=x(y+z+1)+\frac1{xyz},
+\qquad
+W_{B_2}=\frac{F_{B_2}^{,2}}{x}.
+\end{equation}
+The surface
+\[
+S_{B_2}=V(F_{B_2})\subset(\mathbb C^*)^3
+\]
+is smooth.  Along it the potential has a rank-one normal Hessian with
+quadratic coefficient $1/x$, whose square class is $[x]$.  This class is
+nontrivial: on the curve
+\[
+(x,y,z)=(t,-1,t^{-1})\subset S_{B_2}
+\]
+it restricts to $[t]$.  Saturation of the logarithmic critical ideal by
+$F_{B_2}$ gives the two complementary points
+\[
+p_+=(1,1,1),
+\qquad
+p_-=(-1,1,1).
+\]
+Their critical values and logarithmic Hessian determinants are
+\[
+W_{B_2}(p_\pm)=\pm16,
+\qquad
+\det(\theta_i\theta_jW_{B_2})(p_\pm)=\pm512.
+\]
+Consequently,
+\begin{equation}
+\label{eq:B2_source_category}
+\overline{\MF((\mathbb C^*)^3,W_{B_2})}
+\simeq
+\MBcat{S_{B_2};[x]}\oplus\MorseCat{3}^{\oplus2}.
+\end{equation}
+
+For the source $V_{10}$ polynomial of the torus census, put
+\[
+F_{10}=xyz^2+xyz+1,
+\qquad
+G_{10}=xyz^2+xyz+xz+yz+1.
+\]
+Its $21$ monomials group into the exact factorization
+\begin{equation}
+\label{eq:V10_source_factorization}
+W_{V_{10}}+6
+=
+\frac{F_{10}^{,2}G_{10}}{x^2y^2z^3}.
+\end{equation}
+Thus the fiber at $-6$ contains the smooth critical surface
+\[
+S_{V_{10}}=V(F_{10}).
+\]
+The coefficient $G_{10}$ is a unit on
+\[
+S_{V_{10}}^\circ=S_{V_{10}}\setminus K,
+\qquad
+K=V(F_{10},G_{10}),
+\]
+and $K$ has the explicit presentation
+\[
+K=\{y=-x,\ x^2z(z+1)=1\}.
+\]
+Moreover,
+\[
+\det\!\left(
+\frac{\partial(F_{10},G_{10})}{\partial(x,y)}
+\right)\bigg|_K
+=-2xz^2(z+1),
+\]
+which is a unit on $K$.  Hence $(F_{10},G_{10})$ are formal normal
+coordinates along $K$, and the shifted potential is contact-equivalent there
+to $u^2v$.  If $\mathcal P_{V_{10}}$ denotes the torsion formal category of
+this crossing family and
+\[
+\mathcal C_{V_{10},-6}
+:=
+\overline{\MF^{S_{V_{10}}}
+(\widehat{(\mathbb C^*)^3}_{S_{V_{10}}},\widehat W_{V_{10}})},
+\]
+supported localization gives
+\begin{equation}
+\label{eq:V10_source_localization}
+\mathcal P_{V_{10}}
+\longrightarrow
+\mathcal C_{V_{10},-6}
+\longrightarrow
+\Aper{S_{V_{10}}^\circ}{1}.
+\end{equation}
+The remaining critical points are
+\[
+P_a=(4a-2,4a-2,a),
+\qquad
+4a^2-2a-1=0,
+\]
+and satisfy
+\[
+W_{V_{10}}(P_a)=40a+6,
+\qquad
+\det(\theta_i\theta_jW_{V_{10}})(P_a)=64(123a+38)\neq0.
+\]
+It follows that
+\begin{equation}
+\label{eq:V10_source_category}
+\overline{\MF((\mathbb C^*)^3,W_{V_{10}})}
+\simeq
+\mathcal C_{V_{10},-6}\oplus\MorseCat{3}^{\oplus2}.
+\end{equation}
+Equations \eqref{eq:B2_source_category} and
+\eqref{eq:V10_source_category} already show that equality of the two source
+open-torus categories does not follow from their isolated Morse sectors.
+
+\subsection{The compactifiable \texorpdfstring{$B_2$}{B2} pencil}
+
+For the projective calculation we use the standard representative
+\begin{equation}
+\label{eq:B2_compact_torus}
+f_{B_2}(x,y,z)=\frac{(x+y+1)^4}{xyz}+z.
+\end{equation}
+Its pencil is
+\begin{equation}
+\label{eq:B2_compact_pencil}
+F_{B_2,\lambda}
+=(X+Y+T)^4+XYZ^2-\lambda XYZT=0
+\end{equation}
+in $\mathbb P^3_{[X:Y:Z:T]}$ \cite{PrzyjalkowskiWeak,Przyjalkowski2026}.
+Put $A=x+y+1$ on $U_T$.  The logarithmic critical equations on the dense
+torus are
+\[
+\theta_xf_{B_2}=\frac{A^3(4x-A)}{xyz},
+\qquad
+\theta_yf_{B_2}=\frac{A^3(4y-A)}{xyz},
+\qquad
+\theta_zf_{B_2}=-\frac{A^4}{xyz}+z.
+\]
+At a critical point one has $A\neq0$, so the first two equations give
+$4x=A=4y$.  Therefore $x=y=1/2$, and the last equation gives $z^2=64$.
+The two critical points are thus
+\[
+q_\pm=(1/2,1/2,\pm8),
+\qquad
+f_{B_2}(q_\pm)=\pm16,
+\]
+or, projectively,
+\[
+q_\pm=[1:1:\pm16:2].
+\]
+Direct differentiation gives
+\begin{equation}
+\label{eq:B2_compact_hessian}
+\det(\theta_i\theta_jf_{B_2})(q_\pm)=\pm512,
+\end{equation}
+so both points are ordinary double points of their fibers.
+
+At $\lambda=0$, the reduced raw singular support can be read on the four
+projective charts:
+\begin{center}
+\small
+\begin{tblr}{
+  width=0.91\textwidth,
+  colspec={Q[c,wd=0.10\textwidth]Q[l,wd=0.43\textwidth]X[l]},
+  row{1}={font=\bfseries},
+  hline{1,2,Z}={0.4pt},
+  rowsep=2pt,
+}
+Chart & Central equation & Reduced singular support \\
+$U_T$ & $(x+y+1)^4+xyz^2$ & $x+y+1=z=0$ \\
+$U_X$ & $(1+y+t)^4+yz^2$ & $1+y+t=z=0$ \\
+$U_Y$ & $(x+1+t)^4+xz^2$ & $x+1+t=z=0$ \\
+$U_Z$ & $(x+y+t)^4+xy$ & $x=y=t=0$ \\
+\end{tblr}
+\end{center}
+Globally this is the disjoint union
+\begin{equation}
+\label{eq:B2_raw_central_support}
+L=V(X+Y+T,Z)
+\qquad\text{and}\qquad
+p_\infty=[0:0:1:0].
+\end{equation}
+On the open part of $L$ where $XY\neq0$, the transverse equation is
+formally $u^4+v^2$, hence of type $A_3$.  At $p_\infty$, the $U_Z$ equation
+is $(x+y+t)^4+xy$; eliminating the nondegenerate pair $(x,y)$ by Kn\"orrer
+periodicity again leaves the one-variable $A_3$ potential $t^4$.  The two
+special boundary points of $L$ and the base-locus intersections must be
+retained in the blowup calculation; the generic $A_3$ description alone is
+not a global decomposition.
+
+\subsection{The compactifiable \texorpdfstring{$V_{10}$}{V10} pencil}
+
+For $V_{10}$ we use
+\begin{equation}
+\label{eq:V10_compact_torus}
+f_{V_{10}}(x,y,z)
+=
+\frac{(1+x+y+z+xy+xz+yz)^2}{xyz}.
+\end{equation}
+Write
+\[
+Q=T^2+T(X+Y+Z)+XY+XZ+YZ.
+\]
+The projective pencil is
+\begin{equation}
+\label{eq:V10_compact_pencil}
+F_{V_{10},\lambda}=Q^2-\lambda XYZT=0
+\end{equation}
+\cite{PrzyjalkowskiWeak,Przyjalkowski2026}.  On $U_T$, let
+\[
+q=1+x+y+z+xy+xz+yz.
+\]
+The entire smooth surface $V(q)$ is critical in the central fiber.  Away
+from it, the logarithmic critical equations are
+\begin{equation}
+\label{eq:V10_saturated_critical_equations}
+2xq_x=q,
+\qquad
+2yq_y=q,
+\qquad
+2zq_z=q.
+\end{equation}
+After saturation by $xyzq$, their reduced solution is
+\[
+x=y=z=r,
+\qquad
+r^2-r-1=0.
+\]
+Writing $a=r^{-1}$ gives $a^2+a=1$.  The two noncentral critical points and
+their values are therefore
+\[
+r_a=(a^{-1},a^{-1},a^{-1}),
+\qquad
+f_{V_{10}}(r_a)=20a+32,
+\]
+or, projectively,
+\begin{equation}
+\label{eq:V10_compact_nodes}
+r_a=[1:1:1:a],
+\qquad
+a^2+a=1.
+\end{equation}
+Their logarithmic Hessian determinants reduce modulo $a^2+a-1$ to
+\begin{equation}
+\label{eq:V10_compact_hessian}
+\det(\theta_i\theta_jf_{V_{10}})(r_a)
+=32(123a+199)\neq0.
+\end{equation}
+Thus these are precisely two ordinary double points away from the base locus.
+
+The matrix of the projective quadratic form $Q$ has determinant $1/16$.
+Consequently the quadric
+\[
+\mathcal Q=V(Q)\subset\mathbb P^3
+\]
+is smooth, while the raw central member of
+\eqref{eq:V10_compact_pencil} is the nonreduced divisor $2\mathcal Q$.
+Away from $V(XYZT)$ its formal transverse equation is $u^2$, with the
+coefficient twisting inherited from $1/(xyz)$.  The intersections with the
+coordinate boundary are part of the base locus and cannot be discarded
+before resolving the pencil.
+
+\subsection{Resolved compactifications and the \texorpdfstring{$d=2$}{d=2} comparison}
+
+Let
+\[
+\pi_F:Y_F\longrightarrow
+\mathbb P^3\times\mathbb A^1_\lambda,
+\qquad F\in\{B_2,V_{10}\},
+\]
+denote the standard crepant resolution of the corresponding pencil, and let
+$w_F:Y_F\to\mathbb A^1$ be the resolved Landau--Ginzburg map.  Put
+\[
+\Gamma_F
+=
+\bigl(\CritLoc(w_F)\cap w_F^{-1}(0)\bigr)_{\mathrm{red}}.
+\]
+We define the compactified central categories by
+\begin{equation}
+\label{eq:d2_compact_central_categories}
+\CcompBtwo
+:=
+\overline{\MF^{\Gamma_{B_2}}
+(\widehat{Y_{B_2}}_{\Gamma_{B_2}},\widehat w_{B_2})},
+\qquad
+\CcompVten
+:=
+\overline{\MF^{\Gamma_{V_{10}}}
+(\widehat{Y_{V_{10}}}_{\Gamma_{V_{10}}},\widehat w_{V_{10}})}.
+\end{equation}
+The standard resolution calculation gives
+\begin{equation}
+\label{eq:d2_component_count}
+k(B_2)=h^{1,2}(B_2)+1=11,
+\qquad
+k(V_{10})=h^{1,2}(V_{10})+1=11
+\end{equation}
+for the numbers of irreducible components of the resolved central fibers
+\cite{PrzyjalkowskiHodge}.  The noncentral audit above, together with the
+base-locus resolution, gives no additional noncentral singularities beyond
+the two ordinary double points on either side
+\cite{Przyjalkowski2026}.  Hence
+\begin{equation}
+\label{eq:B2_compact_final_decomposition}
+\overline{\MF(Y_{B_2},w_{B_2})}
+\simeq
+\CcompBtwo\oplus\MorseCat{3}^{\oplus2},
+\end{equation}
+and
+\begin{equation}
+\label{eq:V10_compact_final_decomposition}
+\overline{\MF(Y_{V_{10}},w_{V_{10}})}
+\simeq
+\CcompVten\oplus\MorseCat{3}^{\oplus2}.
+\end{equation}
+
+\begin{proposition}[What the $d=2$ calculation proves]
+\label{prop:d2_compactified_comparison}
+For the standard compactifiable representatives of $B_2$ and $V_{10}$, the
+isolated compactified sectors are equivalent:
+\[
+\mathcal I_{B_2}^{\mathrm{comp}}
+\simeq
+\mathcal I_{V_{10}}^{\mathrm{comp}}
+\simeq
+\MorseCat{3}^{\oplus2}.
+\]
+Their resolved central fibers also have the same number, eleven, of
+irreducible components.  These equalities do not imply
+\[
+\CcompBtwo\simeq\CcompVten.
+\]
+Indeed, the raw central supports have different geometry: the $B_2$ support
+is the line-plus-point configuration in
+\eqref{eq:B2_raw_central_support}, whereas the $V_{10}$ central member is a
+double smooth quadric.  An equivalence of the full central categories would
+require a comparison of all exceptional components and their attaching
+functors, and no such equivalence is obtained from the present calculation.
+\end{proposition}
+
+\begin{proof}
+The first assertion follows from
+\eqref{eq:B2_compact_hessian},
+\eqref{eq:V10_compact_hessian},
+\eqref{eq:B2_compact_final_decomposition}, and
+\eqref{eq:V10_compact_final_decomposition}.  The component count is
+\eqref{eq:d2_component_count}.  The final statement follows because neither
+the number of components nor the number of isolated nodes determines the
+formal gluing diagram of the resolved central fiber.
+\end{proof}
+
+\section{The \texorpdfstring{$d=3$}{d=3} pair: \texorpdfstring{$B_3$ and $V_{14}$}{B3 and V14}}
+\label{sec:B3_V14_calculation}
+
+We next treat the cubic threefold $B_3$ and the prime Fano threefold
+$V_{14}$.  This pair illustrates a second boundary phenomenon.  The two
+isolated contributions of $B_3$ are already visible on the dense torus.  For
+the convenient $V_{14}$ compactification, one node is visible on the torus,
+whereas the other appears only after resolving a curve in the base locus.
+
+\subsection{The source Laurent polynomials on the torus}
+
+The source polynomial for $B_3$ is
+\begin{equation}
+\label{eq:B3_source_polynomial}
+W_{B_3}
+=x+\frac{x}{yz}+y+z+\frac2z+\frac2y
++\frac{y}{xz}+\frac2x+\frac{z}{xy}.
+\end{equation}
+Its saturated logarithmic critical ideal is
+\[
+(x-y,\ y-z,\ z^2-3).
+\]
+Thus the two critical points are $(a,a,a)$, where $a^2=3$, and
+\[
+W_{B_3}(a,a,a)=6a,
+\qquad
+\det(\theta_i\theta_jW_{B_3})(a,a,a)=54a\neq0.
+\]
+Consequently,
+\begin{equation}
+\label{eq:B3_source_category}
+\overline{\MF((\mathbb C^*)^3,W_{B_3})}
+\simeq
+\bigoplus_{a^2=3}\MorseCat{3}.
+\end{equation}
+
+For the source $V_{14}$ polynomial, put
+\[
+A=yz^2+yz+1
+\]
+and
+\[
+\begin{aligned}
+B={}&x^2yz^2+xy^2z^4+2xy^2z^3+xy^2z^2
+     +2xyz+x+yz^2.
+\end{aligned}
+\]
+The exact factorization
+\begin{equation}
+\label{eq:V14_source_factorization}
+W_{V_{14}}+4=\frac{AB}{xy^2z^3}
+\end{equation}
+shows that the critical fiber at $-4$ contains the smooth curve
+\[
+\Gamma_{\mathrm{src}}
+=
+\left\{
+\left(1,-\frac1{t(t+1)},t\right):
+t\in\mathbb C^*\setminus\{-1\}
+\right\}.
+\]
+Indeed, on $A=0$ one has
+\[
+y=-\frac1{z(z+1)},
+\qquad
+B=-\frac{z(x-1)^2}{z+1}.
+\]
+With $R=\mathbb C[t^{\pm1},(t+1)^{-1}]$ and global normal coordinates
+\[
+U=A,
+\qquad
+V=x-1,
+\]
+the completed shifted potential is, after multiplication by a unit and a
+relative finite-determinacy change of coordinates,
+\[
+U\left(U^2-\frac{t}{t+1}V^2\right).
+\]
+The coefficient has square class
+\[
+\left[\frac{t}{t+1}\right]=[t(t+1)]
+\quad\text{in }R^*/R^{*2}.
+\]
+The two complementary critical points are
+\[
+P_+=(1,1,1),
+\qquad
+P_-=\left(-1,9,-\frac13\right),
+\]
+with
+\[
+W_{V_{14}}(P_+)=23,
+\qquad
+W_{V_{14}}(P_-)=-5,
+\]
+and logarithmic Hessian determinants $1458$ and $-2$, respectively.  Hence
+\begin{equation}
+\label{eq:V14_source_category}
+\overline{\MF((\mathbb C^*)^3,W_{V_{14}})}
+\simeq
+\Dper{\Gamma_{\mathrm{src}}}{4}{t(t+1)}
+\oplus\MorseCat{3}^{\oplus2}.
+\end{equation}
+In particular, the source categories in
+\eqref{eq:B3_source_category} and \eqref{eq:V14_source_category} are not
+equivalent: the second contains a positive-dimensional residual $D_4$
+contribution absent from the first.
+
+\subsection{The compactifiable \texorpdfstring{$B_3$}{B3} pencil}
+
+For the compactification calculation, take
+\begin{equation}
+\label{eq:B3_compact_torus}
+f_{B_3}(x,y,z)=\frac{(x+y+1)^3}{xyz}+z.
+\end{equation}
+Writing $A_h=X+Y+T$, the associated quartic pencil is
+\begin{equation}
+\label{eq:B3_compact_pencil}
+F_{B_3,\lambda}
+=T A_h^3+XYZ^2-\lambda XYZT=0
+\end{equation}
+\cite{PrzyjalkowskiWeak,Przyjalkowski2026}.  On the dense torus, set
+$A=x+y+1$.  The logarithmic derivatives are
+\[
+\theta_xf_{B_3}=\frac{A^2(3x-A)}{xyz},
+\qquad
+\theta_yf_{B_3}=\frac{A^2(3y-A)}{xyz},
+\qquad
+\theta_zf_{B_3}=-\frac{A^3}{xyz}+z.
+\]
+At a critical point $A\neq0$, so $3x=A=3y$.  It follows that $x=y=1$ and
+$z^2=27$.  If $a^2=3$, the two points, their values, and their Hessians are
+\begin{equation}
+\label{eq:B3_compact_nodes}
+q_a=(1,1,3a),
+\qquad
+f_{B_3}(q_a)=6a,
+\qquad
+\det(\theta_i\theta_jf_{B_3})(q_a)=54a.
+\end{equation}
+Thus both are ordinary double points.  Projectively they are
+\[
+q_a=[1:1:3a:1].
+\]
+
+At $\lambda=0$, the four affine equations and their reduced singular
+supports are
+\begin{center}
+\small
+\begin{tblr}{
+  width=0.91\textwidth,
+  colspec={Q[c,wd=0.10\textwidth]Q[l,wd=0.43\textwidth]X[l]},
+  row{1}={font=\bfseries},
+  hline{1,2,Z}={0.4pt},
+  rowsep=2pt,
+}
+Chart & Central equation & Reduced singular support \\
+$U_T$ & $(x+y+1)^3+xyz^2$ & $x+y+1=z=0$ \\
+$U_X$ & $t(1+y+t)^3+yz^2$ & $1+y+t=z=0$ \\
+$U_Y$ & $t(x+1+t)^3+xz^2$ & $x+1+t=z=0$ \\
+$U_Z$ & $t(x+y+t)^3+xy$ & $x=y=t=0$ \\
+\end{tblr}
+\end{center}
+Thus the raw central support is again
+\begin{equation}
+\label{eq:B3_raw_central_support}
+L_3=V(X+Y+T,Z)
+\qquad\text{together with}\qquad
+p_\infty=[0:0:1:0].
+\end{equation}
+On the open part of $L_3$ where the coefficients $T$ and $XY$ are units, the
+transverse equation is $u^3+v^2$, of type $A_2$.  At $p_\infty$, the equation
+$t(x+y+t)^3+xy$ has a nondegenerate split quadratic pair $(x,y)$; eliminating
+it leaves a one-variable potential with leading term $t^4$, hence type $A_3$.
+As before, the special points of $L_3$ and its base-locus intersections must
+be handled by the global resolution.
+
+\subsection{The compactifiable \texorpdfstring{$V_{14}$}{V14} pencil}
+
+For $V_{14}$ use the standard representative
+\begin{equation}
+\label{eq:V14_compact_torus}
+f_{V_{14}}
+=
+\frac{(x+y+z+1)^2}{x}
++
+\frac{(x+y+z+1)(y+z+1)(z+1)^2}{xyz}.
+\end{equation}
+Set
+\[
+A_h=X+Y+Z+T,
+\qquad
+B_h=Y+Z+T,
+\qquad
+C_h=Z+T.
+\]
+The projective pencil is
+\begin{equation}
+\label{eq:V14_compact_pencil}
+F_{V_{14},\lambda}
+=A_h\bigl(YZ A_h+B_hC_h^2\bigr)-\lambda XYZT=0
+\end{equation}
+\cite{PrzyjalkowskiWeak,Przyjalkowski2026}.  Its dense-torus critical locus
+contains the central curve
+\begin{equation}
+\label{eq:V14_compact_central_curve}
+\Gamma_{\mathrm{cmp}}
+=
+\{(x,y,z)=(t,-t,-1):t\in\mathbb C^*\}.
+\end{equation}
+There is one complementary torus critical point
+\[
+r=(6,3/2,1/2),
+\qquad
+r=[12:3:1:2]
+\]
+with
+\begin{equation}
+\label{eq:V14_visible_node}
+f_{V_{14}}(r)=27,
+\qquad
+\det(\theta_i\theta_jf_{V_{14}})(r)=1458.
+\end{equation}
+This gives the first noncentral ordinary double point.
+
+The raw central member factors as
+\begin{equation}
+\label{eq:V14_raw_central_factorization}
+F_{V_{14},0}=A_hG_h,
+\qquad
+G_h=YZ A_h+B_hC_h^2.
+\end{equation}
+Thus it is the union of the plane $\Pi=V(A_h)$ and the cubic
+$D=V(G_h)$.  Their scheme-theoretic intersection on $\Pi$ is
+\[
+A_h=B_hC_h^2=0;
+\]
+the component $V(A_h,C_h)$ occurs with multiplicity two and restricts to
+$\Gamma_{\mathrm{cmp}}$ on the dense torus.  To identify the transverse
+singularity, use
+\[
+t=x,
+\qquad
+U=x+y+z+1,
+\qquad
+V=z+1,
+\qquad
+y=U-t-V.
+\]
+Then the potential is exactly
+\begin{equation}
+\label{eq:V14_compact_local_equation}
+f_{V_{14}}
+=
+\frac{U\bigl(-U^2V+U^2+(t-1)UV-tU+tV^2\bigr)}
+{t(V-1)(-U+V+t)}.
+\end{equation}
+Since the denominator is a unit along $U=V=0$, the transverse germ is
+contact-equivalent to
+\[
+U(U-V^2)
+=
+\left(U-\frac12V^2\right)^2-\frac14V^4,
+\]
+an $A_3$ family along $\Gamma_{\mathrm{cmp}}$.  This differs from the
+residual $D_4$ family of the source representative
+\eqref{eq:V14_source_factorization}.
+
+\subsection{The boundary node of \texorpdfstring{$V_{14}$}{V14}}
+
+The second isolated contribution is created by resolving the base curve
+through
+\[
+P_6=[0:1:-1:0].
+\]
+On $U_Y$, write $x=X/Y$, $z=Z/Y$, $t=T/Y$, and set
+\[
+b=1+z+t.
+\]
+The relevant base curve is $x=b=0$.  In the blowup chart $x=br$, after
+dividing by the exceptional factor $b$, the strict transform of the pencil is
+\begin{equation}
+\label{eq:V14_first_blowup_equation}
+\widetilde F_\lambda
+=
+b(r+1)^2(b-t-1)
++b(r+1)(b-1)^2
+-\lambda r(b-t-1)t.
+\end{equation}
+For every $\lambda\neq0$, the point $b=r=t=0$ is singular.  Its Hessian is
+\[
+H_\lambda=
+\begin{pmatrix}
+-2&-1&-1\\
+-1&0&\lambda\\
+-1&\lambda&0
+\end{pmatrix},
+\qquad
+\det H_\lambda=2\lambda(\lambda+1).
+\]
+Hence this is an ordinary double point for $\lambda\neq0,-1$, while the
+fiber at $\lambda=-1$ has the more degenerate $A_3$ point that survives the
+simultaneous resolution step.
+
+To see the remaining node explicitly, set $\lambda=-1$ and blow up
+$b=r=t=0$.  In the chart
+\[
+b=e,
+\qquad
+r=eR,
+\qquad
+t=eT,
+\]
+the strict transform is
+\begin{equation}
+\label{eq:V14_second_blowup_equation}
+\begin{aligned}
+G(e,R,T)={}&-R^2Te^2+R^2e^2-R^2e-RT^2e-RTe-RT\\
+&+Re^2-R-T+e-1.
+\end{aligned}
+\end{equation}
+It has a critical point at
+\[
+(e,R,T)=(0,-1,-1),
+\]
+where
+\[
+\operatorname{Hess}G=
+\begin{pmatrix}
+2&2&-1\\
+2&0&-1\\
+-1&-1&0
+\end{pmatrix},
+\qquad
+\det(\operatorname{Hess}G)=2.
+\]
+This is the second ordinary double point, lying in the fiber at
+$\lambda=-1$.  The calculation also explains why it is absent from the
+original dense-torus audit \cite{Przyjalkowski2026}.
+
+\subsection{Resolved compactifications and the \texorpdfstring{$d=3$}{d=3} comparison}
+
+Let $w_F:Y_F\to\mathbb A^1$ be the standard resolved compactification for
+$F\in\{B_3,V_{14}\}$, and put
+\[
+\Gamma_F^{(3)}
+=
+\bigl(\CritLoc(w_F)\cap w_F^{-1}(0)\bigr)_{\mathrm{red}}.
+\]
+Define
+\begin{equation}
+\label{eq:d3_compact_central_categories}
+\CcompBthree
+:=
+\overline{\MF^{\Gamma_{B_3}^{(3)}}
+(\widehat{Y_{B_3}}_{\Gamma_{B_3}^{(3)}},\widehat w_{B_3})},
+\qquad
+\CcompVfourteen
+:=
+\overline{\MF^{\Gamma_{V_{14}}^{(3)}}
+(\widehat{Y_{V_{14}}}_{\Gamma_{V_{14}}^{(3)}},\widehat w_{V_{14}})}.
+\end{equation}
+The central component formula gives
+\begin{equation}
+\label{eq:d3_component_count}
+k(B_3)=h^{1,2}(B_3)+1=6,
+\qquad
+k(V_{14})=h^{1,2}(V_{14})+1=6
+\end{equation}
+\cite{PrzyjalkowskiHodge}.  Combining the two torus nodes
+\eqref{eq:B3_compact_nodes} with the visible and boundary nodes
+\eqref{eq:V14_visible_node}--\eqref{eq:V14_second_blowup_equation} gives
+\begin{equation}
+\label{eq:B3_compact_final_decomposition}
+\overline{\MF(Y_{B_3},w_{B_3})}
+\simeq
+\CcompBthree\oplus\MorseCat{3}^{\oplus2},
+\end{equation}
+and
+\begin{equation}
+\label{eq:V14_compact_final_decomposition}
+\overline{\MF(Y_{V_{14}},w_{V_{14}})}
+\simeq
+\CcompVfourteen\oplus\MorseCat{3}^{\oplus2}.
+\end{equation}
+
+\begin{proposition}[What the $d=3$ calculation proves]
+\label{prop:d3_compactified_comparison}
+For the standard compactifications of $B_3$ and $V_{14}$,
+\[
+\mathcal I_{B_3}^{\mathrm{comp}}
+\simeq
+\mathcal I_{V_{14}}^{\mathrm{comp}}
+\simeq
+\MorseCat{3}^{\oplus2},
+\]
+and both resolved central fibers have six irreducible components.  On the
+$V_{14}$ side, one Morse summand is supported at the torus point of value
+$27$, and the other is the boundary node of value $-1$ produced by the
+base-curve resolution.  These facts do not by themselves prove
+\[
+\CcompBthree\simeq\CcompVfourteen.
+\]
+Such an equivalence requires compatible global attaching data, or the
+compactified-HMS identifications for a Kuznetsov-matched pair.
+\end{proposition}
+
+\begin{proof}
+The isolated statement follows from
+\eqref{eq:B3_compact_nodes}, \eqref{eq:V14_visible_node}, and the explicit
+boundary calculation
+\eqref{eq:V14_first_blowup_equation}--\eqref{eq:V14_second_blowup_equation}.
+The component count is \eqref{eq:d3_component_count}.  Equality of these
+numerical and isolated sectors does not identify the formal gluing diagrams
+of the six central components.
+\end{proof}
+
+\section{The remaining index-two compactifications:
+\texorpdfstring{$B_1$ and $B_5$}{B1 and B5}}
+\label{sec:B1_B5_compactifications}
+
+We now complete the compactification calculation on the index-two side.  In
+the notation of \cite{Przyjalkowski2026}, our $B_d$ is the threefold denoted
+$Y_d$.  The cases $B_2$, $B_3$, and $B_4$ were calculated above; here we work
+directly with the projective pencils for $B_1$ and $B_5$, without introducing
+or solving separate source-torus models.
+
+\subsection{The compactified \texorpdfstring{$B_1$}{B1} pencil}
+
+Put
+\[
+H=XY-XT-T^2.
+\]
+A standard toric Landau--Ginzburg model for $B_1$ is birational over the base
+to the quartic pencil
+\begin{equation}
+\label{eq:B1_compact_pencil}
+F_{B_1,\lambda}
+=X^4+Z^2H-\lambda YZH=0
+\end{equation}
+in $\mathbb P^3_{[X:Y:Z:T]}$
+\cite{PrzyjalkowskiWeak,Przyjalkowski2026}.  The singular points belonging
+to the base-locus resolution are
+\[
+\begin{gathered}
+P_1=[0:0:0:1],\qquad P_2=[0:1:0:0],\\
+P_3=[0:0:1:0],\qquad P_4=[0:1:\lambda:0].
+\end{gathered}
+\]
+For $\lambda\neq0$, their surface singularity types are, respectively,
+$A_3$, $A_7$, $A_1$, and $A_7$.  In the chart $Y=1$, set
+$X'=x(1-t)-t^2$ and translate the local $z$-coordinate to $Z'$.  The
+equation becomes
+$Z'X'+((X'+t^2)/(1-t))^4$; its restriction to the Hessian kernel has
+residual order eight.  The same order occurs at $P_4$.  They are resolved as part of the standard
+base-locus resolution and do not contribute isolated singularities to the
+resolved noncentral fibers.
+
+The two singularities away from the base locus can be obtained directly on
+$U_T$.  Write
+\[
+h=xy-x-1,
+\qquad
+f_\lambda=x^4+(z^2-\lambda yz)h.
+\]
+At a non-base singular point, $z\neq0$ and $h\neq0$.  The equations
+$\partial_zf_\lambda=\partial_yf_\lambda=0$ give
+\[
+z=\frac{\lambda y}{2},
+\qquad
+zx+\lambda h=0.
+\]
+Combining these identities with $f_\lambda=\partial_xf_\lambda=0$ yields
+\[
+x=-2,\qquad y=\frac13,\qquad z=4\alpha,\qquad
+\lambda=24\alpha,\qquad \alpha^2=3.
+\]
+Thus the two projective points are
+\begin{equation}
+\label{eq:B1_compact_nodes}
+q_\alpha=[-6:1:12\alpha:3],
+\qquad
+\lambda_\alpha=24\alpha,
+\qquad
+\alpha^2=3.
+\end{equation}
+The determinant of the affine Hessian in the variables $(x,y,z)$ is
+\begin{equation}
+\label{eq:B1_compact_hessian}
+\det\bigl(\operatorname{Hess}_{x,y,z}f_{\lambda_\alpha}
+(q_\alpha)\bigr)=13824,
+\end{equation}
+so both points are ordinary double points.
+
+For completeness, the reduced singular support of the raw central member is
+\begin{equation}
+\label{eq:B1_raw_central_support}
+\Sing(F_{B_1,0})_{\mathrm{red}}
+=V(X,Z)\ \sqcup\ \{[0:0:1:0]\}.
+\end{equation}
+At a general point of the line $V(X,Z)$ the transverse equation is
+$u^4+v^2$, of type $A_3$.  The isolated point lies on the base locus and is
+removed by its crepant resolution; it is not a third isolated summand of the
+resolved Landau--Ginzburg model.
+
+Let $w_{B_1}:Y_{B_1}\to\mathbb A^1$ be the standard resolved
+compactification and put
+\[
+\Gamma_{B_1}
+=\bigl(\CritLoc(w_{B_1})\cap w_{B_1}^{-1}(0)\bigr)_{\mathrm{red}}.
+\]
+Define
+\begin{equation}
+\label{eq:B1_compact_central_category}
+\CcompBone
+:=
+\overline{\MF^{\Gamma_{B_1}}
+(\widehat{Y_{B_1}}_{\Gamma_{B_1}},\widehat w_{B_1})}.
+\end{equation}
+The resolved central fiber has
+\begin{equation}
+\label{eq:B1_component_count}
+k(B_1)=h^{1,2}(B_1)+1=22
+\end{equation}
+irreducible components \cite{PrzyjalkowskiHodge}.  Equations
+\eqref{eq:B1_compact_nodes} and \eqref{eq:B1_compact_hessian}, together with
+the base-locus resolution, give
+\begin{equation}
+\label{eq:B1_compact_final_decomposition}
+\overline{\MF(Y_{B_1},w_{B_1})}
+\simeq
+\CcompBone\oplus\MorseCat{3}^{\oplus2}.
+\end{equation}
+
+\begin{remark}[Two corrected substitutions]
+\label{rem:corrected_B1_B5_data}
+Direct substitution into the displayed pencils corrects two typographical
+errors in the point data printed in \cite{Przyjalkowski2026}.  For $B_1$ the
+node has first homogeneous coordinate $-6$, as in
+\eqref{eq:B1_compact_nodes}.  For $B_5$ below, the critical value is
+$4\alpha^3+6\alpha$.  The corrected expressions make the defining equation
+and all first derivatives vanish; the Hessian calculations then verify the
+ordinary-double-point assertions.
+\end{remark}
+
+\subsection{The compactified \texorpdfstring{$B_5$}{B5} pencil}
+
+For $B_5$, the standard quartic pencil is
+\begin{equation}
+\label{eq:B5_compact_pencil}
+\begin{aligned}
+F_{B_5,\lambda}={}&
+X^2YZ+XY^2Z+XYZ^2+YZT^2+XZT^2+XYT^2+T^4\\
+&-\lambda XYZT=0.
+\end{aligned}
+\end{equation}
+Its base-locus singular points are
+\[
+P_1^1=[1:0:0:0],\quad
+P_1^2=[0:1:0:0],\quad
+P_1^3=[0:0:1:0]
+\]
+of type $A_4$ for $\lambda\neq0$ and type $A_5$ on the central member
+$\lambda=0$, whereas the points
+\[
+P_2^1=[1:-1:0:0],\quad
+P_2^2=[1:0:-1:0],\quad
+P_2^3=[0:1:-1:0]
+\]
+are of type $A_1$.  In the chart $X=1$, a local equation at $P_1^1$ is
+$(y+t^2)(z+t^2)+yz(y+z+t^2-\lambda t)$.  After eliminating the
+nondegenerate quadratic directions, the residual term begins with
+$-\lambda t^5$.  Thus it has order five for $\lambda\neq0$ and order six
+for $\lambda=0$; symmetry gives the same types at the other $P_1^i$.
+Resolving these fixed singularities resolves the base
+locus without creating any further singular fibers
+\cite{Przyjalkowski2026}.
+
+The remaining singularities are found in the chart $U_X$.  Symmetry and the
+three first-derivative equations give
+\begin{equation}
+\label{eq:B5_compact_nodes}
+p_\alpha=[1:1:1:\alpha],
+\qquad
+\alpha^4+\alpha^2=1,
+\qquad
+\lambda_\alpha=4\alpha^3+6\alpha.
+\end{equation}
+There are four roots of $\alpha^4+\alpha^2-1$, hence four such points.  A
+direct calculation in the affine variables $(Y/X,Z/X,T/X)$ gives
+\begin{equation}
+\label{eq:B5_compact_hessian}
+\det\bigl(\operatorname{Hess}F_{B_5,\lambda_\alpha}
+(p_\alpha)\bigr)
+=2(3\alpha^2+4)\neq0.
+\end{equation}
+Thus all four points are ordinary double points away from the base locus.
+The resolved pencil is Lefschetz: it has four singular fibers, each with one
+ordinary double point \cite{Przyjalkowski2026}.  Since
+$h^{1,2}(B_5)=0$, the fiber over $0$ is smooth and irreducible after the
+base-locus resolution, so
+\begin{equation}
+\label{eq:B5_component_count}
+k(B_5)=1,
+\qquad
+\mathcal C^{\mathrm{comp}}_{B_5,0}=0.
+\end{equation}
+Consequently,
+\begin{equation}
+\label{eq:B5_compact_final_decomposition}
+\overline{\MF(Y_{B_5},w_{B_5})}
+\simeq
+\MorseCat{3}^{\oplus4}.
+\end{equation}
+
+\begin{proposition}[Compactification census for all five $B_d$]
+\label{prop:Bd_compactification_census}
+For the standard resolved compactifications of the index-two Fano
+threefolds $B_d$, $1\leq d\leq5$, one has
+\[
+\begin{array}{c|c|c|c}
+d & \varepsilon(B_d) & k(B_d) &
+\overline{\MF(Y_{B_d},w_{B_d})} \\
+\hline
+1 & 2 & 22 & \CcompBone\oplus\MorseCat{3}^{\oplus2} \\
+2 & 2 & 11 & \CcompBtwo\oplus\MorseCat{3}^{\oplus2} \\
+3 & 2 & 6  & \CcompBthree\oplus\MorseCat{3}^{\oplus2} \\
+4 & 2 & 3  & \CcompB\oplus\MorseCat{3}^{\oplus2} \\
+5 & 4 & 1  & \MorseCat{3}^{\oplus4}.
+\end{array}
+\]
+Here $\varepsilon(B_d)$ is the number of compactified ordinary double
+points, and $k(B_d)$ is the number of irreducible components of the resolved
+fiber over $0$.  For $d\leq4$, the notation $\mathcal C^{\mathrm{comp}}_{B_d,0}$
+denotes the connected formal category supported on that central fiber.  The
+table is a compactification statement and does not require a separate
+calculation of the critical locus of a source Laurent polynomial on the
+torus.
+\end{proposition}
+
+\begin{proof}
+The rows $d=2,3,4$ are
+\eqref{eq:B2_compact_final_decomposition},
+\eqref{eq:B3_compact_final_decomposition}, and
+\eqref{eq:B4_final_decomposition}.  The rows $d=1,5$ are
+\eqref{eq:B1_compact_final_decomposition} and
+\eqref{eq:B5_compact_final_decomposition}.  The component counts follow from
+$k(B_d)=h^{1,2}(B_d)+1$ for $d\leq4$ and from the smooth irreducible central
+fiber for the Lefschetz pencil $B_5$.
+\end{proof}
+
+\section{The remaining prime compactifications:
+\texorpdfstring{$V_6$ and $V_{22}$}{V6 and V22}}
+\label{sec:V6_V22_compactifications}
+
+We now calculate the two extreme cases that were still missing on the
+index-one side.  As for $B_1$ and $B_5$, we start directly from the
+compactified pencils.  Thus no separate census of the critical locus of a
+source Laurent polynomial is needed.
+
+\subsection{The compactified \texorpdfstring{$V_6$}{V6} pencil}
+
+The threefold $V_6$ is a complete intersection of a quadric and a cubic.
+Its Givental-type model has the anticanonical compactification
+\begin{equation}
+\label{eq:V6_compact_pencil}
+(X_0+X_1)^2(Y+Z+T)^3
+=\lambda X_0X_1YZT
+\end{equation}
+in
+$\mathbb P^1_{[X_0:X_1]}\times\mathbb P^2_{[Y:Z:T]}$.
+The equation has bidegree $(2,3)$, which is the anticanonical degree of the
+ambient product \cite{PrzyjalkowskiWeak,PrzyjalkowskiCY}.
+
+On the chart $X_0=T=1$, put $x=X_1/X_0$, $y=Y/T$, and $z=Z/T$.  Away from
+the base locus, the logarithmic derivative equations for the quotient of the
+two pencil generators are
+\[
+\frac{2x}{x+1}=1,
+\qquad
+\frac{3y}{y+z+1}=1,
+\qquad
+\frac{3z}{y+z+1}=1.
+\]
+They have the unique solution
+\begin{equation}
+\label{eq:V6_compact_node}
+(x,y,z)=(1,1,1),
+\qquad
+\lambda=108.
+\end{equation}
+For
+\[
+f_{V_6,\lambda}
+=(x+1)^2(y+z+1)^3-\lambda xyz,
+\]
+the Hessian at this point is
+\begin{equation}
+\label{eq:V6_compact_hessian}
+\operatorname{Hess}f_{V_6,108}(1,1,1)
+=
+\begin{pmatrix}
+54&0&0\\
+0&72&-36\\
+0&-36&72
+\end{pmatrix},
+\qquad
+\det=209952=2^5 3^8.
+\end{equation}
+Hence the noncentral singularity is an ordinary double point.  The standard
+crepant resolution of the fixed base locus creates no further noncentral
+singularities; equivalently, the complete-intersection calculation gives
+exactly one such fiber \cite{Przyjalkowski2026}.
+
+The raw member over $0$ is the nonreduced divisor
+\begin{equation}
+\label{eq:V6_raw_central_member}
+2D_X+3D_A,
+\qquad
+D_X=V(X_0+X_1),\qquad D_A=V(Y+Z+T).
+\end{equation}
+Let $w_{V_6}:Y_{V_6}\to\mathbb A^1$ be the resolved compactification and
+write
+\[
+\Gamma_{V_6}
+=\bigl(\CritLoc(w_{V_6})\cap w_{V_6}^{-1}(0)\bigr)_{\mathrm{red}}.
+\]
+We set
+\begin{equation}
+\label{eq:V6_compact_central_category}
+\CcompVsix
+:=
+\overline{\MF^{\Gamma_{V_6}}
+(\widehat{Y_{V_6}}_{\Gamma_{V_6}},\widehat w_{V_6})}.
+\end{equation}
+Since $h^{1,2}(V_6)=20$, the resolved central fiber has
+\begin{equation}
+\label{eq:V6_component_count}
+k(V_6)=21
+\end{equation}
+irreducible components.  The compactified decomposition is therefore
+\begin{equation}
+\label{eq:V6_compact_final_decomposition}
+\overline{\MF(Y_{V_6},w_{V_6})}
+\simeq
+\CcompVsix\oplus\MorseCat{3}.
+\end{equation}
+
+\subsection{The compactified \texorpdfstring{$V_{22}$}{V22} pencil}
+
+For $V_{22}$, homogenizing the standard Laurent representative, including
+its constant term $4$ and the monomial $z/(xy)$, gives the quartic pencil
+\begin{equation}
+\label{eq:V22_compact_pencil}
+\begin{aligned}
+F_{V_{22},\lambda}={}&
+X^2Y^2+XY^2T+X^2YT+X^2YZ+XY^2Z+XYT^2+4XYZT\\
+&+YZT^2+XZT^2+XYZ^2+ZT^3+YZ^2T+XZ^2T+Z^2T^2\\
+&-\lambda XYZT=0
+\end{aligned}
+\end{equation}
+in $\mathbb P^3_{[X:Y:Z:T]}$
+\cite{PrzyjalkowskiWeak,Przyjalkowski2026}.  Let $\alpha$ satisfy
+\[
+\alpha^3+2\alpha^2-2=0.
+\]
+Direct substitution gives three singular points away from the base locus,
+\begin{equation}
+\label{eq:V22_visible_nodes}
+p_\alpha=[1:1:1:\alpha],
+\qquad
+\lambda_\alpha=3\alpha^2+8\alpha+8.
+\end{equation}
+The cubic has three distinct roots.  On the chart $X=1$, the Hessian
+determinant at $p_\alpha$ reduces modulo
+$\alpha^3+2\alpha^2-2$ to
+\begin{equation}
+\label{eq:V22_visible_hessian}
+2(14\alpha^2+39\alpha+32).
+\end{equation}
+Moreover,
+\[
+\operatorname{Res}_\alpha
+(\alpha^3+2\alpha^2-2,14\alpha^2+39\alpha+32)=22,
+\]
+so all three points are ordinary double points.
+
+The singular points that remain on the fixed base locus are
+\[
+\begin{gathered}
+P_1^1=[1:0:0:0],\quad P_1^2=[0:1:0:0],\\
+P_2^1=[1:0:0:-1],\quad P_2^2=[0:1:0:-1],\\
+P_3=[0:0:1:0],\quad P_4=[1:1:-1:0],\quad
+P_5=[1:1:0:-1],\\
+P_5^1=[1:0:1:-1],\qquad P_5^2=[0:1:1:-1].
+\end{gathered}
+\]
+The points other than $P_4$ are removed by the standard resolution of the
+fixed base components.  The point $P_4$, however, produces one additional
+ordinary double point.  We make this boundary contribution explicit.
+
+Work on $X=1$ and set
+\[
+q=Y/X,\qquad u=(Y+Z)/X,\qquad t=T/X.
+\]
+The base line through $P_4$ is $u=t=0$.  In the blow-up chart $u=tr$, the
+total transform of \eqref{eq:V22_compact_pencil} has a common factor $t$.
+After removing it, the strict transform is
+\begin{equation}
+\label{eq:V22_boundary_strict_transform}
+\begin{aligned}
+g_\lambda={}&
+\lambda q^2+q^3-q^2r-2q^2+qr+q
++qrt(-\lambda-2q+r+2)\\
+&+t^2(qr^2-qr-q+r^2+r)+r(r+1)t^3.
+\end{aligned}
+\end{equation}
+At $\lambda=0$, the point
+\begin{equation}
+\label{eq:V22_boundary_node}
+(q,r,t)=(1,0,0)
+\end{equation}
+is singular.  The transformed second pencil generator is
+$q(tr-q)$, whose value there is $-1$; hence the point is no longer on the
+base locus.  Finally,
+\begin{equation}
+\label{eq:V22_boundary_hessian}
+\operatorname{Hess}g_0(1,0,0)
+=
+\begin{pmatrix}
+2&-1&0\\
+-1&0&0\\
+0&0&-2
+\end{pmatrix},
+\qquad
+\det=2.
+\end{equation}
+Thus the blow-up creates precisely the fourth ordinary double point.  After
+resolving the remaining fixed base singularities, the $V_{22}$ model is a
+Lefschetz pencil with four singular fibers, one node in each
+\cite{Przyjalkowski2026}.  Since $h^{1,2}(V_{22})=0$, there is no
+positive-dimensional central contribution, and
+\begin{equation}
+\label{eq:V22_compact_final_decomposition}
+k(V_{22})=1,
+\qquad
+\overline{\MF(Y_{V_{22}},w_{V_{22}})}
+\simeq
+\MorseCat{3}^{\oplus4}.
+\end{equation}
+
+\begin{remark}[The corrected $V_{22}$ homogenization]
+\label{rem:corrected_V22_homogenization}
+The transcription of the $V_{22}$ quartic in
+\cite{Przyjalkowski2026} omits the terms $4XYZT$ and $Z^2T^2$ that arise
+from the constant $4$ and $z/(xy)$ in the standard Laurent polynomial of
+\cite{PrzyjalkowskiWeak}.  The constant term can be absorbed by translating
+the parameter, but $Z^2T^2$ cannot.  Equation
+\eqref{eq:V22_compact_pencil} is the direct homogenization; with these terms,
+the points \eqref{eq:V22_visible_nodes}, all first derivatives, and the
+boundary blow-up calculation vanish exactly as stated.
+\end{remark}
+
+\begin{proposition}[The two extreme prime compactifications]
+\label{prop:V6_V22_compactification_census}
+For the standard resolved compactifications one has
+\[
+\begin{array}{c|c|c|c}
+F & \varepsilon(F) & k(F) & \overline{\MF(Y_F,w_F)}\\
+\hline
+V_6 & 1 & 21 & \CcompVsix\oplus\MorseCat{3}\\
+V_{22} & 4 & 1 & \MorseCat{3}^{\oplus4}.
+\end{array}
+\]
+For $V_6$, the nonisolated category is supported on the resolved central
+fiber.  For $V_{22}$, all four contributions are isolated, including the
+boundary node \eqref{eq:V22_boundary_node}.
+\end{proposition}
+
+\begin{proof}
+The $V_6$ row is
+\eqref{eq:V6_compact_hessian}--\eqref{eq:V6_compact_final_decomposition}.
+The three non-base $V_{22}$ nodes are verified by
+\eqref{eq:V22_visible_nodes}--\eqref{eq:V22_visible_hessian}; the fourth is
+\eqref{eq:V22_boundary_node}--\eqref{eq:V22_boundary_hessian}.  The component
+counts follow from $k(F)=h^{1,2}(F)+1$ when $h^{1,2}(F)>0$, and from the
+irreducibility of the $V_{22}$ Lefschetz fibers.
+\end{proof}
+
+\section{Compactification comparison for all five pairs}
+\label{sec:five_pair_compactification}
+
+We now extend the compactification comparison from the detailed pair
+$(B_4,V_{18})$ to
+\[
+(B_d,V_{4d+2}),
+\qquad d=1,2,3,4,5.
+\]
+On the $B$ side, Proposition~\ref{prop:Bd_compactification_census} gives the
+compactified calculation for every $d$.  Proposition
+\ref{prop:V6_V22_compactification_census} supplies the two extreme cases on
+the $V$ side.  For $d=2,3$,
+Sections~\ref{sec:B2_V10_calculation} and
+\ref{sec:B3_V14_calculation} additionally determine the raw central supports
+and the two isolated nodes on the corresponding $V$ side.  For $d\neq4$,
+however, we do not claim a complete chartwise computation of all exceptional
+divisors and their attaching maps.
+
+\subsection{Isolated compactification contributions}
+
+Let
+\[
+\mu_{\mathrm{tor}}^{\mathrm{iso}}(F)
+=\#\{\text{isolated Morse points of }W_F\text{ in }(\mathbb C^*)^3\},
+\]
+let $\varepsilon(F)$ be the number of ordinary double points in the chosen
+compactification, and put
+\[
+\delta_\partial(F)
+=\varepsilon(F)-\mu_{\mathrm{tor}}^{\mathrm{iso}}(F).
+\]
+Every isolated compactified singularity in this census is an ordinary double
+point.  Consequently its matrix-factorization contribution is
+\begin{equation}
+\label{eq:five_pair_isolated_category}
+\mathcal I_F^{\mathrm{comp}}
+\simeq
+\MorseCat{3}^{\oplus\varepsilon(F)}.
+\end{equation}
+The open-torus and compactified counts are as follows
+\cite{Przyjalkowski2026}.  In this table, $\mu_B$ and $\mu_V$ count the
+isolated Morse points on the dense torus of the compactifiable representatives
+whose projective pencils are displayed; a different source or mutation
+representative can have a different torus count.
+\begin{center}
+\footnotesize
+\begin{tblr}{
+  width=0.98\textwidth,
+  colspec={Q[c,wd=0.05\textwidth]Q[c,wd=0.13\textwidth]
+    Q[c,wd=0.08\textwidth]Q[c,wd=0.08\textwidth]
+    Q[c,wd=0.08\textwidth]Q[c,wd=0.08\textwidth]
+    Q[c,wd=0.09\textwidth]X[l]},
+  colsep=2pt,
+  row{1}={font=\bfseries},
+  rowsep=2pt,
+  hline{1,2,Z}={0.4pt},
+}
+$d$ & Pair & $\mu_B$ & $\varepsilon_B$ & $\mu_V$ & $\varepsilon_V$ &
+$\delta_{\partial,V}$ & Isolated compactified categories \\
+$5$ & $(B_5,V_{22})$ & $4$ & $4$ & $3$ & $4$ & $1$ &
+$\mathcal I_{B_5}^{\mathrm{comp}}\simeq
+ \mathcal I_{V_{22}}^{\mathrm{comp}}\simeq\MorseCat{3}^{\oplus4}$. \\
+$4$ & $(B_4,V_{18})$ & $2$ & $2$ & $2$ & $2$ & $0$ &
+$\mathcal I_{B_4}^{\mathrm{comp}}\simeq
+ \mathcal I_{V_{18}}^{\mathrm{comp}}\simeq\MorseCat{3}^{\oplus2}$. \\
+$3$ & $(B_3,V_{14})$ & $2$ & $2$ & $1$ & $2$ & $1$ &
+$\mathcal I_{B_3}^{\mathrm{comp}}\simeq
+ \mathcal I_{V_{14}}^{\mathrm{comp}}\simeq\MorseCat{3}^{\oplus2}$. \\
+$2$ & $(B_2,V_{10})$ & $2$ & $2$ & $2$ & $2$ & $0$ &
+$\mathcal I_{B_2}^{\mathrm{comp}}\simeq
+ \mathcal I_{V_{10}}^{\mathrm{comp}}\simeq\MorseCat{3}^{\oplus2}$. \\
+$1$ & $(B_1,V_6)$ & $2$ & $2$ & $1$ & $1$ & $0$ &
+$\mathcal I_{B_1}^{\mathrm{comp}}\simeq\MorseCat{3}^{\oplus2}$,
+$\mathcal I_{V_6}^{\mathrm{comp}}\simeq\MorseCat{3}$. \\
+\end{tblr}
+\end{center}
+
+Thus the isolated compactified sectors agree for $d=2,3,4,5$.  For $d=3$,
+$V_{14}$ has one open-torus Morse point and a second node created at the
+boundary; for $d=5$, the additional boundary node of $V_{22}$ likewise
+restores the multiplicity missing from its open torus.  For $d=1$, the
+isolated sectors already have different numbers of Morse summands.
+
+\subsection{Central-component counts}
+
+Let $k(F)$ denote the number of irreducible components of the central fiber
+of a minimal compactification of $W_F$.  For the standard rank-one models,
+\begin{equation}
+\label{eq:five_pair_component_formula}
+k(F)=h^{1,2}(F)+1
+\end{equation}
+\cite{PrzyjalkowskiHodge}.  Write $h_B=h^{1,2}(B_d)$ and
+$h_V=h^{1,2}(V_{4d+2})$.  Substitution gives
+\begin{center}
+\footnotesize
+\begin{tblr}{
+  width=0.86\textwidth,
+  colspec={Q[c,wd=0.06\textwidth]Q[c,wd=0.17\textwidth]
+    Q[c,wd=0.09\textwidth]Q[c,wd=0.10\textwidth]
+    Q[c,wd=0.09\textwidth]Q[c,wd=0.10\textwidth]X[c]},
+  colsep=2pt,
+  row{1}={font=\bfseries},
+  rowsep=2pt,
+  hline{1,2,Z}={0.4pt},
+}
+$d$ & Pair & $h_B$ & $k(B_d)$ & $h_V$ & $k(V_{4d+2})$ & Status \\
+$5$ & $(B_5,V_{22})$ & $0$ & $1$ & $0$ & $1$ & Equal. \\
+$4$ & $(B_4,V_{18})$ & $2$ & $3$ & $2$ & $3$ & Equal. \\
+$3$ & $(B_3,V_{14})$ & $5$ & $6$ & $5$ & $6$ & Equal. \\
+$2$ & $(B_2,V_{10})$ & $10$ & $11$ & $10$ & $11$ & Equal. \\
+$1$ & $(B_1,V_6)$ & $21$ & $22$ & $20$ & $21$ & Different by one. \\
+\end{tblr}
+\end{center}
+
+Both available compactification counts therefore agree for $d=2,3,4,5$ and
+fail to agree for $d=1$.  For $d=5$, both central fibers are irreducible.  For
+$d=3$ and $d=2$, equality of the numbers $6$ and $11$, respectively, does not
+determine the dual intersection complex, the transverse quadratic data, or
+the categories at higher intersections.  Only for $d=4$ do the calculations
+above determine the common incidence pattern: three components, three
+rational double curves, and two triple points.
+
+\subsection{The punctured double curves for the \texorpdfstring{$d=4$}{d=4} pair}
+
+\begin{lemma}
+\label{lem:punctured_double_curves}
+For every $1\leq i<j\leq3$, one has
+\[
+R_{ij}^{\circ}
+\cong
+S_{ij}^{\circ}
+\cong
+\mathbb P^1\setminus\{0,\infty\}
+\cong
+\mathbb C^*,
+\]
+and the transverse potential on either curve has split normal form $uv$.
+Consequently,
+\[
+\MBcat{R_{ij}^{\circ}}
+\simeq
+\Dtwo(R_{ij}^{\circ})
+\simeq
+\Dtwo(S_{ij}^{\circ})
+\simeq
+\MBcat{S_{ij}^{\circ}}.
+\]
+\end{lemma}
+
+\begin{proof}
+Each $R_{ij}$ and $S_{ij}$ is a smooth rational curve passing through the two
+triple-point strata of the corresponding resolved central fiber.  Removing
+those two points gives a twice-punctured projective line.  Away from the
+triple points the two components meet transversely, so formal coordinates put
+the potential in the form $uv$.  Relative Knörrer periodicity identifies the
+matrix-factorization category with the two-periodic coherent category of the
+supporting punctured curve.
+\end{proof}
+
+The lemma identifies the three open Morse--Bott pieces in
+\eqref{eq:B4_resolved_localization} and
+\eqref{eq:V18_resolved_localization}.  It does not identify their middle
+terms or the complete enhanced Čech diagrams.  The precise additional
+hypothesis is that there are dg equivalences
+\[
+\Phi_I:\mathfrak M^B_I\xrightarrow{\sim}\mathfrak M^V_I
+\qquad
+(\varnothing\neq I\subset\{\circ,X,Y,Z,T\})
+\]
+and coherent natural equivalences
+\begin{equation}
+\label{eq:d4_restriction_compatibility}
+\Phi_J\circ\rho^B_{I,J}
+\simeq
+\rho^V_{I,J}\circ\Phi_I
+\qquad(I\subset J),
+\end{equation}
+satisfying the cocycle and all higher coherence conditions.  Equivalently,
+the $\Phi_I$ must assemble to a natural equivalence of semicosimplicial dg
+diagrams
+\[
+\Phi^\bullet:
+\check{\mathfrak M}^{B,\bullet}
+\xrightarrow{\sim}
+\check{\mathfrak M}^{V,\bullet}.
+\]
+Functoriality of the homotopy limit then gives an equivalence of dg
+totalizations; applying $H^0$ and idempotent completion yields
+\begin{equation}
+\label{eq:d4_compatible_gluing}
+\CcompB\simeq\CcompV.
+\end{equation}
+Thus the equality of the abstract punctured curves is necessary input for the
+comparison, but it does not construct the equivalences $\Phi_I$, the overlap
+homotopies, or their higher coherences.  In particular, the two outer terms
+of a Verdier sequence are not being used to reconstruct its middle term.
+For $d\neq4$, the component-count table alone does not supply analogous
+double curves or gluing diagrams.
+
+\section{Categorical interpretation and full-category equivalence}
+
+\subsection{The genus-two categories for the \texorpdfstring{$d=4$}{d=4} pair}
+
+The intersection of two quadrics $B_4\subset\mathbb P^5$ determines a pencil
+of quadrics.  Its discriminant consists of six points of $\mathbb P^1$; the
+double cover branched over them is a smooth genus-two curve, denoted
+$C_{B_4}$.  The standard semiorthogonal decomposition is
+\begin{equation}
+\label{eq:B4_fano_sod}
+\Db(B_4)
+=
+\left\langle
+\Db(C_{B_4}),\mathcal O_{B_4},\mathcal O_{B_4}(H)
+\right\rangle.
+\end{equation}
+This is the quadric-fibration description of
+\cite{KuzQuadric,AuelBernardaraBolognesi}.
+
+A smooth prime Fano threefold $V_{18}$ of genus $10$ is a codimension-two
+linear section of the $G_2$ Grassmannian.  Homological projective duality
+associates to it a double cover of a line branched at six points, hence another
+smooth genus-two curve $C_{V_{18}}$.  Its derived category has the
+semiorthogonal decomposition
+\begin{equation}
+\label{eq:V18_fano_sod}
+\Db(V_{18})
+=
+\left\langle
+\Db(C_{V_{18}}),\mathcal O_{V_{18}},\mathcal U_{V_{18}}^{\vee}
+\right\rangle.
+\end{equation}
+The order of the two exceptional objects depends on the mutation convention;
+the nontrivial component is $\Db(C_{V_{18}})$
+\cite{KuzHyperplane,KuzFano}.
+
+The relation between index-two degree-four Fano threefolds and index-one
+genus-ten Fano threefolds was formulated categorically in \cite{KuzFano}.
+The theorem of Kuznetsov--Shinder shows that the relevant nontrivial
+components occur in a common deformation framework and corrects the scope of
+the original conjecture \cite{KuzShinder}.  It does not identify the components
+of an arbitrary pair.  In this note, a \emph{matched pair} means an additional
+choice for which $C_{B_4}\cong C_{V_{18}}$; only under this hypothesis are the
+two Fano-side nontrivial components immediately equivalent.
+
+\subsection{What follows for the compactified matrix-factorization categories}
+
+The preceding derived equivalences concern the coherent derived categories of
+the Fano threefolds.  The categories $\CcompB$ and $\CcompV$ are instead
+matrix-factorization categories on Landau--Ginzburg mirrors.  No reference
+cited in this note states or proves either of the following equivalences for
+the compactified central categories defined in
+\eqref{eq:B4_cech_totalization} and \eqref{eq:V18_cech_totalization}:
+\[
+\CcompB\simeq\Dtwo(C_{B_4})
+\qquad\text{or}\qquad
+\CcompV\simeq\Dtwo(C_{V_{18}}).
+\]
+They are expected mirror-side identifications, not theorems imported from the
+literature.  What Kuznetsov proves is the Fano-side pair of semiorthogonal
+decompositions \eqref{eq:B4_fano_sod} and \eqref{eq:V18_fano_sod}; those
+results do not by themselves identify the newly defined categories $\CcompB$
+and $\CcompV$ with the periodic derived categories of the corresponding
+curves.
+The explicit resolution actually shows why a direct relative-Morse argument
+cannot prove these formulas.  In both models the resolved central support is
+not a smooth genus-two curve: it is a connected union of three rational curves
+meeting at two triple points.  Consequently the proven descriptions are the
+nonsplit localization sequences
+\eqref{eq:B4_resolved_localization} and
+\eqref{eq:V18_resolved_localization}, not identities with
+$\Dtwo(C_{B_4})$ or $\Dtwo(C_{V_{18}})$.
+
+Claiming either genus-two equivalence as a theorem would require one of the
+following:
+\begin{enumerate}
+\item a direct equivalence between the connected rational-curve gluing category
+in \eqref{eq:B4_resolved_localization} or
+\eqref{eq:V18_resolved_localization} and the corresponding two-periodic
+genus-two category;
+\item a proved compactified Homological Mirror Symmetry equivalence that
+identifies the central eigenvalue piece with the corresponding genus-two
+category.
+\end{enumerate}
+
+The local calculation does prove the expected form away from the exceptional
+strata: a split $uv$ normal form contributes the two-periodic coherent category
+of the supporting smooth curve by Knörrer periodicity.  What remains is the
+global extension over the crossing, the node, and the exceptional divisors
+\cite{Knorrer,OrlovEquivalences,Hirano,LuntsSchnurer}.
+
+It is therefore useful to state the expected identification separately.
+
+\begin{remark}[Conditional genus-two identification]
+Assume that compactified HMS, or a direct comparison of the two localization
+sequences, identifies the connected formal gluing category of the three
+rational curves with the genus-two component on the Fano side.  Then one
+expects
+\[
+\mathcal C^{\mathrm{comp}}_{F,0}
+\simeq
+\Dtwo(C_F),
+\qquad F\in\{B_4,V_{18}\}.
+\]
+For a Kuznetsov-matched pair with
+$C_{B_4}\cong C_{V_{18}}$, this would imply
+\[
+\CcompB\simeq\CcompV.
+\]
+This implication is conditional; it is not a consequence of the five-chart
+calculation by itself.
+\end{remark}
+
+\begin{corollary}[Equivalence for a matched pair]
+\label{cor:matched_pair_equivalence}
+Let $(B_4,V_{18})$ be a matched pair for which there is an isomorphism
+\[
+\phi:C_{B_4}\xrightarrow{\sim}C_{V_{18}}.
+\]
+Then pullback along $\phi$ gives
+\[
+\Db(C_{V_{18}})\simeq\Db(C_{B_4}),
+\qquad
+\Dtwo(C_{V_{18}})\simeq\Dtwo(C_{B_4}).
+\]
+If, in addition, the compactified mirror identifications
+\[
+\CcompB\simeq\Dtwo(C_{B_4}),
+\qquad
+\CcompV\simeq\Dtwo(C_{V_{18}})
+\]
+hold, then their composition yields
+\begin{equation}
+\label{eq:matched_compactified_equivalence}
+\boxed{\CcompB\simeq\CcompV}.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+The isomorphism $\phi$ induces the first two equivalences.  Composing its
+two-periodization with the two assumed compactified mirror equivalences gives
+\[
+\CcompB
+\simeq\Dtwo(C_{B_4})
+\simeq\Dtwo(C_{V_{18}})
+\simeq\CcompV.
+\]
+\end{proof}
+
+For $\mathbb Z$-graded derived categories of smooth curves of genus at least
+two, an equivalence reconstructs the curve.  Thus
+\[
+\Db(C_{B_4})\simeq\Db(C_{V_{18}})
+\quad\Longleftrightarrow\quad
+C_{B_4}\cong C_{V_{18}}.
+\]
+After two-periodization, one should additionally require that an equivalence
+admits a compatible $\mathbb Z$-graded lift before applying this reconstruction
+statement.
+The reconstruction implication for the $\mathbb Z$-graded categories is due
+to Bondal--Orlov \cite{BondalOrlov}.
+
+\subsection{Fano-side status for all five pairs}
+
+Let $\operatorname{Ku}(B_d)$ and $\operatorname{Ku}(V_{4d+2})$ denote the
+nontrivial components in the standard semiorthogonal decompositions.  Their
+comparison is not uniform in $d$.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item For $d=5$,
+\[
+\operatorname{Ku}(B_5)
+\simeq
+\operatorname{Ku}(V_{22})
+\simeq
+\Db(\operatorname{Rep}K_3),
+\]
+where $K_3$ is the three-arrow Kronecker quiver \cite{KuzFano}.
+\item For $d=4$ and $d=3$, equivalences hold for pairs lying in the
+correspondences constructed by Kuznetsov; they are not statements about
+arbitrary independently chosen pairs \cite{KuzFano}.
+\item For $d=2$, the Kuznetsov components of a smooth quartic double solid
+$B_2$ and a smooth Gushel--Mukai threefold $V_{10}$ are deformation
+equivalent but not equivalent \cite{BayerPerry}.
+\item For $d=1$, the corrected statement uses a nodal degree-one del Pezzo
+threefold and a crepant categorical resolution of its nontrivial component,
+rather than an arbitrary smooth pair $(B_1,V_6)$ \cite{KuzShinder}.
+\end{enumerate}
+
+Consequently, equality of isolated node counts or central-component counts
+cannot by itself imply equivalence of the full compactified categories.  For
+$d=3,4,5$, a matched Fano-side equivalence yields the expected mirror-side
+equivalence only after compatible compactified-HMS identifications or a
+direct equivalence of the global formal gluing diagrams.
+
+\subsection{Case-by-case verification of the compactified equality}
+\label{sec:case_by_case_compactified_equality}
+
+There are two different equalities that must not be conflated.  Write
+\[
+\mathcal T_F^{\mathrm{comp}}
+:=
+\overline{\MF(Y_F,w_F)}
+\]
+for the total compactified matrix-factorization category, containing the
+contributions from all critical values.  On the other hand, write
+$\mathcal C_F^{\mathrm{comp}}$ for the distinguished compactified summand
+expected, under compactified HMS, to correspond to
+$\operatorname{Ku}(F)^{\mathrm{per}}$.  This distinguished summand need not
+coincide with the category of the fiber labelled $0$ for an arbitrary
+translation of the pencil parameter.
+
+\begin{proposition}[Status of
+$\mathcal C_{B_d}^{\mathrm{comp}}\simeq
+\mathcal C_{V_{4d+2}}^{\mathrm{comp}}$]
+\label{prop:case_by_case_compactified_equality}
+The compactification calculations and the known Fano-side results give the
+following case-by-case answer.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item For $d=5$, the total compactified categories are directly equivalent:
+\begin{equation}
+\label{eq:d5_total_compactified_equality}
+\mathcal T_{B_5}^{\mathrm{comp}}
+\simeq
+\MorseCat{3}^{\oplus4}
+\simeq
+\mathcal T_{V_{22}}^{\mathrm{comp}}.
+\end{equation}
+The equality of the distinguished summands
+$\mathcal C_{B_5}^{\mathrm{comp}}$ and
+$\mathcal C_{V_{22}}^{\mathrm{comp}}$ follows from the equivalence of their
+Kuznetsov components only after compatible compactified-HMS identifications.
+
+\item For $d=4$ and $d=3$, let $(B_d,V_{4d+2})$ be a Kuznetsov-matched pair.
+If
+\[
+\mathcal C_{B_d}^{\mathrm{comp}}
+\simeq\operatorname{Ku}(B_d)^{\mathrm{per}},
+\qquad
+\mathcal C_{V_{4d+2}}^{\mathrm{comp}}
+\simeq\operatorname{Ku}(V_{4d+2})^{\mathrm{per}},
+\]
+then
+\begin{equation}
+\label{eq:d3_d4_conditional_compactified_equality}
+\mathcal C_{B_d}^{\mathrm{comp}}
+\simeq
+\mathcal C_{V_{4d+2}}^{\mathrm{comp}}.
+\end{equation}
+For $d=4$, the same conclusion follows directly if the complete enhanced
+Čech diagrams are naturally equivalent, compatibly with all
+restriction/incidence functors and their higher coherences, as required by
+the criterion \eqref{eq:d4_compatible_gluing}.  Neither argument gives an
+unconditional statement for an arbitrary independently chosen pair.
+
+\item For $d=2$, an equivalence
+\begin{equation}
+\label{eq:d2_compactified_no_graded_lift}
+\mathcal C_{B_2}^{\mathrm{comp}}
+\simeq
+\mathcal C_{V_{10}}^{\mathrm{comp}}
+\end{equation}
+cannot admit a compatible $\mathbb Z$-graded lift that matches graded
+compactified HMS.  Such a lift would imply an equivalence between the
+Kuznetsov components of a smooth quartic double solid and a smooth
+Gushel--Mukai threefold, contradicting \cite{BayerPerry}.  In the purely
+ungraded two-periodic setting, the present calculation neither proves nor
+disproves \eqref{eq:d2_compactified_no_graded_lift}.
+
+\item For $d=1$, the expression
+$\mathcal C_{B_1}^{\mathrm{comp}}\simeq
+\mathcal C_{V_6}^{\mathrm{comp}}$ for an arbitrary smooth pair is not the
+statement furnished by the corrected Fano correspondence.  The appropriate
+comparison replaces the smooth $B_1$ by a nodal degree-one del Pezzo
+threefold and replaces its Kuznetsov component by a crepant categorical
+resolution \cite{KuzShinder}.  A compactified mirror equivalence for this
+corrected pair is not proved here.
+\end{enumerate}
+Consequently, the formula
+\[
+\mathcal C_{B_d}^{\mathrm{comp}}
+\simeq
+\mathcal C_{V_{4d+2}}^{\mathrm{comp}}
+\qquad(1\leq d\leq5)
+\]
+is not a theorem.  It is conditionally valid for matched pairs when
+$d=3,4,5$, has no compatible graded-HMS lift for smooth pairs when $d=2$,
+and must be reformulated when $d=1$.
+\end{proposition}
+
+\begin{proof}
+For $d=5$, equation \eqref{eq:d5_total_compactified_equality} is the
+combination of \eqref{eq:B5_compact_final_decomposition} and
+\eqref{eq:V22_compact_final_decomposition}.  The distinguished-summand
+statement follows by two-periodizing
+$\operatorname{Ku}(B_5)\simeq\operatorname{Ku}(V_{22})$ and composing with
+the two assumed mirror identifications.
+
+For $d=3,4$, two-periodize the equivalence of the Kuznetsov components of a
+matched pair and compose it with the two assumed compactified-HMS
+equivalences.  The alternative $d=4$ argument is precisely the homotopy-gluing
+criterion \eqref{eq:d4_compatible_gluing}.
+
+For $d=2$, a compatible graded lift of
+\eqref{eq:d2_compactified_no_graded_lift}, composed with graded compactified
+HMS, would give
+$\operatorname{Ku}(B_2)\simeq\operatorname{Ku}(V_{10})$, contradicting the
+nonequivalence theorem of \cite{BayerPerry}.  Forgetting to the two-periodic
+category loses this obstruction, so no ungraded nonequivalence is claimed.
+The final statement is the corrected degeneration theorem of
+\cite{KuzShinder}.
+\end{proof}
+
+\begin{remark}[The fiber labelled zero for $d=5$]
+\label{rem:d5_zero_fiber_warning}
+For the explicit parameter normalizations used above,
+\[
+\mathcal C_{B_5,0}^{\mathrm{comp}}=0,
+\qquad
+\mathcal C_{V_{22},0}^{\mathrm{comp}}\simeq\MorseCat{3},
+\]
+because the $B_5$ fiber over $0$ is smooth whereas the fourth $V_{22}$ node
+lies over $0$.  Thus the categories of the fibers carrying the literal label
+$0$ are not equivalent.  Equation \eqref{eq:d5_total_compactified_equality}
+compares the total categories, while the distinguished-summand comparison
+requires a matching of critical values or compactified HMS.
+\end{remark}
+
+\begin{theorem}[Compactified comparison for the five pairs]
+\label{thm:five_pair_conclusion}
+For the standard compactifications of $(B_d,V_{4d+2})$, $1\leq d\leq5$, the
+following statements hold.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item The five-chart calculation for $d=4$ gives
+\[
+\overline{\MF(Y_{B_4},w_{B_4})}
+\simeq\CcompB\oplus\MorseCat{3}^{\oplus2},
+\]
+and
+\[
+\overline{\MF(Y_{V_{18}},w_{V_{18}})}
+\simeq\CcompV\oplus\MorseCat{3}^{\oplus2}.
+\]
+The central categories are the Čech totalizations in
+\eqref{eq:B4_cech_totalization} and \eqref{eq:V18_cech_totalization}.
+\item The explicit $d=2$ calculation gives
+\[
+\overline{\MF(Y_{B_2},w_{B_2})}
+\simeq\CcompBtwo\oplus\MorseCat{3}^{\oplus2},
+\qquad
+\overline{\MF(Y_{V_{10}},w_{V_{10}})}
+\simeq\CcompVten\oplus\MorseCat{3}^{\oplus2}.
+\]
+The raw central supports are, respectively, a line together with an isolated
+point and a double smooth quadric.  Thus the isolated sectors agree, but the
+calculation does not identify $\CcompBtwo$ with $\CcompVten$.
+\item The explicit $d=3$ calculation gives
+\[
+\overline{\MF(Y_{B_3},w_{B_3})}
+\simeq\CcompBthree\oplus\MorseCat{3}^{\oplus2},
+\qquad
+\overline{\MF(Y_{V_{14}},w_{V_{14}})}
+\simeq\CcompVfourteen\oplus\MorseCat{3}^{\oplus2}.
+\]
+For $B_3$, both isolated ordinary double points are visible on the torus.
+For $V_{14}$, one occurs on the torus at critical value $27$, whereas the
+second appears over the boundary base curve in the fiber of critical value
+$-1$.  The isolated sectors and the resolved central-component counts agree,
+but the calculation does not identify $\CcompBthree$ with
+$\CcompVfourteen$.
+\item The compactification calculation on the index-two side is complete for
+all five values of $d$.  In particular,
+\[
+\overline{\MF(Y_{B_1},w_{B_1})}
+\simeq\CcompBone\oplus\MorseCat{3}^{\oplus2},
+\qquad
+\overline{\MF(Y_{B_5},w_{B_5})}
+\simeq\MorseCat{3}^{\oplus4}.
+\]
+Their central-component counts are
+\[
+\bigl(k(B_1),k(B_2),k(B_3),k(B_4),k(B_5)\bigr)
+=(22,11,6,3,1).
+\]
+For $B_5$ the resolved pencil is Lefschetz and its fiber over $0$ is smooth.
+\item The two extreme index-one compactifications give
+\[
+\overline{\MF(Y_{V_6},w_{V_6})}
+\simeq\CcompVsix\oplus\MorseCat{3},
+\qquad
+\overline{\MF(Y_{V_{22}},w_{V_{22}})}
+\simeq\MorseCat{3}^{\oplus4}.
+\]
+For $V_6$, the unique noncentral node has critical value $108$ and the
+resolved central fiber has $21$ components.  For $V_{22}$, three nodes lie
+away from the base locus and the fourth is created by blowing up the line
+$T=Y+Z=0$; the pencil is Lefschetz.
+\item The isolated compactified categories satisfy
+\[
+\mathcal I_{B_d}^{\mathrm{comp}}
+\simeq
+\mathcal I_{V_{4d+2}}^{\mathrm{comp}}
+\quad\Longleftrightarrow\quad
+d\in\{2,3,4,5\}.
+\]
+For $d=5$, the equality uses the additional boundary ordinary double point of
+$V_{22}$.
+\item The central-component counts satisfy
+\[
+k(B_d)=k(V_{4d+2})
+\quad\Longleftrightarrow\quad
+d\in\{2,3,4,5\}.
+\]
+For $d=1$, $k(B_1)=22$ and $k(V_6)=21$, and the isolated sectors also have
+different multiplicities.
+\item For $d=4$, the three punctured double-curve categories are pairwise
+equivalent by Lemma~\ref{lem:punctured_double_curves}.  If the complete
+enhanced Čech diagrams are naturally equivalent, compatibly with all
+restriction/incidence functors and their higher coherences, then
+$\CcompB\simeq\CcompV$.
+\item For $d\in\{3,4,5\}$ and a Kuznetsov-matched pair, compatible
+compactified-HMS identifications imply
+\[
+\mathcal C^{\mathrm{comp}}_{B_d}
+\simeq
+\mathcal C^{\mathrm{comp}}_{V_{4d+2}}.
+\]
+This is conditional: the numerical compactification data do not construct
+the required equivalence of gluing diagrams.  For $d=2$ the corresponding
+smooth Fano-side components are not equivalent, and for $d=1$ the statement
+must be reformulated using the nodal degree-one del Pezzo category.
+\end{enumerate}
+Therefore the compactification calculation proves equality of the isolated
+sectors for exactly four pairs.  Equivalence of the full compactified
+categories requires the additional global gluing or compactified-HMS input
+specified above.
+\end{theorem}
+
+\begin{proof}
+Part~\textup{(a)} is the combination of
+\eqref{eq:B4_final_decomposition} and
+\eqref{eq:V18_final_decomposition}.  Part~\textup{(b)} is
+Proposition~\ref{prop:d2_compactified_comparison} together with
+\eqref{eq:B2_compact_final_decomposition} and
+\eqref{eq:V10_compact_final_decomposition}.  Part~\textup{(c)} is
+Proposition~\ref{prop:d3_compactified_comparison} together with
+\eqref{eq:B3_compact_final_decomposition} and
+\eqref{eq:V14_compact_final_decomposition}.  Part~\textup{(d)} is
+Proposition~\ref{prop:Bd_compactification_census}.  Part~\textup{(e)} is
+Proposition~\ref{prop:V6_V22_compactification_census}.  Part~\textup{(f)}
+follows from \eqref{eq:five_pair_isolated_category} and the
+ordinary-double-point table.  Part~\textup{(g)} follows from
+\eqref{eq:five_pair_component_formula} and the Hodge-number table.
+Part~\textup{(h)} is Lemma~\ref{lem:punctured_double_curves} together with the
+compatible-gluing implication \eqref{eq:d4_compatible_gluing}.  Part~\textup{(i)}
+follows by two-periodizing the matched Fano-side equivalence and composing it
+with the two assumed compactified mirror identifications.  The qualifications
+for $d=1,2$ are the results recalled in the preceding subsection.
+\end{proof}
+
+\begin{thebibliography}{99}
+
+\bibitem{Minkowski}
+M.~Akhtar, T.~Coates, S.~Galkin, and A.~M.~Kasprzyk,
+\emph{Minkowski polynomials and mutations},
+SIGMA \textbf{8} (2012), Paper 094.
+
+\bibitem{AuelBernardaraBolognesi}
+A.~Auel, M.~Bernardara, and M.~Bolognesi,
+\emph{Fibrations in complete intersections of quadrics, Clifford algebras,
+derived categories, and rationality problems},
+J. Math. Pures Appl. \textbf{102} (2014), 249--291.
+
+\bibitem{BondalOrlov}
+A.~Bondal and D.~Orlov,
+\emph{Reconstruction of a variety from the derived category and groups of
+autoequivalences},
+Compos. Math. \textbf{125} (2001), 327--344.
+
+\bibitem{CCGK}
+T.~Coates, A.~Corti, S.~Galkin, and A.~Kasprzyk,
+\emph{Quantum periods for $3$-dimensional Fano manifolds},
+Geom. Topol. \textbf{20} (2016), 103--256.
+
+\bibitem{Dyckerhoff}
+T.~Dyckerhoff,
+\emph{Compact generators in categories of matrix factorizations},
+Duke Math. J. \textbf{159} (2011), 223--274.
+
+\bibitem{Eisenbud}
+D.~Eisenbud,
+\emph{Homological algebra on a complete intersection, with an application to
+group representations},
+Trans. Amer. Math. Soc. \textbf{260} (1980), 35--64.
+
+\bibitem{Hirano}
+Y.~Hirano,
+\emph{Derived Kn\"orrer periodicity and Orlov's theorem for gauged
+Landau--Ginzburg models},
+Compos. Math. \textbf{153} (2017), 973--1007.
+
+\bibitem{Knorrer}
+H.~Kn\"orrer,
+\emph{Cohen--Macaulay modules on hypersurface singularities I},
+Invent. Math. \textbf{88} (1987), 153--164.
+
+\bibitem{KuzHyperplane}
+A.~Kuznetsov,
+\emph{Hyperplane sections and derived categories},
+Izv. Math. \textbf{70} (2006), 447--547.
+
+\bibitem{KuzQuadric}
+A.~Kuznetsov,
+\emph{Derived categories of quadric fibrations and intersections of quadrics},
+Adv. Math. \textbf{218} (2008), 1340--1369.
+
+\bibitem{KuzFano}
+A.~Kuznetsov,
+\emph{Derived categories of Fano threefolds},
+Proc. Steklov Inst. Math. \textbf{264} (2009), 110--122;
+arXiv:0809.0225.
+
+\bibitem{BayerPerry}
+A.~Bayer and A.~Perry,
+\emph{Kuznetsov's Fano threefold conjecture via K3 categories and enhanced
+group actions},
+J. Reine Angew. Math. \textbf{800} (2023), 107--153.
+
+\bibitem{KuzShinder}
+A.~Kuznetsov and E.~Shinder,
+\emph{Derived categories of Fano threefolds and degenerations},
+Invent. Math. \textbf{239} (2025), 377--430.
+
+\bibitem{LuntsSchnurer}
+V.~A.~Lunts and O.~M.~Schn\"urer,
+\emph{Matrix factorizations and semi-orthogonal decompositions for
+blowing-ups},
+J. Noncommut. Geom. \textbf{10} (2016), 907--979.
+
+\bibitem{OrlovDbranes}
+D.~Orlov,
+\emph{Triangulated categories of singularities and D-branes in
+Landau--Ginzburg models},
+Proc. Steklov Inst. Math. \textbf{246} (2004), 227--248.
+
+\bibitem{OrlovEquivalences}
+D.~Orlov,
+\emph{Triangulated categories of singularities and equivalences between
+Landau--Ginzburg models},
+Sb. Math. \textbf{197} (2006), 1827--1840.
+
+\bibitem{OrlovFormal}
+D.~Orlov,
+\emph{Formal completions and idempotent completions of triangulated
+categories of singularities},
+Adv. Math. \textbf{226} (2011), 206--217.
+
+\bibitem{OrlovNonaffine}
+D.~Orlov,
+\emph{Matrix factorizations for nonaffine Landau--Ginzburg models},
+Math. Ann. \textbf{353} (2012), 95--108.
+
+\bibitem{Preygel}
+A.~Preygel,
+\emph{Thom--Sebastiani and duality for matrix factorizations},
+arXiv:1101.5834.
+
+\bibitem{PrinceMutation}
+T.~Prince,
+\emph{Mutation equivalence of toric Landau--Ginzburg models},
+arXiv:2006.01477.
+
+\bibitem{PrzyjalkowskiWeak}
+V.~Przyjalkowski,
+\emph{Weak Landau--Ginzburg models for smooth Fano threefolds},
+Izv. Math. \textbf{77} (2013), 772--794.
+
+\bibitem{PrzyjalkowskiHodge}
+V.~Przyjalkowski,
+\emph{Hodge numbers of Fano threefolds via Landau--Ginzburg models},
+arXiv:0911.5428 (2009).
+
+\bibitem{PrzyjalkowskiCY}
+V.~Przyjalkowski,
+\emph{Calabi--Yau compactifications of toric Landau--Ginzburg models for
+smooth Fano threefolds},
+Sb. Math. \textbf{208} (2017), 992--1013.
+
+\bibitem{PrzyjalkowskiToric}
+V.~Przyjalkowski,
+\emph{Toric Landau--Ginzburg models},
+Russian Math. Surveys \textbf{73} (2018), 1033--1118.
+
+\bibitem{Przyjalkowski2026}
+V.~Przyjalkowski,
+\emph{Landau--Ginzburg models for Fano threefolds of Picard rank one and
+exceptional collections},
+arXiv:2601.16497 (2026).
+
+\end{thebibliography}
+
+\end{document}
