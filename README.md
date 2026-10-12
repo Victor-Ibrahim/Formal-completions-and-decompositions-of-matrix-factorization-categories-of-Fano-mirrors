@@ -1,3 +1,37 @@
+# Formal Completions and Decompositions of Matrix Factorization Categories of Fano Mirrors
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## 📌 About the Project
+
+This repository provides the documentation, Python source code, `.sing` (Singular) scripts, and auxiliary LaTeX files supporting the article and the detailed computations in the research paper **Formal completions and decompositions of matrix factorization categories of Fano mirrors**. The focus is on performing formal verifications of local calculations, classifications, and validation regarding the use of matrix factorization categories, as well as the detailed constructions and decompositions surrounding Homological Mirror Symmetry, Fano varieties, and Landau-Ginzburg models.
+
+## 📁 Repository Structure
+
+* `build_morimukai_certificates.py`
+* `rank_one_fano_validation.py`
+* `mori_mukai_validation.py`
+* `input_model_audit.py`
+* `rank_one_five_chart_gluing.py`
+## ⚙️ Prerequisites and Execution
+
+The Python scripts dynamically generate and verify the certificates and logarithmic Hessian metrics for all 105 deformation families (15 "Rank One" classification models and 83 "Mori-Mukai" models, among other classification exceptions listed in the study guidelines).
+
+To execute the complete verification pipeline for the "Mori-Mukai" examples:
+
+```bash
+# Generate the Mori-Mukai validation certificates
+python computations/build_morimukai_certificates.py
+
+# Validate the "Rank One" documentation cases
+python computations/rank_one_fano_validation.py --all
+
+# Run the global data check
+python computations/mori_mukai_validation.py --all
+
+
+
+
 # Computational verification — "Compactified gluing for the B_d and V_{4d+2} LG models"
 
 Requirements: `python3` with `sympy`, and `Singular` (`apt install singular`).
