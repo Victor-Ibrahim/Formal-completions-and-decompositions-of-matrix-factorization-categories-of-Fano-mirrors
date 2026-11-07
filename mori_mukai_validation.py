@@ -13,10 +13,10 @@ Chapter 4 of the manuscript:
 
 Run examples:
 
-  python computations/mori_mukai_validation.py --list
-  python computations/mori_mukai_validation.py --case MM_2_10
-  python computations/mori_mukai_validation.py --all
-  python computations/mori_mukai_validation.py --all --verbose
+  python mori_mukai_validation.py --list
+  python mori_mukai_validation.py --case MM_2_10
+  python mori_mukai_validation.py --all
+  python mori_mukai_validation.py --all --verbose
 
 The cases below are intentionally written as ordinary Python/SymPy expressions,
 not parsed from LaTeX.  This makes the verification independent of typesetting

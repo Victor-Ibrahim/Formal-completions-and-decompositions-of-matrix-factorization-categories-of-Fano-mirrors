@@ -2,13 +2,13 @@
 """
 Build a supplementary GRDB/Iskovskikh--Mori--Mukai correspondence table.
 
-Input:  Apendice.tex
+Input:  Appendix.tex
 Output: supplementary-morimukai-correspondence.tex
         supplementary-morimukai-correspondence.csv
 
 The GRDB source URL is recorded explicitly in the table.  The polynomial column
 is extracted from the first displayed Laurent potential in each Mori--Mukai
-example of Apendice.tex, so the table remains synchronized with the detailed
+example of Appendix.tex, so the table remains synchronized with the detailed
 companion appendix.
 """
 
@@ -20,7 +20,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, List, Optional
 
-SOURCE_TEX = Path("Apendice.tex")
+SOURCE_TEX = Path("Appendix.tex")
 OUT_TEX = Path("supplementary-morimukai-correspondence.tex")
 OUT_CSV = Path("supplementary-morimukai-correspondence.csv")
 GRDB_URL = "http://www.grdb.co.uk/misc/morimukai.php"
@@ -189,7 +189,7 @@ def extract_entries(source_tex: Path = SOURCE_TEX) -> List[MoriMukaiEntry]:
             label_key=label_key,
             family=family,
             polynomial=polynomial,
-            source=f"GRDB Mori--Mukai table ({GRDB_URL}); polynomial transcribed from Apendice.tex.",
+            source=f"GRDB Mori--Mukai table ({GRDB_URL}); polynomial transcribed from Appendix.tex.",
         )
     return [entries[key] for key in sorted(entries, key=sort_key)]
 
@@ -241,7 +241,7 @@ def write_tex(entries: List[MoriMukaiEntry], out_tex: Path = OUT_TEX) -> None:
 \section*{{Supplementary GRDB/Iskovskikh--Mori--Mukai Correspondence Table}}
 
 This table records the Iskovskikh--Mori--Mukai label used in the manuscript, the Laurent polynomial displayed there, the Fano family description attached to the example, and the external GRDB source to be used for cross-checking. The GRDB source page is \url{{{GRDB_URL}}}.
-The polynomial column is generated from \texttt{{Apendice.tex}}; the machine-readable companion file is \texttt{{supplementary-morimukai-correspondence.csv}}.
+The polynomial column is generated from \texttt{{Appendix.tex}}; the machine-readable companion file is \texttt{{supplementary-morimukai-correspondence.csv}}.
 
 \begin{{longtable}}{{>{{\raggedright\arraybackslash}}p{{0.07\textwidth}}>{{\raggedright\arraybackslash}}p{{0.54\textwidth}}>{{\raggedright\arraybackslash}}p{{0.23\textwidth}}>{{\raggedright\arraybackslash}}p{{0.12\textwidth}}}}
 \caption{{GRDB/Iskovskikh--Mori--Mukai correspondence for Mori--Mukai Laurent polynomial examples.}}\\

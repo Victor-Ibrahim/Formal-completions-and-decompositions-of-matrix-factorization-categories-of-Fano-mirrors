@@ -2,7 +2,7 @@
 """
 Build an auditable Mori--Mukai computational-certificate supplement.
 
-Input:  computations/mori_mukai_validation.py
+Input:  mori_mukai_validation.py
 Output: supplementary-morimukai-certificates.tex
 
 The generated supplement is intentionally plain: each Mori--Mukai label gets a
@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Iterable, List
 
 OUT_TEX = Path("supplementary-morimukai-certificates.tex")
-VALIDATION_SCRIPT = Path("computations/mori_mukai_validation.py")
+VALIDATION_SCRIPT = Path("mori_mukai_validation.py")
 WRAP_WIDTH = 132
 
 
@@ -216,7 +216,7 @@ def build_document() -> str:
 \sloppy
 
 \title{{Auditable Computational Certificates for Mori--Mukai Landau--Ginzburg Models}}
-\author{{Generated from \texttt{{computations/mori\_mukai\_validation.py}}}}
+\author{{Generated from \texttt{{mori\_mukai\_validation.py}}}}
 \date{{11 de agosto de 2026}}
 
 \begin{{document}}
@@ -224,16 +224,16 @@ def build_document() -> str:
 
 \section*{{How to Read This Supplement}}
 The source is the executable validation dictionary \texttt{{CASES}} in
-\path{{computations/mori_mukai_validation.py}}. Each Mori--Mukai label is listed separately.
+\path{{mori_mukai_validation.py}}. Each Mori--Mukai label is listed separately.
 Within each label, the certificates are grouped as identities/compact forms, saturated critical ideals,
 point and Hessian checks, parametric branches, and normal forms or formal expansions.  Regenerate this
 supplement with
 \[
-\texttt{{python computations/build\_morimukai\_certificates.py}}
+\texttt{{python build\_morimukai\_certificates.py}}
 \]
 Running the companion symbolic-validation command
 \[
-\texttt{{python computations/mori\_mukai\_validation.py --all}}
+\texttt{{python mori\_mukai\_validation.py --all}}
 \]
 recomputes the symbolic checks represented here.
 

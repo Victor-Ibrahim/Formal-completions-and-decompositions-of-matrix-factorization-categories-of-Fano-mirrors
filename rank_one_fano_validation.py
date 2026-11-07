@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """Exact symbolic validation for the 17 Picard-rank-one Fano threefold models.
 
-The checks mirror the computations recorded in ``Apendice.tex``.  They cover
+The checks mirror the computations recorded in ``Appendix.tex``.  They cover
 logarithmic critical equations, isolated points and Hessians, positive-
 dimensional critical branches, compact factorizations, and the formal
 quadratic expansions used in the categorical decompositions.
 
 Run with, for example,
 
-    python computations/rank_one_fano_validation.py --list
-    python computations/rank_one_fano_validation.py --case V_12
-    python computations/rank_one_fano_validation.py --all
+    python rank_one_fano_validation.py --list
+    python rank_one_fano_validation.py --case V_12
+    python rank_one_fano_validation.py --all
 """
 
 from __future__ import annotations

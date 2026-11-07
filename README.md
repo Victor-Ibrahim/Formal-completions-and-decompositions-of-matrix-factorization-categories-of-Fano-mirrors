@@ -74,6 +74,8 @@ python3 mori_mukai_validation.py --all
 python3 rank_one_fano_validation.py --all
 python3 morse_bott_audit.py
 python3 rank_one_five_chart_gluing.py
+python3 build_morimukai_certificates.py
+python3 build_morimukai_correspondence.py
 bash run_all.sh
 ```
 
@@ -83,8 +85,3 @@ bash run_all.sh
   `mori_mukai_validation.py --coverage` read the paper's source file `main.tex`,
   which is not in this repository. `hodge_milnor_audit.py` accepts another path
   with `--source`.
-- `build_morimukai_certificates.py` still looks for
-  `computations/mori_mukai_validation.py`. In this flat layout the file is
-  `mori_mukai_validation.py`.
-- `build_morimukai_correspondence.py` reads `Apendice.tex`. In this repository
-  the appendix is `Appendix.tex`.
