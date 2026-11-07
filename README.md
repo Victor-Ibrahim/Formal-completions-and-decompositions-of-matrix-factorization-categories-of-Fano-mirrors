@@ -1,35 +1,90 @@
 # Formal Completions and Decompositions of Matrix Factorization Categories of Fano Mirrors
 
-This repository and file package (`computations.zip`) contain the complete LaTeX source code for the scientific paper, as well as all the mathematical and computational validation scripts that support the demonstrated results[cite: 2].
+Computations and verification scripts for the paper *Formal completions and
+decompositions of matrix factorization categories of Fano mirrors* by
+Victor Ibrahim Santos El Adji.
 
-## 📌 Project Structure
+The paper computes, for specified Laurent-polynomial mirrors of the del Pezzo
+surfaces and of the 105 deformation families of smooth Fano threefolds, the
+critical loci, critical values, Hessians, and global formal normal forms on the
+open torus. It also computes the resulting decompositions of the idempotent-completed
+categories of matrix factorizations. This repository contains:
 
-The repository is organized into several main directories to separate the algebraic computations from the LaTeX manuscript[cite: 2]:
+- the companion appendix with the model-by-model calculations;
+- the scripts that check them;
+- the generated supplements cited in the paper.
 
-### 1. Mathematical Computations and Validations (`computations/`)
-This directory houses the Python scripts responsible for generating and auditing matrix factorizations and contact equivalences[cite: 2]:
-* **Model Audits:** `input_model_audit.py`, `morse_bott_audit.py`, and `hodge_milnor_audit.py`[cite: 2].
-* **Fano and Mori-Mukai Validations:** `rank_one_fano_validation.py` and `mori_mukai_validation.py` perform exact verification of the models[cite: 2].
-* **Generation of Certificates and Correspondences:** `build_morimukai_correspondence.py` and `build_morimukai_certificates.py`[cite: 2]. These files produce the LaTeX appendices and CSV data (e.g., `supplementary-morimukai-certificates.tex`, `supplementary-morimukai-correspondence.csv`) that support the paper[cite: 2].
-* **Gluing and Factorization:** `rank_one_five_chart_gluing.py`[cite: 2]. ### 2. Advanced Specific Verifications (`verification_Bd_V4d2/`)
-A directory dedicated to verifications of specific hypersurfaces, combining computational scripts in Python and the software Singular (`.sing`)[cite: 2]:
-* **Python Scripts:** `d1.py`, `d2.py`, `d3.py`, `d5.py`, `hodge.py`, `periods.py`, `periods2.py`, `jumps3.py`, `jumplib.py`, `recur.py`, and `common.py`[cite: 2].
-* **Singular Scripts:** `b1types.sing`, `b2.sing`, `b4.sing`, `scan2.sing`, `tr.sing`, `types.sing`, `v14.sing`, `v18.sing`, `v6scan.sing`, among others[cite: 2].
-* **Automation:** The `run_all.sh` file allows for the execution of the entire suite of tests and simulations in this directory at once[cite: 2].
+The paper's own LaTeX source is not included.
 
-### 3. LaTeX Source Code for the Paper (`sections/` and `Victor_paper_corrected_source/`)
-Contains the complete scientific manuscript, organized into segments:
-* **`sections/`:** Organizes the individual sections of the paper to facilitate compilation. It includes files ranging from `01-introduction.tex`, `02-preliminaries.tex`, and `03-supported-matrix-factorizations.tex` to specific cases such as `05-del-pezzo-models.tex`, `08-fano-rank-one-examples.tex`, `10-fano-higher-rank-examples.tex`, and `12-fano-hodge-compactification.tex`[cite: 2]. * **`Victor_paper_corrected_source/`:** Source code following corrections, containing `main_alex.tex`, bibliographic files (`ref.bib`, `main.bbl`), and notes on changes in `sections_3_4_and_dependent_corrections.diff` and `README_FOR_VICTOR.md`[cite: 2].
-* **Root:** Global files such as `Appendix.tex` and `Bd_V4d+2_compactified_gluing.tex`[cite: 2].
-* **`paper-reviews/`:** Contains the `.tex` file with the peer review of the document (`review-2026-10-01-112615.tex`)[cite: 2].
-* **`prism-uploads/`:** arXiv submission files and manifests (`ARXIV_SOURCE_MANIFEST.txt` and draft PDF files such as `1303.3288v3 (1).pdf`)[cite: 2].
+All files are in the top-level folder.
 
-## 🚀 How to Run Computational Validations
+## Documents
 
-To reproduce the results, generate mathematical certificates, or validate the Fano and Mori-Mukai models, execute the following commands from the repository root:
+| File | Contents |
+| --- | --- |
+| `Appendix.tex` | Companion appendix *Detailed Computations for the Fano Threefold Models*: polynomial identities, saturated critical ideals, critical points, parametrized components, Jacobian minors, Hessians and formal coordinate changes for each model. |
+| `Bd_V4d+2_compactified_gluing.tex` | Compactification comparison for the five rank-one pairs $(B_d, V_{4d+2})$, $d = 1,\dots,5$. |
+| `supplementary-morimukai-certificates.tex` | Certificate supplement for the Mori–Mukai entries, generated from `mori_mukai_validation.py`. |
+| `supplementary-morimukai-correspondence.tex`, `.csv` | Correspondence between the Iskovskikh–Mori–Mukai labels, the Laurent polynomials used in the paper, and the GRDB source. |
 
-**Mori-Mukai Construction and Validation:**
+## Scripts on the open torus (Python + SymPy)
+
+| Script | Checks |
+| --- | --- |
+| `mori_mukai_validation.py` | Exact symbolic checks for the Mori–Mukai models: saturated logarithmic critical ideals, critical points and values, Hessians. Options `--list`, `--case MM_2_10`, `--all`, `--verbose`. |
+| `rank_one_fano_validation.py` | The same checks for the 17 Picard-rank-one models. Options `--list`, `--case V_12`, `--all`. |
+| `morse_bott_audit.py` | Every Morse–Bott component in the paper: critical equations, smoothness, Hessian rank equal to the codimension, a unit Jacobian minor for the global normal coordinates, and the discriminant square class. |
+| `input_model_audit.py` | Source-level invariants of the input models, and the count benchmarks against the paper's tables. |
+| `hodge_milnor_audit.py` | The Hodge/Milnor census of the 105 models (reduced versus nonreduced fibers, isolated versus non-isolated critical loci, $\mu_{\mathrm{tor}}$ against $e(F)$). Options `--details` and `--source <file>`. |
+| `rank_one_five_chart_gluing.py` | Compactification audit for the rank-one comparison, on the four projective charts of $\mathbf P^3$ and the dense torus. |
+| `build_morimukai_certificates.py` | Generates `supplementary-morimukai-certificates.tex`. |
+| `build_morimukai_correspondence.py` | Generates `supplementary-morimukai-correspondence.tex` and `.csv` from the appendix. |
+
+## Scripts for the rank-one compactifications (Python + Singular)
+
+These scripts check the compactified pencils of the pairs $(B_d, V_{4d+2})$. They cover:
+
+- critical points on the torus and on the charts;
+- local singularity types and Milnor numbers;
+- central fibers;
+- Hodge invariants;
+- quantum periods and Picard–Fuchs singularities.
+
+| Files | Use |
+| --- | --- |
+| `b4.py`, `v18.py`, `v18b.py`, `d1.py`, `d2.py`, `d3.py`, `d5.py` | Models for $d = 4, 1, 2, 3, 5$. |
+| `b1types.sing`, `b2.sing`, `b4.sing`, `v14.sing`, `v18.sing`, `v22b.sing`, `v22c.sing`, `tr.sing`, `types.sing`, `scan2.sing`, `v6scan.sing` | Singular checks of local types, Jacobian radicals and central fibers. |
+| `hodge.py` | Euler characteristic, $h^{1,2}$, degree and index of the ten threefolds. |
+| `periods.py`, `periods2.py`, `recur.py` | Quantum periods on the Fano side against constant terms of the Laurent polynomials, and the Picard–Fuchs singularities. |
+| `jumps3.py`, `v6jumps.py`, `jumplib.py`, `common.py` | Milnor-number jumps at base points; shared helpers. |
+| `run_all.sh` | Runs all of the above. |
+| `saida_completa.txt`, `scan2.out` | Recorded output of `run_all.sh` and of `scan2.sing`. |
+
+## Requirements
+
+- Python 3 with SymPy.
+- Singular (for example `apt install singular`) for the `.sing` files and `run_all.sh`.
+
+## How to run
+
+From the repository folder:
+
 ```bash
-python computations/build_morimukai_certificates.py
-python computations/rank_one_fano_validation.py --all
-python computations/mori_mukai_validation.py --all
+python3 mori_mukai_validation.py --all
+python3 rank_one_fano_validation.py --all
+python3 morse_bott_audit.py
+python3 rank_one_five_chart_gluing.py
+bash run_all.sh
+```
+
+## Known limitations
+
+- `input_model_audit.py`, `hodge_milnor_audit.py`, and
+  `mori_mukai_validation.py --coverage` read the paper's source file `main.tex`,
+  which is not in this repository. `hodge_milnor_audit.py` accepts another path
+  with `--source`.
+- `build_morimukai_certificates.py` still looks for
+  `computations/mori_mukai_validation.py`. In this flat layout the file is
+  `mori_mukai_validation.py`.
+- `build_morimukai_correspondence.py` reads `Apendice.tex`. In this repository
+  the appendix is `Appendix.tex`.
