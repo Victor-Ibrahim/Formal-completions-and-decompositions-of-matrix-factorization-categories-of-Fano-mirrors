@@ -60,9 +60,45 @@ These scripts check the compactified pencils of the pairs $(B_d, V_{4d+2})$. The
 | `run_all.sh` | Runs all of the above. |
 | `saida_completa.txt`, `scan2.out` | Recorded output of `run_all.sh` and of `scan2.sing`. |
 
+## Exceptional collections and Hori–Vafa polynomials (`toric_exceptional/`)
+
+These scripts certify the table in the subsection *Exceptional collections
+and the size of the decomposition* of the paper. The table covers the
+Fano threefolds with a full exceptional collection: the 18 toric ones, $Q$,
+$B_5$ and $V_{22}$. Every check is an `assert`; the recorded output is
+`certify.out`.
+
+| File | Contents |
+| --- | --- |
+| `certify.py` | Runs every check. For each toric family it confirms four things. (1) The fan built from the Mori–Mukai description is a smooth Fano polytope with $n = 2+2\rho$ facets. (2) The paper's Laurent polynomial and the Hori–Vafa polynomial of the fan have equal period sequences over $\mathbb Z$ up to order 14. (3) The anticanonical degree $(-K)^3 = 6\,\mathrm{vol}(\Delta^\circ)$ of the paper's Newton polytope, of the fan and of Mori–Mukai agree. (4) Both polynomials have exact critical data on the torus. Negative controls (swapped fans, unshifted rank-four labels, a perturbed coefficient) must fail. |
+| `fibers.py` | Loads the 105 polynomials from `mori_mukai_validation.py` and `rank_one_fano_validation.py`; Laurent terms; period sequences modulo a prime. |
+| `fans.py` | The fans (rays) of the 18 smooth toric Fano threefolds, built as products, projective bundles and star subdivisions. |
+| `toric.py` | Vertices and facets of a lattice polytope; smooth-Fano test. |
+| `degree.py` | Anticanonical degree from the polar dual of the Newton polytope. |
+| `compare.py` | The rank-four label correspondence (see below). |
+| `jac.py` | Torus Jacobian ring via a graded Gröbner basis with $u = 1/(xyz)$. |
+
+The exact critical data has three parts.
+- $\mu_{\mathrm{tor}}$ is the dimension of the torus Jacobian ring.
+- All critical points are nondegenerate, because the characteristic
+  polynomial of multiplication by $3x+5y+7z$ on that ring is squarefree of
+  degree $\mu_{\mathrm{tor}}$.
+- The number of critical points in each fibre is the multiplicity of the
+  corresponding root of the characteristic polynomial of multiplication by
+  $W$.
+
+**Rank-four labels.** In `mori_mukai_validation.py`, the polynomial for the
+Mori–Mukai family $MM_{4-k}$ ($9\le k\le12$) is stored under the label
+`MM_4_{k+1}`, and the one under `MM_4_2` is $MM_{4-13}$. Both the degree and
+the period show this; `certify.py` asserts it, and checks that the unshifted
+pairing fails.
+
+Run with `python3 toric_exceptional/certify.py`. It needs SymPy and SciPy and
+takes a few minutes.
+
 ## Requirements
 
-- Python 3 with SymPy.
+- Python 3 with SymPy, and SciPy for `toric_exceptional/`.
 - Singular (for example `apt install singular`) for the `.sing` files and `run_all.sh`.
 
 ## How to run

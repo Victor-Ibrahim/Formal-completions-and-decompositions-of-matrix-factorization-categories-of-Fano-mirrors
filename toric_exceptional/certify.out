@@ -1,0 +1,53 @@
+﻿== fans and periods ==
+P3       listed as P3       smooth-Fano fan, facets=4, periods equal over Z to order 14, degree 64 (paper polytope = fan = MM)
+MM_2_33  listed as MM_2_33  smooth-Fano fan, facets=6, periods equal over Z to order 14, degree 54 (paper polytope = fan = MM)
+MM_2_34  listed as MM_2_34  smooth-Fano fan, facets=6, periods equal over Z to order 14, degree 54 (paper polytope = fan = MM)
+MM_2_35  listed as MM_2_35  smooth-Fano fan, facets=6, periods equal over Z to order 14, degree 56 (paper polytope = fan = MM)
+MM_2_36  listed as MM_2_36  smooth-Fano fan, facets=6, periods equal over Z to order 14, degree 62 (paper polytope = fan = MM)
+MM_3_25  listed as MM_3_25  smooth-Fano fan, facets=8, periods equal over Z to order 14, degree 44 (paper polytope = fan = MM)
+MM_3_26  listed as MM_3_26  smooth-Fano fan, facets=8, periods equal over Z to order 14, degree 46 (paper polytope = fan = MM)
+MM_3_27  listed as MM_3_27  smooth-Fano fan, facets=8, periods equal over Z to order 14, degree 48 (paper polytope = fan = MM)
+MM_3_28  listed as MM_3_28  smooth-Fano fan, facets=8, periods equal over Z to order 14, degree 48 (paper polytope = fan = MM)
+MM_3_29  listed as MM_3_29  smooth-Fano fan, facets=8, periods equal over Z to order 14, degree 50 (paper polytope = fan = MM)
+MM_3_30  listed as MM_3_30  smooth-Fano fan, facets=8, periods equal over Z to order 14, degree 50 (paper polytope = fan = MM)
+MM_3_31  listed as MM_3_31  smooth-Fano fan, facets=8, periods equal over Z to order 14, degree 52 (paper polytope = fan = MM)
+MM_4_9   listed as MM_4_10  smooth-Fano fan, facets=10, periods equal over Z to order 14, degree 40 (paper polytope = fan = MM)
+MM_4_10  listed as MM_4_11  smooth-Fano fan, facets=10, periods equal over Z to order 14, degree 42 (paper polytope = fan = MM)
+MM_4_11  listed as MM_4_12  smooth-Fano fan, facets=10, periods equal over Z to order 14, degree 44 (paper polytope = fan = MM)
+MM_4_12  listed as MM_4_13  smooth-Fano fan, facets=10, periods equal over Z to order 14, degree 46 (paper polytope = fan = MM)
+MM_5_2   listed as MM_5_2   smooth-Fano fan, facets=12, periods equal over Z to order 14, degree 36 (paper polytope = fan = MM)
+MM_5_3   listed as MM_5_3   smooth-Fano fan, facets=12, periods equal over Z to order 14, degree 36 (paper polytope = fan = MM)
+
+== negative controls ==
+MM_4_9: unshifted polynomial vs fan -> periods differ (expected)
+MM_4_10: unshifted polynomial vs fan -> periods differ (expected)
+MM_4_11: unshifted polynomial vs fan -> periods differ (expected)
+MM_4_12: unshifted polynomial vs fan -> periods differ (expected)
+MM_3_29 fan vs MM_3_30 polynomial -> periods differ (expected)
+MM_2_33 fan with a+b replaced by (1,1,1) -> periods differ (expected)
+MM_2_33 polynomial with one coefficient changed -> periods differ (expected)
+
+== exact critical data ==
+P3       paper(P3): mu=4 morse=True points-per-fibre=[1, 1, 1, 1] | HV: mu=4 morse=True points-per-fibre=[1, 1, 1, 1]
+MM_2_33  paper(MM_2_33): mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1] | HV: mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1]
+MM_2_34  paper(MM_2_34): mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1] | HV: mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1]
+MM_2_35  paper(MM_2_35): mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1] | HV: mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1]
+MM_2_36  paper(MM_2_36): mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1] | HV: mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1]
+MM_3_25  paper(MM_3_25): mu=8 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1]
+MM_3_26  paper(MM_3_26): mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1]
+MM_3_27  paper(MM_3_27): mu=8 morse=True points-per-fibre=[3, 3, 1, 1] | HV: mu=8 morse=True points-per-fibre=[3, 3, 1, 1]
+MM_3_28  paper(MM_3_28): mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1]
+MM_3_29  paper(MM_3_29): mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1]
+MM_3_30  paper(MM_3_30): mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1]
+MM_3_31  paper(MM_3_31): mu=4 morse=True points-per-fibre=[1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1]
+MM_4_9   paper(MM_4_10): mu=10 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=10 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+MM_4_10  paper(MM_4_11): mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1] | HV: mu=10 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1]
+MM_4_11  paper(MM_4_12): mu=10 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=10 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+MM_4_12  paper(MM_4_13): mu=10 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1] | HV: mu=10 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1]
+MM_5_2   paper(MM_5_2): mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=12 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+MM_5_3   paper(MM_5_3): mu=2 morse=True points-per-fibre=[1, 1] | HV: mu=12 morse=True points-per-fibre=[3, 3, 2, 2, 1, 1]
+Q        paper(Q): mu=3 morse=True points-per-fibre=[1, 1, 1]
+B_5      paper(B_5): mu=4 morse=True points-per-fibre=[1, 1, 1, 1]
+V_22     paper(V_22): mu=3 morse=True points-per-fibre=[1, 1, 1]
+
+ALL CHECKS PASSED
