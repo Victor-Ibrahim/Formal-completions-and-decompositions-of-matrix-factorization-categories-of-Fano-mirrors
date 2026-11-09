@@ -27,6 +27,12 @@ MM_3_29 fan vs MM_3_30 polynomial -> periods differ (expected)
 MM_2_33 fan with a+b replaced by (1,1,1) -> periods differ (expected)
 MM_2_33 polynomial with one coefficient changed -> periods differ (expected)
 
+== CCGK polynomials replaced by Hori-Vafa in the paper ==
+MM_3_31  CCGK polynomial: periods equal to HV over Z to order 14; mu=4 < n=8, points-per-fibre=[1, 1, 1, 1]
+MM_4_10  CCGK polynomial: periods equal to HV over Z to order 14; mu=6 < n=10, points-per-fibre=[1, 1, 1, 1, 1, 1]
+MM_5_2   CCGK polynomial: periods equal to HV over Z to order 14; mu=8 < n=12, points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1]
+MM_5_3   CCGK polynomial: periods equal to HV over Z to order 14; mu=2 < n=12, points-per-fibre=[1, 1]
+
 == exact critical data ==
 P3       paper(P3): mu=4 morse=True points-per-fibre=[1, 1, 1, 1] | HV: mu=4 morse=True points-per-fibre=[1, 1, 1, 1]
 MM_2_33  paper(MM_2_33): mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1] | HV: mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1]
@@ -39,13 +45,13 @@ MM_3_27  paper(MM_3_27): mu=8 morse=True points-per-fibre=[3, 3, 1, 1] | HV: mu=
 MM_3_28  paper(MM_3_28): mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1]
 MM_3_29  paper(MM_3_29): mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1]
 MM_3_30  paper(MM_3_30): mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1]
-MM_3_31  paper(MM_3_31): mu=4 morse=True points-per-fibre=[1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1]
+MM_3_31  paper(MM_3_31): mu=8 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1] | HV: mu=8 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1]
 MM_4_9   paper(MM_4_10): mu=10 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=10 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-MM_4_10  paper(MM_4_11): mu=6 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1] | HV: mu=10 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1]
+MM_4_10  paper(MM_4_11): mu=10 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1] | HV: mu=10 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1]
 MM_4_11  paper(MM_4_12): mu=10 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=10 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 MM_4_12  paper(MM_4_13): mu=10 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1] | HV: mu=10 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1]
-MM_5_2   paper(MM_5_2): mu=8 morse=True points-per-fibre=[1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=12 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
-MM_5_3   paper(MM_5_3): mu=2 morse=True points-per-fibre=[1, 1] | HV: mu=12 morse=True points-per-fibre=[3, 3, 2, 2, 1, 1]
+MM_5_2   paper(MM_5_2): mu=12 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1, 1, 1] | HV: mu=12 morse=True points-per-fibre=[2, 2, 1, 1, 1, 1, 1, 1, 1, 1]
+MM_5_3   paper(MM_5_3): mu=12 morse=True points-per-fibre=[3, 3, 2, 2, 1, 1] | HV: mu=12 morse=True points-per-fibre=[3, 3, 2, 2, 1, 1]
 Q        paper(Q): mu=3 morse=True points-per-fibre=[1, 1, 1]
 B_5      paper(B_5): mu=4 morse=True points-per-fibre=[1, 1, 1, 1]
 V_22     paper(V_22): mu=3 morse=True points-per-fibre=[1, 1, 1]

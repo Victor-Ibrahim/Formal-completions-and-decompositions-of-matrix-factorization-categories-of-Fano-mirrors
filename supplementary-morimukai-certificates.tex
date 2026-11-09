@@ -2224,9 +2224,10 @@ Saturated critical ideals:
   - critical ideal saturated by xyz
     saturation element: x*y*z
     expected generators:
-      * x - 4*z**2
-      * y - 4*z
-      * 16*z**4 + 16*z**3 - 1
+      * x + y - z**5 + 4*z**4 + 3*z**3 - 4*z**2 - 2*z
+      * y**2 - z
+      * (z - 1)*(z + 1)*(2*y + z**3 - 4*z**2 - z)
+      * (z - 1)*(z + 1)*(z**4 - 4*z**3 - 2*z**2 + 1)
 
 Point and Hessian certificates:
   none
@@ -2548,9 +2549,10 @@ Saturated critical ideals:
   - critical ideal saturated by xyz
     saturation element: x*y*z
     expected generators:
-      * x - 2*z**2 + z - 2
-      * (y - 1)*(y + 1)
-      * z**3 - z**2 + 2*z - 1
+      * x**2 + x - y**3 - y**2 - y - 2
+      * (y + 1)*(x - y**2 - 1)
+      * (y + 1)*(y**3 - y**2 + 2*y - 1)
+      * (z - 1)*(z + 1)
 
 Point and Hessian certificates:
   none
@@ -2665,9 +2667,9 @@ Saturated critical ideals:
   - critical ideal saturated by xyz
     saturation element: x*y*z
     expected generators:
-      * x - 2*z**7 - 5*z**6 - 4*z**5 - 4*z**4 - 2*z**3 + z**2 + 3*z + 3
-      * y - z**2
-      * (z**4 + z - 1)*(z**4 + 2*z**3 - z - 1)
+      * 13*x + 11*z**11 + 8*z**10 - 22*z**9 - 42*z**8 + 61*z**6 + 27*z**5 - 23*z**4 - 51*z**3 - 11*z**2 + 16*z + 30
+      * 13*y + 11*z**11 + 8*z**10 - 22*z**9 - 42*z**8 + 61*z**6 + 27*z**5 - 23*z**4 - 51*z**3 - 11*z**2 + 16*z + 30
+      * (z**4 - z**2 + 1)*(z**4 + z**3 - 1)*(z**4 + z**3 - 2*z - 1)
 
 Point and Hessian certificates:
   none
@@ -2694,9 +2696,10 @@ Saturated critical ideals:
   - critical ideal saturated by xyz
     saturation element: x*y*z
     expected generators:
-      * 3*x - 8
-      * (y - 1)*(y + 1)
-      * 8*z - 9
+      * (x - y)*(x + y)
+      * (x - y)*(y - 1)*(y + 1)
+      * (y - 1)*(y + 1)*(y**2 + y + 1)
+      * (z - 1)*(z + 1)
 
 Point and Hessian certificates:
   none

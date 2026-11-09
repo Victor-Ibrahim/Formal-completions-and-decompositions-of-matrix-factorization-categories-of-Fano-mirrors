@@ -7768,87 +7768,40 @@ points are isolated Morse singularities of type $A_1$. Consequently,
 \end{example}
 
 \begin{example}
-Consider the Mori--Mukai model $MM_{3-31}$ on the algebraic torus
-$(\mathbb{C}^*)^3$, with Laurent potential
+Consider the Mori--Mukai model $MM_{3-31}$, the projective bundle
+$\mathbb{P}(\mathcal O\oplus\mathcal O(1,1))$ over $\mathbb{P}^1\times\mathbb{P}^1$.
+We use the Hori--Vafa polynomial of the fan, with rays $(1,0,0)$,
+$(-1,0,1)$, $(0,1,0)$, $(0,-1,1)$, $(0,0,\pm1)$:
 \[
-W_{MM_{3-31}}=\frac{x^2}{y^2z}+x+\frac{2x}{y}+y+z+\frac{1}{x}.
+W_{MM_{3-31}}=x+y+z+\frac{z}{x}+\frac{z}{y}+\frac{1}{z}.
 \]
-The $z$-derivative gives
+The Laurent polynomial of Coates--Corti--Galkin--Kasprzyk,
 \[
-x^2=y^2z^2,
+W'_{MM_{3-31}}=\frac{x^2}{y^2z}+x+\frac{2x}{y}+y+z+\frac{1}{x},
 \]
-so a priori there are two branches, $x=yz$ and $x=-yz$. The $y$-derivative is
+has only four critical points on the torus, while
+$\dim H^{\mathrm{even}}=8$; its period sequence agrees with that of
+$W_{MM_{3-31}}$ up to order $14$.
+Clearing denominators in the logarithmic critical equations and saturating
+by $xyz$ gives the lexicographic basis
 \[
-1-\frac{2x^2}{y^3z}-\frac{2x}{y^2}=0.
+x+y-z^5+4z^4+3z^3-4z^2-2z,\quad
+y^2-z,\quad
+(z^2-1)(2y+z^3-4z^2-z),\quad
+(z^2-1)(z^4-4z^3-2z^2+1).
 \]
-After multiplying by $y^3z$ and using $x^2=y^2z^2$, this becomes
+The torus Jacobian ring has dimension $8$. The characteristic polynomial of
+multiplication by $W_{MM_{3-31}}$ on it is
 \[
-y^3z-2y^2z^2-2xyz=0,
+(w-2)^2(w+2)^2(w^4+4w^3-8w^2-144w-416),
 \]
-or equivalently
-\[
-y-2z-2\frac{x}{y}=0.
-\]
-On the branch $x=-yz$ this equation gives $y=0$, which is impossible on the
-torus. Hence the negative branch is empty. On the branch $x=yz$ one obtains
-\[
-y=4z,
-\qquad
-x=4z^2.
-\]
-The remaining $x$-derivative is
-\[
-\frac{2x}{y^2z}+1+\frac{2}{y}-\frac{1}{x^2}=0.
-\]
-Using $x=yz$, this reduces to
-\[
-1+\frac{4}{y}-\frac{1}{x^2}=0.
-\]
-Substituting $y=4z$ and $x=4z^2$ gives
-\[
-1+\frac{1}{z}-\frac{1}{16z^4}=0.
-\]
-Thus the characteristic equation is
-\[
-\Phi(z):=16z^4+16z^3-1=0.
-\]
-The polynomial $\Phi$ is irreducible and square-free over $\mathbb{Q}$, and is
-coprime to $z$. Hence all four roots give torus points. The critical locus
-consists of the four points
-\[
-P_\lambda=\left(4\lambda^2,4\lambda,\lambda\right),
-\qquad
-\Phi(\lambda)=0.
-\]
-Equivalently, clearing denominators in the logarithmic critical equations and
-saturating by $xyz$ gives the lexicographic basis
-\[
-x-4z^2,
-\qquad
-y-4z,
-\qquad
-\Phi(z).
-\]
-
-The critical values are the roots of
-\[
-w^4+4w^3-8w^2-144w-416=0.
-\]
-Equivalently, modulo $\Phi(\lambda)$ one has
-\[
-W_{MM_{3-31}}(P_\lambda)=8\lambda^2+12\lambda.
-\]
-The logarithmic Hessian is nondegenerate at every critical point. More
-precisely, modulo $\Phi(\lambda)$ one has
-\[
-\det(\theta_i\theta_jW)(P_\lambda)
-=-8(4\lambda^3-1),
-\]
-and the displayed factor is coprime to $\Phi$. Therefore all four critical
-points are isolated Morse singularities of type $A_1$. Consequently,
+and that of multiplication by $3x+5y+7z$ is squarefree of degree $8$. Hence
+the eight critical points are nondegenerate. The fibres over $w=\pm2$ contain
+two points each, and the four roots of $w^4+4w^3-8w^2-144w-416$ (the critical
+values of $W'_{MM_{3-31}}$) carry one point each. Consequently,
 \[
 \overline{MF((\mathbb{C}^*)^3,W_{MM_{3-31}})}
-\cong \bigoplus_{\lambda:\,\Phi(\lambda)=0}\MorseCat{3}.
+\cong \bigoplus_{p\in\CritLoc(W_{MM_{3-31}})}\MorseCat{3}.
 \]
 \end{example}
 
@@ -9112,109 +9065,40 @@ points are isolated Morse singularities of type $A_1$. Consequently,
 \end{example}
 
 \begin{example}
-Consider the Mori--Mukai model $MM_{4-11}$ on the algebraic torus
-$(\mathbb{C}^*)^3$, with Laurent potential
+Consider the model listed as $MM_{4-11}$, a mirror of the Mori--Mukai family
+$4$-$10$, $\mathbb{P}^1\times S_7$ (its Newton polytope has degree $42$).
+We use the Hori--Vafa polynomial, the sum of the Hori--Vafa polynomial of
+$S_7$ and $z+z^{-1}$:
 \[
-W_{MM_{4-11}}=x+y+z+\frac{1}{y}+\frac{z}{x}+\frac{2}{x}+\frac{1}{xz}.
+W_{MM_{4-11}}=x+y+\frac{1}{x}+xy+\frac{1}{xy}+z+\frac{1}{z}.
 \]
-The three terms with denominator $x$ form the square
+The Laurent polynomial of Coates--Corti--Galkin--Kasprzyk,
 \[
-\frac{z}{x}+\frac{2}{x}+\frac{1}{xz}
-=\frac{1}{x}\left(z+2+\frac{1}{z}\right)
-=\frac{(z+1)^2}{xz}.
+W'=x+y+z+\frac{1}{y}+\frac{z}{x}+\frac{2}{x}+\frac{1}{xz},
 \]
-Thus
+has only six critical points on the torus, while $\dim H^{\mathrm{even}}=10$;
+its period sequence agrees with that of $W_{MM_{4-11}}$ up to order $14$.
+Clearing denominators in
+the logarithmic critical equations and saturating by $xyz$ gives the
+lexicographic basis
 \[
-W_{MM_{4-11}}=x+z+\frac{(z+1)^2}{xz}+y+\frac{1}{y},
+x^2+x-y^3-y^2-y-2,\quad
+(y+1)(x-y^2-1),\quad
+(y+1)(y^3-y^2+2y-1),\quad
+z^2-1.
 \]
-so the $y$-coordinate is decoupled from the $(x,z)$-subsystem. The
-$y$-derivative gives
+The torus Jacobian ring has dimension $10$. The characteristic polynomial of
+multiplication by $W_{MM_{4-11}}$ on it is
 \[
-1-\frac{1}{y^2}=0,
-\qquad\text{hence}\qquad
-y=\pm1.
+(w-1)^2(w+3)^2(w^3-5w^2-10w-11)(w^3+7w^2-2w-67),
 \]
-The $x$-derivative gives
-\[
-1-\frac{(z+1)^2}{x^2z}=0,
-\qquad\text{hence}\qquad
-x^2=\frac{(z+1)^2}{z}.
-\]
-The $z$-derivative gives
-\[
-1+\frac{1}{x}-\frac{1}{xz^2}=0,
-\]
-or, equivalently,
-\[
-z^2(x+1)=1,
-\qquad\text{so}\qquad
-x=\frac{1-z^2}{z^2}.
-\]
-Substituting this expression for $x$ into $x^2=(z+1)^2/z$ gives
-\[
-\left(\frac{1-z^2}{z^2}\right)^2=\frac{(z+1)^2}{z}.
-\]
-The factor $(z+1)^2$ corresponds to $z=-1$, which would force $x=0$ in
-$x=(1-z^2)/z^2$ and is therefore removed by the torus condition. After this
-saturation one obtains
-\[
-(1-z)^2=z^3,
-\]
-or
-\[
-p(z):=z^3-z^2+2z-1=0.
-\]
-The polynomial $p$ is irreducible and square-free over $\mathbb{Q}$, and is
-coprime to $z(z^2-1)$. Hence its three roots give torus points on each of the
-two sheets $y=\pm1$. The critical points are
-\[
-P^{\varepsilon}_\alpha=\left(
-\frac{1-\alpha^2}{\alpha^2},
-\varepsilon,
-\alpha
-\right),
-\qquad
-\varepsilon\in\{\pm1\},
-\qquad
-p(\alpha)=0.
-\]
-Equivalently, clearing denominators in the logarithmic critical equations and
-saturating by $xyz$ gives the lexicographic basis
-\[
-x-2z^2+z-2,
-\qquad
-(y-1)(y+1),
-\qquad
-p(z).
-\]
-
-On the sheet $y=1$, the critical values are the roots of
-\[
-w^3-5w^2-10w-11=0,
-\]
-and, modulo $p(\alpha)$,
-\[
-W_{MM_{4-11}}(P^+_\alpha)=4\alpha^2-\alpha+6.
-\]
-On the sheet $y=-1$, the critical values are the roots of
-\[
-w^3+7w^2-2w-67=0,
-\]
-and
-\[
-W_{MM_{4-11}}(P^-_\alpha)=4\alpha^2-\alpha+2.
-\]
-The logarithmic Hessian is nondegenerate at every critical point. More
-precisely,
-\[
-\det(\theta_i\theta_jW)(P^{\varepsilon}_\alpha)
-=2\varepsilon(3\alpha^2-4\alpha+8),
-\]
-and the displayed factor is coprime to $p$. Therefore all six critical points
-are isolated Morse singularities of type $A_1$. Consequently,
+and that of multiplication by $3x+5y+7z$ is squarefree of degree $10$. Hence
+the ten critical points are nondegenerate. The fibres over $w=1$ and $w=-3$
+contain two points each, and the six roots of the two cubics carry one point
+each. Consequently,
 \[
 \overline{MF((\mathbb{C}^*)^3,W_{MM_{4-11}})}
-\cong \bigoplus_{\varepsilon\in\{\pm1\}} \bigoplus_{\alpha:\,p(\alpha)=0}\MorseCat{3}.
+\cong \bigoplus_{p\in\CritLoc(W_{MM_{4-11}})}\MorseCat{3}.
 \]
 \end{example}
 
@@ -9464,233 +9348,83 @@ are isolated Morse singularities of type $A_1$. Consequently,
 \end{example}
 
 \begin{example}
-Consider the Mori--Mukai model $MM_{5-2}$ on the algebraic torus
-$(\mathbb{C}^*)^3$, with Laurent potential
+Consider the Mori--Mukai model $MM_{5-2}$, the blowup of $MM_{3-25}$ along
+two exceptional lines on the same irreducible component of the exceptional
+locus.
+We use the Hori--Vafa polynomial of the fan, whose rays are
+$e_1,e_2,e_3,d=-(e_1+e_2+e_3)$ and $e_1+e_2$, $e_3+d$, $e_1+e_2+e_3$,
+$e_1+e_2+d$:
 \[
-W_{MM_{5-2}}=x+y+\frac{y}{z}+z+\frac{1}{y}
-+\frac{y}{x}+\frac{2}{x}+\frac{1}{xy}.
+W_{MM_{5-2}}=x+y+z+xy+xyz+\frac{1}{z}+\frac{1}{xy}+\frac{1}{xyz}.
 \]
-The $z$-derivative gives
+The Laurent polynomial of Coates--Corti--Galkin--Kasprzyk,
 \[
--\frac{y}{z^2}+1=0,
-\qquad\text{hence}\qquad
-y=z^2.
+W'_{MM_{5-2}}=x+y+\frac{y}{z}+z+\frac{1}{y}+\frac{y}{x}+\frac{2}{x}+\frac{1}{xy},
 \]
-The $x$-derivative gives
+has only eight critical points on the torus, while
+$\dim H^{\mathrm{even}}=12$; its period sequence agrees with that of
+$W_{MM_{5-2}}$ up to order $14$.
+Clearing denominators in the logarithmic critical equations and saturating
+by $xyz$ gives the lexicographic basis
 \[
-1-\frac{y}{x^2}-\frac{2}{x^2}-\frac{1}{x^2y}=0,
+\begin{gathered}
+13x+R(z),\qquad 13y+R(z),\qquad
+(z^4-z^2+1)(z^4+z^3-1)(z^4+z^3-2z-1),\\
+R(z)=11z^{11}+8z^{10}-22z^9-42z^8+61z^6+27z^5-23z^4-51z^3-11z^2+16z+30.
+\end{gathered}
 \]
-or equivalently
+The torus Jacobian ring has dimension $12$. The characteristic polynomial of
+multiplication by $W_{MM_{5-2}}$ on it is
 \[
-x^2y=(y+1)^2.
+(w^2+4w+8)^2(w^4+w^3-8w^2-36w-11)(w^4+5w^3-44w^2-360w-691),
 \]
-The $y$-derivative gives
-\[
-1+\frac{1}{z}-\frac{1}{y^2}+\frac{1}{x}-\frac{1}{xy^2}=0.
-\]
-Using $y=z^2$, this equation can be written as
-\[
-(z^4-1)(x+1)+xz^3=0,
-\]
-so that
-\[
-x=-\frac{z^4-1}{z^4+z^3-1}.
-\]
-On the other hand, the $x$-equation gives
-\[
-x^2=\frac{(z^2+1)^2}{z^2}.
-\]
-Equating these two expressions for $x^2$ and cancelling the nonzero factor
-$(z^2+1)^2$ gives
-\[
-z^2(z^2-1)^2=(z^4+z^3-1)^2.
-\]
-Thus the critical locus splits into two branches:
-\[
-p_-(z):=z^4+z-1=0,
-\qquad
-p_+(z):=z^4+2z^3-z-1=0.
-\]
-The polynomials $p_-$ and $p_+$ are irreducible and square-free over
-$\mathbb{Q}$, are coprime to each other, and are coprime to
-$z(z^2+1)(z^4+z^3-1)$. Hence all eight roots give torus points. The critical
-points are
-\[
-P^-_\alpha=\left(
--\frac{\alpha^2+1}{\alpha},
-\alpha^2,
-\alpha
-\right),
-\qquad
-p_-(\alpha)=0,
-\]
-and
-\[
-P^+_\beta=\left(
-\frac{\beta^2+1}{\beta},
-\beta^2,
-\beta
-\right),
-\qquad
-p_+(\beta)=0.
-\]
-Equivalently, after clearing denominators and saturating by the torus
-variables, the two branch lexicographic bases are
-\[
-x+z^3+z+1,
-\qquad
-y-z^2,
-\qquad
-p_-(z),
-\]
-and
-\[
-x-z^3-2z^2-z+1,
-\qquad
-y-z^2,
-\qquad
-p_+(z).
-\]
-
-On the negative branch, the critical values are the roots of
-\[
-w^4+w^3-8w^2-36w-11=0,
-\]
-and, modulo $p_-(\alpha)$,
-\[
-W_{MM_{5-2}}(P^-_\alpha)=-\alpha^3+2\alpha^2-1.
-\]
-On the positive branch, the critical values are the roots of
-\[
-w^4+5w^3-44w^2-360w-691=0,
-\]
-and
-\[
-W_{MM_{5-2}}(P^+_\beta)=\beta^3+4\beta^2+6\beta-1.
-\]
-The logarithmic Hessian is nondegenerate at every critical point. More
-precisely,
-\[
-\det(\theta_i\theta_jW)(P^-_\alpha)
-=-2(\alpha^3+4\alpha^2-3\alpha+5),
-\]
-and
-\[
-\det(\theta_i\theta_jW)(P^+_\beta)
-=-2(3\beta^3-2\beta^2-9\beta-5),
-\]
-with the displayed factors coprime to $p_-$ and $p_+$, respectively.
-Therefore all eight critical points are isolated Morse singularities of type
-$A_1$. Consequently,
+and that of multiplication by $3x+5y+7z$ is squarefree of degree $12$. Hence
+the twelve critical points are nondegenerate. The fibres over the two roots
+$w=-2\pm2i$ of $w^2+4w+8$ contain two points each, and the eight roots of the
+two quartics (the critical values of $W'_{MM_{5-2}}$) carry one point each.
+Consequently,
 \[
 \overline{MF((\mathbb{C}^*)^3,W_{MM_{5-2}})}
-\cong \left(\bigoplus_{\alpha:\,p_-(\alpha)=0}\MorseCat{3}\right) \oplus \left(\bigoplus_{\beta:\,p_+(\beta)=0}\MorseCat{3}\right).
+\cong \bigoplus_{p\in\CritLoc(W_{MM_{5-2}})}\MorseCat{3}.
 \]
 \end{example}
 
 \begin{example}
-Consider the Mori--Mukai model $MM_{5-3}$ on the algebraic torus
-$(\mathbb{C}^*)^3$, with Laurent potential
+Consider the Mori--Mukai model $MM_{5-3}=\mathbb{P}^1\times S_6$.
+We use the Hori--Vafa polynomial, the sum of the Hori--Vafa polynomial of
+the hexagonal surface $S_6$ and $z+z^{-1}$:
 \[
-W_{MM_{5-3}}=x+y+z+\frac{1}{y}+\frac{3}{x}
-+\frac{2}{xz}+\frac{3}{x^2z}+\frac{1}{x^3z^2}.
+W_{MM_{5-3}}=x+y+xy+\frac{1}{x}+\frac{1}{y}+\frac{1}{xy}+z+\frac{1}{z}.
 \]
-The $y$-coordinate is decoupled from the $(x,z)$-subsystem. Its derivative
-gives
+The Laurent polynomial of Coates--Corti--Galkin--Kasprzyk,
 \[
-1-\frac{1}{y^2}=0,
-\qquad\text{hence}\qquad
-y=\pm1.
+W'_{MM_{5-3}}=x+y+z+\frac{1}{y}+\frac{3}{x}+\frac{2}{xz}+\frac{3}{x^2z}+\frac{1}{x^3z^2},
 \]
-The $z$-derivative gives
-\[
-1-\frac{2}{xz^2}-\frac{3}{x^2z^2}-\frac{2}{x^3z^3}=0,
-\]
-or, after clearing denominators,
-\[
-x^3z^3-2x^2z-3xz-2=0.
-\]
-The $x$-derivative gives
-\[
-1-\frac{3}{x^2}-\frac{2}{x^2z}-\frac{6}{x^3z}
--\frac{3}{x^4z^2}=0,
-\]
-or equivalently
-\[
-x^4z^2-3x^2z^2-2x^2z-6xz-3=0.
-\]
-Set
-\[
-v=xz.
-\]
-The $z$-equation becomes
-\[
-v^3-2xv-3v-2=0,
-\qquad\text{so}\qquad
-2xv=(v+1)^2(v-2).
-\]
-The $x$-equation becomes
-\[
-(xv)^2-2xv-3(v+1)^2=0.
-\]
-Substituting $xv=(v+1)^2(v-2)/2$ gives
-\[
-\frac{v^2(v-3)(v+1)^3}{4}=0.
-\]
-The torus condition excludes $v=0$, and $v=-1$ would force $x=0$ in the
-equation $2xv=(v+1)^2(v-2)$. Hence
-\[
-v=3.
-\]
-It follows that
-\[
-x=\frac{8}{3},
-\qquad
-z=\frac{9}{8}.
-\]
-Together with $y=\pm1$, this gives the two critical points
-\[
-P_{\varepsilon}=\left(\frac{8}{3},\varepsilon,\frac{9}{8}\right),
-\qquad
-\varepsilon\in\{\pm1\}.
-\]
-Equivalently, clearing denominators in the logarithmic critical equations and
+has only two critical points on the torus, with values $8$ and $4$, while
+$\dim H^{\mathrm{even}}=12$; its period sequence agrees with that of
+$W_{MM_{5-3}}$ up to order $14$.
+Clearing denominators in the logarithmic critical equations and
 saturating by $xyz$ gives the lexicographic basis
 \[
-3x-8,
-\qquad
-(y-1)(y+1),
-\qquad
-8z-9.
+(x-y)(x+y),\quad
+(x-y)(y^2-1),\quad
+(y^2-1)(y^2+y+1),\quad
+z^2-1.
 \]
-
-The critical values are
+The torus Jacobian ring has dimension $12$. The characteristic polynomial of
+multiplication by $W_{MM_{5-3}}$ on it is
 \[
-W_{MM_{5-3}}(P_{\varepsilon})=6+2\varepsilon.
+w^3(w-8)(w-4)(w+1)^2(w+4)^3(w+5)^2,
 \]
-Thus
-\[
-W_{MM_{5-3}}(P_1)=8,
-\qquad
-W_{MM_{5-3}}(P_{-1})=4.
-\]
-The logarithmic Hessian is nondegenerate at both critical points. More
-precisely,
-\[
-(\theta_i\theta_jW)(P_{\varepsilon})=
-\begin{pmatrix}
-\frac{19}{3} & 0 & \frac{5}{3} \\
-0 & 2\varepsilon & 0 \\
-\frac{5}{3} & 0 & \frac{7}{3}
-\end{pmatrix},
-\qquad
-\det(\theta_i\theta_jW)(P_{\varepsilon})=24\varepsilon.
-\]
-Therefore both critical points are isolated Morse singularities of type
-$A_1$. Consequently,
+and that of multiplication by $3x+5y+7z$ is squarefree of degree $12$. Hence
+the twelve critical points are nondegenerate. The critical values of the
+hexagon polynomial are $6$ (one point), $-2$ (three points) and $-3$ (two
+points), and those of $z+z^{-1}$ are $\pm2$. The fibres over $0$ and $-4$
+therefore contain three points each, those over $-1$ and $-5$ two each, and
+those over $8$ and $4$ one each. Consequently,
 \[
 \overline{MF((\mathbb{C}^*)^3,W_{MM_{5-3}})}
-\cong \bigoplus_{\varepsilon\in\{\pm1\}}\MorseCat{3}.
+\cong \bigoplus_{p\in\CritLoc(W_{MM_{5-3}})}\MorseCat{3}.
 \]
 \end{example}
 
@@ -10524,7 +10258,7 @@ $MM_{3-27}$ & 8 & $\bigoplus_{\epsilon\in\{1,-1\}^3}\MorseCat{3}$ \\
 $MM_{3-28}$ & 8 & $\bigoplus_{\epsilon\in\{1,-1\}} \left(\bigoplus_{\lambda:\,\Phi(\lambda)=0}\MorseCat{3}\right)$ \\
 $MM_{3-29}$ & 8 & $\bigoplus_{\lambda:\,\Phi(\lambda)=0}\MorseCat{3}$ \\
 $MM_{3-30}$ & 8 & $\bigoplus_{\lambda:\,\Phi(\lambda)=0}\MorseCat{3}$ \\
-$MM_{3-31}$ & 4 & $\bigoplus_{\lambda:\,\Phi(\lambda)=0}\MorseCat{3}$ \\
+$MM_{3-31}$ & 8 & $\bigoplus_{p\in\CritLoc(W_{MM_{3-31}})}\MorseCat{3}$ \\
 $MM_{4-1}$ & 2 & $\MBtwcat{\Gamma}{t(t+1)}\oplus \MorseCat{3}$ \\
 $MM_{4-2}$ & 6 & $\left(\bigoplus_{\alpha:\,p_+(\alpha)=0}\MorseCat{3}\right) \oplus \left(\bigoplus_{\beta:\,p_-(\beta)=0}\MorseCat{3}\right)$ \\
 $MM_{4-3}$ & 2 & $\MBtwcat{\Gamma}{1-t}\oplus \MorseCat{3}$ \\
@@ -10535,12 +10269,12 @@ $MM_{4-7}$ & 5 & $\left(\bigoplus_{\alpha:\,p_+(\alpha)=0}\MorseCat{3}\right) \o
 $MM_{4-8}$ & 10 & $\left(\bigoplus_{\sigma^2=2}\MorseCat{3}\right) \oplus \left(\bigoplus_{\tau:\,R(\tau)=0}\MorseCat{3}\right)$ \\
 $MM_{4-9}$ & 5 & $\bigoplus_{\lambda:\,\Phi(\lambda)=0}\MorseCat{3}$ \\
 $MM_{4-10}$ & 10 & $\bigoplus_{\gamma:\,\Psi(\gamma)=0}\MorseCat{3}$ \\
-$MM_{4-11}$ & 6 & $\bigoplus_{\varepsilon\in\{\pm1\}} \bigoplus_{\alpha:\,p(\alpha)=0}\MorseCat{3}$ \\
+$MM_{4-11}$ & 10 & $\bigoplus_{p\in\CritLoc(W_{MM_{4-11}})}\MorseCat{3}$ \\
 $MM_{4-12}$ & 10 & $\bigoplus_{\delta:\,\Xi(\delta)=0}\MorseCat{3}$ \\
 $MM_{4-13}$ & 10 & $\bigoplus_{p\in\CritLoc(W_{MM_{4-13}})}\MorseCat{3}$ \\
 $MM_{5-1}$ & 5 & $\bigoplus_{\alpha:\,p(\alpha)=0}\MorseCat{3}$ \\
-$MM_{5-2}$ & 8 & $\left(\bigoplus_{\alpha:\,p_-(\alpha)=0}\MorseCat{3}\right) \oplus \left(\bigoplus_{\beta:\,p_+(\beta)=0}\MorseCat{3}\right)$ \\
-$MM_{5-3}$ & 2 & $\bigoplus_{\varepsilon\in\{\pm1\}}\MorseCat{3}$ \\
+$MM_{5-2}$ & 12 & $\bigoplus_{p\in\CritLoc(W_{MM_{5-2}})}\MorseCat{3}$ \\
+$MM_{5-3}$ & 12 & $\bigoplus_{p\in\CritLoc(W_{MM_{5-3}})}\MorseCat{3}$ \\
 $MM_{6-1}$ & 4 & $\bigoplus_{\varepsilon\in\{\pm1\}} \bigoplus_{\alpha:\,q(\alpha)=0}\MorseCat{3}$ \\
 $MM_{7-1}$ & 4 & $\MBtwcat{\Gamma_1}{t}\oplus \MBtwcat{\Gamma_{-1}}{t} \oplus \bigoplus_{\varepsilon\in\{\pm1\}}\MorseCat{3}$ \\
 $MM_{8-1}$ & 4 & $\QAper{\Gamma_1}{2}\oplus\QAper{\Gamma_{-1}}{2}\oplus\bigoplus_{\varepsilon\in\{\pm1\}}\MorseCat{3}$ \\

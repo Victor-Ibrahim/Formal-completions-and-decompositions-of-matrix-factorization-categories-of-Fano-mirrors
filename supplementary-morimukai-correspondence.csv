@@ -170,7 +170,7 @@ MM_3_27,W_{MM_{3-27}}=x+y+z+\frac{1}{x}+\frac{1}{y}+\frac{1}{z},"the Mori--Mukai
 MM_3_28,W_{MM_{3-28}}=x+\frac{x}{z}+y+z+\frac{1}{y}+\frac{1}{x},"the Mori--Mukai model $MM_{3-28}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_3_29,W_{MM_{3-29}}=xy+x+\frac{x}{yz}+y+z+\frac{1}{x},"the Mori--Mukai model $MM_{3-29}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_3_30,W_{MM_{3-30}}=x+\frac{x}{y}+y+\frac{y}{z}+z+\frac{1}{x},"the Mori--Mukai model $MM_{3-30}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
-MM_3_31,W_{MM_{3-31}}=\frac{x^2}{y^2z}+x+\frac{2x}{y}+y+z+\frac{1}{x},"the Mori--Mukai model $MM_{3-31}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
+MM_3_31,W_{MM_{3-31}}=x+y+z+\frac{z}{x}+\frac{z}{y}+\frac{1}{z},"the Mori--Mukai model $MM_{3-31}$, the projective bundle $\mathbb{P}(\mathcal O\oplus\mathcal O(1,1))$ over $\mathbb{P}^1\times\mathbb{P}^1$.",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_4_1,"W_{MM_{4-1}}=x+yz^2+2yz+y+2z+\frac{1}{y}+\frac{2}{yz}
 +\frac{1}{x}+\frac{2}{xyz}+\frac{1}{xy^2z^2}","the Mori--Mukai model $MM_{4-1}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_4_2,"W_{MM_{4-2}}=x+y+\frac{y}{z}+z+\frac{1}{z}+\frac{2}{y}
@@ -189,16 +189,14 @@ MM_4_8,"W_{MM_{4-8}}=x+y+z+\frac{1}{z}+\frac{z}{y}+\frac{1}{y}
 +\frac{1}{x}+\frac{1}{xz}","the Mori--Mukai model $MM_{4-8}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_4_9,W_{MM_{4-9}}=xy+x+y+z+\frac{1}{y}+\frac{2}{x}+\frac{1}{x^2z},"the Mori--Mukai model $MM_{4-9}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_4_10,W_{MM_{4-10}}=xy+x+y+z+\frac{1}{y}+\frac{1}{yz}+\frac{1}{x},"the Mori--Mukai model $MM_{4-10}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
-MM_4_11,W_{MM_{4-11}}=x+y+z+\frac{1}{y}+\frac{z}{x}+\frac{2}{x}+\frac{1}{xz},"the Mori--Mukai model $MM_{4-11}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
+MM_4_11,W_{MM_{4-11}}=x+y+\frac{1}{x}+xy+\frac{1}{xy}+z+\frac{1}{z},"the model listed as $MM_{4-11}$, a mirror of the Mori--Mukai family $4$-$10$, $\mathbb{P}^1\times S_7$ (its Newton polytope has degree $42$).",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_4_12,W_{MM_{4-12}}=xy+x+\frac{x}{z}+y+z+\frac{1}{y}+\frac{1}{x},"the Mori--Mukai model $MM_{4-12}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_4_13,"W_{MM_{4-13}}
 =xy+\frac{xy}{z}+x+y+z+\frac1y+\frac1x",the Mori--Mukai model $MM_{4-13}$ on the algebraic torus $(\mathbb C^*)^3$:,GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_5_1,"W_{MM_{5-1}}=x+y+\frac{y}{z}+z+\frac{2}{y}
 +\frac{y}{x}+\frac{3}{x}+\frac{3}{xy}+\frac{1}{xy^2}","the Mori--Mukai model $MM_{5-1}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
-MM_5_2,"W_{MM_{5-2}}=x+y+\frac{y}{z}+z+\frac{1}{y}
-+\frac{y}{x}+\frac{2}{x}+\frac{1}{xy}","the Mori--Mukai model $MM_{5-2}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
-MM_5_3,"W_{MM_{5-3}}=x+y+z+\frac{1}{y}+\frac{3}{x}
-+\frac{2}{xz}+\frac{3}{x^2z}+\frac{1}{x^3z^2}","the Mori--Mukai model $MM_{5-3}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
+MM_5_2,W_{MM_{5-2}}=x+y+z+xy+xyz+\frac{1}{z}+\frac{1}{xy}+\frac{1}{xyz},"the Mori--Mukai model $MM_{5-2}$, the blowup of $MM_{3-25}$ along two exceptional lines on the same irreducible component of the exceptional locus.",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
+MM_5_3,W_{MM_{5-3}}=x+y+xy+\frac{1}{x}+\frac{1}{y}+\frac{1}{xy}+z+\frac{1}{z},the Mori--Mukai model $MM_{5-3}=\mathbb{P}^1\times S_6$.,GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_6_1,"W_{MM_{6-1}}=x+y+z+\frac{1}{z}+\frac{2}{y}
 +\frac{y}{x}+\frac{3}{x}+\frac{3}{xy}+\frac{1}{xy^2}","the Mori--Mukai model $MM_{6-1}$ on the algebraic torus $(\mathbb{C}^*)^3$, with Laurent potential",GRDB Mori--Mukai table (http://www.grdb.co.uk/misc/morimukai.php); polynomial transcribed from Appendix.tex.
 MM_7_1,"W_{MM_{7-1}}=xz^2+2xz+x+y+4z+\frac{1}{y}

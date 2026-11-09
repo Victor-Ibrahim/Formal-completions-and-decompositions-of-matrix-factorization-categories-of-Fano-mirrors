@@ -113,6 +113,20 @@ if __name__ == "__main__":
     assert periods_Z(Wb, 6) != periods_Z(models["MM_2_33"], 6)
     print("MM_2_33 polynomial with one coefficient changed -> periods differ (expected)", flush=True)
 
+    print("\n== CCGK polynomials replaced by Hori-Vafa in the paper ==", flush=True)
+    OLD_CCGK = {
+        "MM_3_31": (x**2/(y**2*z) + x + 2*x/y + y + z + 1/x, 4),
+        "MM_4_10": (x + y + z + 1/y + z/x + 2/x + 1/(x*z), 6),
+        "MM_5_2": (x + y + y/z + z + 1/y + y/x + 2/x + 1/(x*y), 8),
+        "MM_5_3": (x + y + z + 1/y + 3/x + 2/(x*z) + 3/(x**2*z) + 1/(x**3*z**2), 2),
+    }
+    for fam, (Wold, mu_old) in OLD_CCGK.items():
+        assert periods_Z(Wold, 14) == periods_Z(hv(FANS[fam]), 14), fam
+        mu, morse, sizes, _ = certify(Wold)
+        assert mu == mu_old and morse, (fam, mu, morse)
+        print(f"{fam:8s} CCGK polynomial: periods equal to HV over Z to order 14; "
+              f"mu={mu} < n={CHI[fam]}, points-per-fibre={sizes}", flush=True)
+
     print("\n== exact critical data ==", flush=True)
     rows = list(FANS) + ["Q", "B_5", "V_22"]
     for fam in rows:
